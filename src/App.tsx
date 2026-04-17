@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PlayerSetup from "./pages/PlayerSetup";
+import GameLobby from "./pages/ServerLobby";
+import RoomLobby from "./pages/RoomLobby";
 
 export default function App() {
   return (
@@ -12,13 +14,9 @@ export default function App() {
         <Routes>
           {/* Player Setup / Home Screen */}
           <Route path="/" element={<PlayerSetup />} />
+          <Route path="/game_lobby" element={<GameLobby />} />
+          <Route path="/room_lobby/:roomId" element={<RoomLobby />} />  
 
-          {/* Add your other routes below as you build them out */}
-          {/* <Route path="/game" element={<GameScreen />} /> */}
-          {/* <Route path="/store" element={<StoreScreen />} /> */}
-          {/* <Route path="/profile" element={<ProfileScreen />} /> */}
-          
-          {/* Optional 404 Catch-all */}
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </div>
