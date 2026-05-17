@@ -2,21 +2,21 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PlayerSetup from "./pages/PlayerSetup";
 import GameLobby from "./pages/ServerLobby";
 import RoomLobby from "./pages/RoomLobby";
+import GameScreen from "./pages/GameScreen";
 
 export default function App() {
   return (
     <BrowserRouter>
-      {/* 
-        Root wrapper enforcing your dark mode class and base theme tokens.
-        (If you set class="dark" in your index.html <body>, you can remove it here)
-      */}
       <div className="dark min-h-screen bg-background text-on-background font-body selection:bg-secondary selection:text-white overflow-hidden">
         <Routes>
-          {/* Player Setup / Home Screen */}
           <Route path="/" element={<PlayerSetup />} />
           <Route path="/game_lobby" element={<GameLobby />} />
-          <Route path="/room_lobby/:roomId" element={<RoomLobby />} />  
+          <Route path="/room_lobby/:roomId" element={<RoomLobby />} />
 
+          {/* ✅ dynamic game screen */}
+          <Route path="/game_screen/:roomId" element={<GameScreen />} />
+
+          {/* optional fallback */}
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </div>

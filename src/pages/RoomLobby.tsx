@@ -119,7 +119,7 @@ const RoomLobby: React.FC = () => {
     socket.on("room_created", updateList);
 
     socket.on("game_started", (data) => {
-      navigate("/game_screen", {
+      navigate(`/game_screen/${roomId}`, {
         state: { ...playerInfo, ...data, roomId },
       });
     });
@@ -133,9 +133,13 @@ const RoomLobby: React.FC = () => {
 
   // ▶ START GAME
   const handleStartGame = () => {
+    if (players.length < 4) {
+      alert("Minimum 4 players required to start the game.");
+      return;
+    }
+
     socket.emit("start_game", { room_id: roomId });
   };
-
   // 🚪 LEAVE ROOM
   const handleLeave = () => {
     socket.emit("leave_room_manually", { room_id: roomId });
@@ -201,7 +205,7 @@ const RoomLobby: React.FC = () => {
           {isMeHost ? (
             <button
               onClick={handleStartGame}
-              disabled={players.length < 2}
+              disabled={players.length < 4}
               className="bg-[#ffe483] text-[#635200] font-black text-3xl px-16 py-6 rounded-lg hover:scale-[1.05] active:scale-95 transition-all shadow-[0_10px_0_#635200] disabled:opacity-50"
             >
               START SESSION

@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 servers/saved_model
+servers/impostor_model
