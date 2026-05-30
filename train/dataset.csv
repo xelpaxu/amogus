@@ -1,0 +1,2001 @@
+sentence,keywords,code,theme,label
+fetching records,"columns, database, table",DELETE FROM users WHERE id=1;,Databases,1
+creating a responsive layout,"frontend, javascript, backend",document.getElementById('app'),Databases,0
+coding lang eh,"programming, typing",print('hello'),Databases,0
+,,UPDATE users SET name='Alex';,Databases,1
+debugging rn,"code, typing",int a = 5;,Web Development,0
+optimizing database,"columns, sql",DELETE FROM users WHERE id=1;,Databases,1
+building a website,"javascript, api",<div>Hello</div>,Databases,0
+debugging rn,"rows, table, database, sql",CREATE TABLE users(id INT);,Databases,1
+building a website,"frontend, node, table",INSERT INTO users VALUES ('John');,Web Development,0
+working on predictions,"dataset, neural network","model.fit(X, y)",Databases,0
+working on a web app,,console.log('hello'),Web Development,1
+testing a neural network,"dataset, prediction, training",import sklearn,Machine Learning,1
+fixing frontend bugs,"node, css",console.log('hello'),Web Development,1
+optimizing database,"query, table, model",import sklearn,Databases,0
+building a website,"backend, css",<div>Hello</div>,Databases,0
+training a model,"dataset, ai, neural network",loss.backward(),Machine Learning,1
+building a website,"html, frontend",fetch('/api/data'),Web Development,1
+managing tables,"columns, index, sql, database",CREATE TABLE users(id INT);,Databases,1
+handling data storage,"index, sql, database",UPDATE users SET name='Alex';,Databases,1
+building a website,"frontend, javascript",function App() { return <h1>Hi</h1>; },Web Development,1
+uh fixing stuff,"query, index, sql",INSERT INTO users VALUES ('John');,Web Development,0
+handling data storage,"table, database",CREATE TABLE users(id INT);,Web Development,0
+trying to fix bugs,"computer, code",int a = 5;,Databases,0
+working on a web app,"javascript, html, backend, node",fetch('/api/data'),Web Development,1
+debugging rn,"code, computer",echo 'hi';,Web Development,0
+analyzing data,"dataset, accuracy, prediction",predict(X_test),Web Development,0
+making something idk,"dataset, training, neural network",import sklearn,Web Development,0
+working on predictions,"neural network, model, frontend",document.getElementById('app'),Machine Learning,0
+debugging rn,"typing, code",print('hello'),Web Development,0
+coding lang eh,"computer, typing",echo 'hi';,Machine Learning,0
+working on something,"database, rows, accuracy",loss.backward(),Databases,0
+making a login system,"backend, api, javascript, react",console.log('hello'),Databases,0
+debugging rn,"typing, code",console.log('test'),Databases,0
+uh fixing stuff,"table, sql, index, query",CREATE TABLE users(id INT);,Databases,1
+fetching records,"rows, database, table",UPDATE users SET name='Alex';,Machine Learning,0
+making a login system,"html, frontend, accuracy",loss.backward(),Web Development,0
+working on a web app,"javascript, backend",document.getElementById('app'),Web Development,1
+analyzing data,"model, ai, table",DELETE FROM users WHERE id=1;,Machine Learning,0
+writing SQL queries,"table, query, sql, database",UPDATE users SET name='Alex';,Web Development,0
+analyzing data,"training, prediction, model",import sklearn,Machine Learning,1
+improving accuracy,"training, ai, html",document.getElementById('app'),Machine Learning,0
+working on predictions,"accuracy, dataset, neural network, prediction","model.fit(X, y)",Machine Learning,1
+building a website,"backend, react, css",function App() { return <h1>Hi</h1>; },Web Development,1
+working on something,"code, typing",print('hello'),Machine Learning,0
+fixing frontend bugs,"html, api, css, react",document.getElementById('app'),Web Development,1
+making something idk,"computer, programming",console.log('test'),Machine Learning,0
+fixing frontend bugs,"react, node, backend, css",fetch('/api/data'),Web Development,1
+analyzing data,"prediction, training, ai",,Machine Learning,1
+improving accuracy,"neural network, training, model, dataset",from tensorflow import keras,Databases,0
+working on predictions,"prediction, accuracy, frontend",function App() { return <h1>Hi</h1>; },Machine Learning,0
+writing SQL queries,"table, columns, backend",<div>Hello</div>,Databases,0
+fetching records,"rows, table, index, sql",INSERT INTO users VALUES ('John');,Machine Learning,0
+uh fixing stuff,"typing, computer",print('hello'),Web Development,0
+making a login system,"backend, frontend",console.log('hello'),Web Development,1
+making a login system,"react, node, prediction",loss.backward(),Web Development,0
+trying to fix bugs,"typing, computer",console.log('test'),Databases,0
+,"training, accuracy, ai","model.fit(X, y)",Web Development,0
+fixing frontend bugs,"react, javascript, css",document.getElementById('app'),Machine Learning,0
+improving accuracy,"accuracy, prediction, ai, dataset",,Machine Learning,1
+fetching records,"database, sql",CREATE TABLE users(id INT);,Databases,1
+building a website,"html, api, ai",loss.backward(),Web Development,0
+improving accuracy,"accuracy, ai, api",console.log('hello'),Machine Learning,0
+creating a responsive layout,"css, api, neural network",predict(X_test),Web Development,0
+making a login system,"node, javascript, react, html",function App() { return <h1>Hi</h1>; },Databases,0
+working on predictions,,"model.fit(X, y)",Machine Learning,1
+working on a web app,"node, css, accuracy",predict(X_test),Web Development,0
+building a website,"javascript, react, node",function App() { return <h1>Hi</h1>; },Machine Learning,0
+analyzing data,"training, accuracy, prediction, ai",from tensorflow import keras,Machine Learning,1
+,"table, query",,Databases,1
+managing tables,"query, table, sql",SELECT * FROM users;,Databases,1
+improving accuracy,"model, training, react",<div>Hello</div>,Machine Learning,0
+building a website,"api, css, rows",DELETE FROM users WHERE id=1;,Web Development,0
+testing a neural network,"neural network, dataset, columns",UPDATE users SET name='Alex';,Machine Learning,0
+making something idk,"css, frontend, api, react",console.log('hello'),Machine Learning,0
+uh fixing stuff,"computer, typing",int a = 5;,Databases,0
+analyzing data,"ai, model, training",loss.backward(),Web Development,0
+building a website,"html, backend, api",function App() { return <h1>Hi</h1>; },Web Development,1
+creating a responsive layout,"api, node, react, html",console.log('hello'),Web Development,1
+testing a neural network,"prediction, dataset",from tensorflow import keras,Machine Learning,1
+,"ai, prediction, api",<div>Hello</div>,Machine Learning,0
+debugging rn,"programming, computer",print('hello'),Web Development,0
+working on something,"computer, code",console.log('test'),Databases,0
+making something idk,,CREATE TABLE users(id INT);,Databases,1
+building a website,"api, node, frontend, react",<div>Hello</div>,Web Development,1
+,"accuracy, training, dataset",loss.backward(),Machine Learning,1
+uh fixing stuff,"index, table, rows",DELETE FROM users WHERE id=1;,Machine Learning,0
+creating a responsive layout,"frontend, html, javascript, node",function App() { return <h1>Hi</h1>; },Web Development,1
+writing SQL queries,,CREATE TABLE users(id INT);,Databases,1
+coding lang eh,,predict(X_test),Databases,0
+coding lang eh,"code, typing",int a = 5;,Machine Learning,0
+managing tables,"query, sql, model",,Databases,0
+idk doing coding,"computer, code",int a = 5;,Web Development,0
+debugging rn,"typing, programming",print('hello'),Databases,0
+making something idk,"computer, programming",print('hello'),Databases,0
+making something idk,"frontend, javascript",fetch('/api/data'),Databases,0
+analyzing data,"dataset, prediction, accuracy, ai",import sklearn,Databases,0
+training a model,"dataset, model, api",,Machine Learning,0
+working on a web app,"react, node, rows",UPDATE users SET name='Alex';,Web Development,0
+optimizing database,"table, query, sql, index",UPDATE users SET name='Alex';,Web Development,0
+,"columns, query, table",CREATE TABLE users(id INT);,Databases,1
+managing tables,"index, sql, query, rows",UPDATE users SET name='Alex';,Databases,1
+,"index, sql, neural network",from tensorflow import keras,Databases,0
+making a login system,"backend, node, model",predict(X_test),Web Development,0
+training a model,"neural network, model, ai",from tensorflow import keras,Machine Learning,1
+improving accuracy,"dataset, ai, prediction","model.fit(X, y)",Web Development,0
+coding lang eh,"programming, typing",int a = 5;,Databases,0
+managing tables,"index, sql, rows",INSERT INTO users VALUES ('John');,Databases,1
+training a model,"training, neural network","model.fit(X, y)",Databases,0
+building a website,"api, node, backend",fetch('/api/data'),Web Development,1
+idk doing coding,"typing, programming",print('hello'),Databases,0
+making a login system,"css, api, frontend",console.log('hello'),Web Development,1
+analyzing data,,import sklearn,Machine Learning,1
+training a model,"training, accuracy",,Machine Learning,1
+working on a web app,"backend, html, css",console.log('hello'),Web Development,1
+fetching records,"rows, table, query, sql",UPDATE users SET name='Alex';,Databases,1
+fetching records,"index, database, table",,Machine Learning,0
+writing SQL queries,"index, database, rows, columns",SELECT * FROM users;,Databases,1
+uh fixing stuff,"code, programming",print('hello'),Databases,0
+handling data storage,"sql, table, database",SELECT * FROM users;,Databases,1
+fixing frontend bugs,"node, css",fetch('/api/data'),Web Development,1
+uh fixing stuff,,loss.backward(),Machine Learning,1
+idk doing coding,"node, api, table",INSERT INTO users VALUES ('John');,Web Development,0
+optimizing database,"table, query",SELECT * FROM users;,Web Development,0
+working on a web app,"frontend, react, rows",INSERT INTO users VALUES ('John');,Web Development,0
+analyzing data,"prediction, model, training",predict(X_test),Machine Learning,1
+testing a neural network,"prediction, accuracy, frontend",console.log('hello'),Machine Learning,0
+working on something,"model, ai, api",console.log('hello'),Machine Learning,0
+making something idk,"typing, computer",print('hello'),Web Development,0
+,"backend, css, api",fetch('/api/data'),Web Development,1
+,"rows, table, html",<div>Hello</div>,Databases,0
+working on something,"css, javascript, ai",from tensorflow import keras,Web Development,0
+handling data storage,"table, query, rows, columns",SELECT * FROM users;,Machine Learning,0
+managing tables,,DELETE FROM users WHERE id=1;,Databases,1
+training a model,"model, dataset, prediction, ai","model.fit(X, y)",Machine Learning,1
+fetching records,"database, rows, sql",SELECT * FROM users;,Databases,1
+idk doing coding,"database, columns, table, sql",SELECT * FROM users;,Databases,1
+trying to fix bugs,,console.log('hello'),Databases,0
+handling data storage,"sql, index, rows, table",,Databases,1
+handling data storage,"table, columns, rows",SELECT * FROM users;,Databases,1
+handling data storage,"index, database, sql, rows",SELECT * FROM users;,Databases,1
+handling data storage,,UPDATE users SET name='Alex';,Databases,1
+making something idk,"code, computer",echo 'hi';,Machine Learning,0
+uh fixing stuff,"code, programming",console.log('test'),Web Development,0
+writing SQL queries,"database, columns, query",DELETE FROM users WHERE id=1;,Machine Learning,0
+fetching records,"index, sql, database, query",INSERT INTO users VALUES ('John');,Databases,1
+trying to fix bugs,"html, frontend, react",<div>Hello</div>,Web Development,1
+working on predictions,"training, dataset, accuracy",loss.backward(),Machine Learning,1
+managing tables,"database, rows, table",INSERT INTO users VALUES ('John');,Databases,1
+debugging rn,"typing, programming",echo 'hi';,Web Development,0
+working on predictions,"neural network, prediction, model, accuracy",loss.backward(),Machine Learning,1
+analyzing data,,INSERT INTO users VALUES ('John');,Machine Learning,0
+building a website,,SELECT * FROM users;,Web Development,0
+managing tables,"query, table, index, columns",INSERT INTO users VALUES ('John');,Databases,1
+making a login system,"frontend, html, css, node",document.getElementById('app'),Web Development,1
+fixing frontend bugs,"node, react, css, html",document.getElementById('app'),Databases,0
+working on predictions,"prediction, model, backend",function App() { return <h1>Hi</h1>; },Machine Learning,0
+uh fixing stuff,"code, computer",print('hello'),Machine Learning,0
+debugging rn,"model, neural network","model.fit(X, y)",Machine Learning,1
+working on something,"typing, programming",int a = 5;,Databases,0
+idk doing coding,"computer, typing",console.log('test'),Web Development,0
+,"javascript, html, node, frontend",<div>Hello</div>,Databases,0
+idk doing coding,,,Machine Learning,0
+idk doing coding,"programming, code",print('hello'),Machine Learning,0
+optimizing database,"table, database",UPDATE users SET name='Alex';,Databases,1
+idk doing coding,"columns, rows, index",DELETE FROM users WHERE id=1;,Databases,1
+working on predictions,"neural network, dataset",,Machine Learning,1
+building a website,"react, javascript, ai","model.fit(X, y)",Web Development,0
+coding lang eh,"query, database, index, table",CREATE TABLE users(id INT);,Databases,1
+idk doing coding,"typing, programming",int a = 5;,Machine Learning,0
+coding lang eh,"database, columns, html",<div>Hello</div>,Databases,0
+making something idk,"typing, computer",console.log('test'),Web Development,0
+making something idk,"typing, computer",int a = 5;,Machine Learning,0
+handling data storage,"table, database, index",UPDATE users SET name='Alex';,Databases,1
+testing a neural network,"neural network, model",loss.backward(),Machine Learning,1
+debugging rn,"computer, typing",console.log('test'),Machine Learning,0
+fetching records,"table, index, api",fetch('/api/data'),Databases,0
+making something idk,"code, computer",int a = 5;,Machine Learning,0
+building a website,"frontend, css",document.getElementById('app'),Web Development,1
+idk doing coding,"model, dataset, training","model.fit(X, y)",Machine Learning,1
+writing SQL queries,"columns, rows",CREATE TABLE users(id INT);,Machine Learning,0
+writing SQL queries,"columns, database, rows",CREATE TABLE users(id INT);,Web Development,0
+working on something,"programming, code",int a = 5;,Machine Learning,0
+working on something,"index, table, columns, sql",,Machine Learning,0
+working on a web app,"react, frontend, backend",console.log('hello'),Databases,0
+trying to fix bugs,"database, columns, node",<div>Hello</div>,Databases,0
+uh fixing stuff,"programming, typing",int a = 5;,Machine Learning,0
+handling data storage,"rows, database, ai",predict(X_test),Databases,0
+working on predictions,,"model.fit(X, y)",Databases,0
+analyzing data,"training, accuracy",loss.backward(),Machine Learning,1
+uh fixing stuff,"database, sql, rows, columns",INSERT INTO users VALUES ('John');,Databases,1
+optimizing database,"columns, rows, api",function App() { return <h1>Hi</h1>; },Databases,0
+working on a web app,"javascript, node, backend",<div>Hello</div>,Web Development,1
+making a login system,"css, html",function App() { return <h1>Hi</h1>; },Web Development,1
+fetching records,"database, sql, query, table",UPDATE users SET name='Alex';,Databases,1
+,"css, api, javascript, frontend",<div>Hello</div>,Web Development,1
+coding lang eh,"typing, programming",int a = 5;,Databases,0
+making something idk,"training, accuracy, ai, neural network",import sklearn,Machine Learning,1
+creating a responsive layout,"node, html, backend",document.getElementById('app'),Databases,0
+building a website,"css, node, table",SELECT * FROM users;,Web Development,0
+writing SQL queries,"table, rows, query, database",UPDATE users SET name='Alex';,Databases,1
+working on predictions,"model, accuracy, neural network, dataset",import sklearn,Machine Learning,1
+working on predictions,"prediction, neural network, ai",from tensorflow import keras,Machine Learning,1
+handling data storage,"columns, database",DELETE FROM users WHERE id=1;,Databases,1
+managing tables,"database, sql, table",UPDATE users SET name='Alex';,Machine Learning,0
+debugging rn,"computer, typing",console.log('test'),Machine Learning,0
+coding lang eh,"accuracy, neural network",loss.backward(),Machine Learning,1
+fixing frontend bugs,"node, backend, react",document.getElementById('app'),Web Development,1
+building a website,"backend, css, api, frontend",document.getElementById('app'),Web Development,1
+making something idk,"node, react, model","model.fit(X, y)",Web Development,0
+testing a neural network,"dataset, model, rows",CREATE TABLE users(id INT);,Machine Learning,0
+testing a neural network,"model, prediction, api",<div>Hello</div>,Machine Learning,0
+working on something,"typing, code",int a = 5;,Machine Learning,0
+,"prediction, neural network, api",console.log('hello'),Machine Learning,0
+writing SQL queries,"database, columns, query",CREATE TABLE users(id INT);,Machine Learning,0
+working on predictions,"ai, prediction, neural network",import sklearn,Machine Learning,1
+building a website,"javascript, react, node",function App() { return <h1>Hi</h1>; },Web Development,1
+making a login system,"frontend, api",fetch('/api/data'),Databases,0
+trying to fix bugs,"frontend, css, javascript",console.log('hello'),Web Development,1
+training a model,"accuracy, neural network, sql",UPDATE users SET name='Alex';,Machine Learning,0
+debugging rn,"sql, table, columns, index",SELECT * FROM users;,Databases,1
+training a model,"prediction, training, dataset",loss.backward(),Machine Learning,1
+uh fixing stuff,"code, typing",int a = 5;,Web Development,0
+,"columns, rows",SELECT * FROM users;,Machine Learning,0
+making something idk,"typing, code",echo 'hi';,Machine Learning,0
+,"javascript, html, react",function App() { return <h1>Hi</h1>; },Web Development,1
+debugging rn,"database, query, index, rows",SELECT * FROM users;,Databases,1
+working on something,"computer, code",echo 'hi';,Web Development,0
+optimizing database,"columns, sql, rows",SELECT * FROM users;,Databases,1
+training a model,"ai, accuracy, rows",INSERT INTO users VALUES ('John');,Machine Learning,0
+testing a neural network,"model, prediction, ai","model.fit(X, y)",Machine Learning,1
+,"frontend, javascript",function App() { return <h1>Hi</h1>; },Databases,0
+coding lang eh,"computer, typing",console.log('test'),Web Development,0
+writing SQL queries,"table, sql, backend",console.log('hello'),Databases,0
+fetching records,,SELECT * FROM users;,Web Development,0
+optimizing database,"index, query, rows, database",SELECT * FROM users;,Databases,1
+making a login system,,,Web Development,1
+debugging rn,"css, html, react, backend",document.getElementById('app'),Web Development,1
+trying to fix bugs,"accuracy, model, dataset",import sklearn,Web Development,0
+managing tables,,CREATE TABLE users(id INT);,Databases,1
+working on predictions,"model, neural network, accuracy",loss.backward(),Machine Learning,1
+,"database, index",DELETE FROM users WHERE id=1;,Machine Learning,0
+debugging rn,"prediction, model, accuracy, ai",predict(X_test),Databases,0
+building a website,"javascript, backend, accuracy",import sklearn,Web Development,0
+debugging rn,"neural network, training, rows",DELETE FROM users WHERE id=1;,Machine Learning,0
+optimizing database,"sql, index, database",DELETE FROM users WHERE id=1;,Databases,1
+optimizing database,"query, rows",DELETE FROM users WHERE id=1;,Databases,1
+,"rows, query, neural network",import sklearn,Databases,0
+improving accuracy,"neural network, training, prediction",predict(X_test),Machine Learning,1
+debugging rn,"node, api, javascript, frontend",document.getElementById('app'),Web Development,1
+working on something,"javascript, html",fetch('/api/data'),Web Development,1
+,"index, rows, database",,Web Development,0
+uh fixing stuff,"computer, programming",int a = 5;,Databases,0
+training a model,,DELETE FROM users WHERE id=1;,Machine Learning,0
+,,predict(X_test),Machine Learning,1
+testing a neural network,"dataset, neural network, frontend",console.log('hello'),Machine Learning,0
+fixing frontend bugs,"react, api, database",DELETE FROM users WHERE id=1;,Web Development,0
+working on predictions,"prediction, dataset, training",,Machine Learning,1
+improving accuracy,"neural network, training, model",import sklearn,Machine Learning,1
+making a login system,"frontend, api",<div>Hello</div>,Databases,0
+making something idk,"programming, typing",echo 'hi';,Databases,0
+optimizing database,"rows, index, query, table",CREATE TABLE users(id INT);,Web Development,0
+managing tables,"database, sql, prediction","model.fit(X, y)",Databases,0
+,"node, react, model",loss.backward(),Web Development,0
+trying to fix bugs,"code, typing",int a = 5;,Machine Learning,0
+,"model, ai, dataset, prediction",,Machine Learning,1
+making a login system,"css, react",document.getElementById('app'),Web Development,1
+idk doing coding,"columns, rows, table",DELETE FROM users WHERE id=1;,Machine Learning,0
+uh fixing stuff,"typing, programming",print('hello'),Machine Learning,0
+analyzing data,"ai, model",from tensorflow import keras,Machine Learning,1
+making a login system,"node, api, rows",CREATE TABLE users(id INT);,Web Development,0
+improving accuracy,"prediction, model",,Machine Learning,1
+working on a web app,,function App() { return <h1>Hi</h1>; },Databases,0
+coding lang eh,"typing, computer",int a = 5;,Web Development,0
+managing tables,"table, database",,Databases,1
+making something idk,"javascript, backend, frontend, html",fetch('/api/data'),Databases,0
+creating a responsive layout,,fetch('/api/data'),Web Development,1
+optimizing database,"query, sql",UPDATE users SET name='Alex';,Databases,1
+,"backend, css, neural network",from tensorflow import keras,Web Development,0
+debugging rn,"ai, neural network",from tensorflow import keras,Databases,0
+analyzing data,"accuracy, training, ai, neural network",import sklearn,Machine Learning,1
+working on something,"typing, computer",echo 'hi';,Web Development,0
+improving accuracy,"training, ai, node",fetch('/api/data'),Machine Learning,0
+creating a responsive layout,"html, react",console.log('hello'),Databases,0
+building a website,"node, api, index",,Web Development,0
+working on something,"computer, programming",int a = 5;,Machine Learning,0
+,"dataset, ai, training",,Databases,0
+fixing frontend bugs,"backend, javascript, neural network",import sklearn,Web Development,0
+creating a responsive layout,"javascript, backend, css, react",fetch('/api/data'),Machine Learning,0
+fixing frontend bugs,"html, javascript, css, react",function App() { return <h1>Hi</h1>; },Machine Learning,0
+handling data storage,"database, query, training",import sklearn,Databases,0
+testing a neural network,"ai, dataset, prediction",from tensorflow import keras,Machine Learning,1
+managing tables,"columns, table",UPDATE users SET name='Alex';,Web Development,0
+debugging rn,"typing, computer",int a = 5;,Web Development,0
+building a website,"api, backend, css",,Web Development,1
+,"query, columns, ai","model.fit(X, y)",Databases,0
+coding lang eh,"programming, code",console.log('test'),Databases,0
+making something idk,"react, api, frontend",<div>Hello</div>,Machine Learning,0
+creating a responsive layout,,console.log('hello'),Web Development,1
+building a website,"javascript, html, sql",DELETE FROM users WHERE id=1;,Web Development,0
+improving accuracy,"model, training, prediction, neural network","model.fit(X, y)",Machine Learning,1
+handling data storage,"columns, index, javascript",console.log('hello'),Databases,0
+working on a web app,"javascript, frontend, rows",CREATE TABLE users(id INT);,Web Development,0
+writing SQL queries,"rows, query, database",INSERT INTO users VALUES ('John');,Databases,1
+debugging rn,"typing, code",int a = 5;,Machine Learning,0
+writing SQL queries,"rows, sql, query, database",UPDATE users SET name='Alex';,Web Development,0
+trying to fix bugs,,<div>Hello</div>,Web Development,1
+building a website,"html, javascript, react",document.getElementById('app'),Databases,0
+optimizing database,"database, query, index",SELECT * FROM users;,Web Development,0
+fixing frontend bugs,"javascript, node, react",function App() { return <h1>Hi</h1>; },Machine Learning,0
+testing a neural network,"neural network, accuracy, prediction",from tensorflow import keras,Machine Learning,1
+,,,Machine Learning,0
+testing a neural network,"training, ai, index",SELECT * FROM users;,Machine Learning,0
+fixing frontend bugs,"javascript, api, frontend, react",document.getElementById('app'),Web Development,1
+fixing frontend bugs,,console.log('hello'),Machine Learning,0
+trying to fix bugs,"typing, programming",echo 'hi';,Databases,0
+managing tables,"index, sql, model",,Databases,0
+testing a neural network,"training, accuracy, frontend",console.log('hello'),Machine Learning,0
+coding lang eh,"prediction, dataset, rows",INSERT INTO users VALUES ('John');,Machine Learning,0
+managing tables,,UPDATE users SET name='Alex';,Web Development,0
+working on a web app,"frontend, api, node",console.log('hello'),Web Development,1
+trying to fix bugs,"code, programming",print('hello'),Web Development,0
+making a login system,"html, react, javascript, node",console.log('hello'),Databases,0
+fetching records,"rows, table, query",SELECT * FROM users;,Web Development,0
+working on predictions,"ai, prediction, model",from tensorflow import keras,Machine Learning,1
+fetching records,"table, sql, query, index",UPDATE users SET name='Alex';,Web Development,0
+making a login system,"api, react",<div>Hello</div>,Web Development,1
+debugging rn,"training, model, prediction",import sklearn,Machine Learning,1
+analyzing data,"prediction, training",from tensorflow import keras,Databases,0
+,"javascript, html, react, frontend",fetch('/api/data'),Web Development,1
+improving accuracy,"accuracy, neural network, columns",SELECT * FROM users;,Machine Learning,0
+idk doing coding,"sql, rows, database, columns",UPDATE users SET name='Alex';,Databases,1
+trying to fix bugs,"table, index, sql, database",DELETE FROM users WHERE id=1;,Web Development,0
+training a model,"prediction, accuracy, index",DELETE FROM users WHERE id=1;,Machine Learning,0
+,"prediction, ai, css",fetch('/api/data'),Machine Learning,0
+fixing frontend bugs,"backend, react, frontend, html",function App() { return <h1>Hi</h1>; },Web Development,1
+debugging rn,"computer, programming",print('hello'),Web Development,0
+managing tables,"database, columns, index, table",CREATE TABLE users(id INT);,Machine Learning,0
+,"css, frontend, html",document.getElementById('app'),Machine Learning,0
+optimizing database,"rows, database, model","model.fit(X, y)",Databases,0
+,"database, table, rows, query",UPDATE users SET name='Alex';,Databases,1
+fixing frontend bugs,"react, backend, node",document.getElementById('app'),Web Development,1
+making a login system,"frontend, api",console.log('hello'),Web Development,1
+working on a web app,"node, html, frontend",<div>Hello</div>,Web Development,1
+optimizing database,"table, sql",DELETE FROM users WHERE id=1;,Machine Learning,0
+idk doing coding,"query, columns, dataset",from tensorflow import keras,Databases,0
+making something idk,"code, programming",print('hello'),Machine Learning,0
+fixing frontend bugs,"api, node, prediction",predict(X_test),Web Development,0
+,"react, node, javascript",console.log('hello'),Web Development,1
+idk doing coding,,,Machine Learning,1
+working on a web app,"frontend, node",<div>Hello</div>,Web Development,1
+managing tables,"database, index, prediction",loss.backward(),Databases,0
+fetching records,"rows, sql, columns",SELECT * FROM users;,Databases,1
+training a model,"dataset, model, prediction",from tensorflow import keras,Machine Learning,1
+uh fixing stuff,"index, rows, columns",,Machine Learning,0
+analyzing data,,loss.backward(),Machine Learning,1
+working on something,"code, computer",echo 'hi';,Databases,0
+uh fixing stuff,"computer, code",int a = 5;,Machine Learning,0
+trying to fix bugs,"code, programming",int a = 5;,Web Development,0
+idk doing coding,"rows, database, query, index",INSERT INTO users VALUES ('John');,Databases,1
+training a model,"dataset, training, model",from tensorflow import keras,Databases,0
+improving accuracy,"dataset, neural network, accuracy",loss.backward(),Machine Learning,1
+uh fixing stuff,,function App() { return <h1>Hi</h1>; },Machine Learning,0
+working on predictions,,DELETE FROM users WHERE id=1;,Machine Learning,0
+analyzing data,"neural network, model, training, prediction",from tensorflow import keras,Machine Learning,1
+improving accuracy,"training, neural network, ai",loss.backward(),Machine Learning,1
+,"database, table, rows, query",CREATE TABLE users(id INT);,Databases,1
+making a login system,"frontend, javascript",<div>Hello</div>,Web Development,1
+debugging rn,"backend, css, api",<div>Hello</div>,Web Development,1
+optimizing database,"columns, query, table, rows",INSERT INTO users VALUES ('John');,Databases,1
+handling data storage,"index, table, database",SELECT * FROM users;,Databases,1
+making a login system,,,Web Development,1
+,"query, table",DELETE FROM users WHERE id=1;,Machine Learning,0
+debugging rn,"prediction, model, columns",DELETE FROM users WHERE id=1;,Machine Learning,0
+,"prediction, dataset, model, neural network",loss.backward(),Machine Learning,1
+making something idk,"accuracy, model",from tensorflow import keras,Machine Learning,1
+fetching records,"index, query, prediction",loss.backward(),Databases,0
+testing a neural network,"model, prediction, ai, training",predict(X_test),Machine Learning,1
+,"node, api, html, backend",document.getElementById('app'),Machine Learning,0
+building a website,"frontend, css, react",fetch('/api/data'),Machine Learning,0
+writing SQL queries,"query, index",SELECT * FROM users;,Machine Learning,0
+fetching records,"columns, database",SELECT * FROM users;,Web Development,0
+,"table, query, javascript",fetch('/api/data'),Databases,0
+making something idk,"computer, programming",print('hello'),Databases,0
+creating a responsive layout,"html, javascript",fetch('/api/data'),Web Development,1
+fetching records,"index, query",DELETE FROM users WHERE id=1;,Databases,1
+fixing frontend bugs,"css, javascript, frontend, react",,Web Development,1
+creating a responsive layout,"frontend, api, html",console.log('hello'),Web Development,1
+working on predictions,"model, dataset, training, prediction","model.fit(X, y)",Machine Learning,1
+testing a neural network,"accuracy, model, prediction",loss.backward(),Web Development,0
+analyzing data,"model, training, css",fetch('/api/data'),Machine Learning,0
+analyzing data,"model, neural network, dataset, ai","model.fit(X, y)",Databases,0
+debugging rn,"accuracy, ai, dataset, training",,Machine Learning,1
+testing a neural network,"ai, neural network, training",from tensorflow import keras,Databases,0
+managing tables,"database, index, rows, columns",SELECT * FROM users;,Databases,1
+fetching records,"sql, rows, backend",fetch('/api/data'),Databases,0
+training a model,"prediction, neural network, node",console.log('hello'),Machine Learning,0
+making a login system,"html, javascript, frontend",document.getElementById('app'),Databases,0
+handling data storage,"query, columns",UPDATE users SET name='Alex';,Databases,1
+analyzing data,"dataset, training, model, neural network","model.fit(X, y)",Web Development,0
+handling data storage,,<div>Hello</div>,Databases,0
+idk doing coding,"table, columns, react",fetch('/api/data'),Databases,0
+trying to fix bugs,"accuracy, dataset, training","model.fit(X, y)",Machine Learning,1
+fixing frontend bugs,"css, node, api",<div>Hello</div>,Machine Learning,0
+fetching records,,INSERT INTO users VALUES ('John');,Databases,1
+fetching records,"query, database, sql",UPDATE users SET name='Alex';,Machine Learning,0
+building a website,"html, css, react, javascript",function App() { return <h1>Hi</h1>; },Machine Learning,0
+optimizing database,"table, database",UPDATE users SET name='Alex';,Databases,1
+making a login system,"node, react, backend, frontend",fetch('/api/data'),Web Development,1
+handling data storage,"columns, query",UPDATE users SET name='Alex';,Databases,1
+fixing frontend bugs,"javascript, api, dataset","model.fit(X, y)",Web Development,0
+working on predictions,"neural network, training, database",UPDATE users SET name='Alex';,Machine Learning,0
+uh fixing stuff,"query, database, neural network","model.fit(X, y)",Databases,0
+fetching records,"sql, columns",UPDATE users SET name='Alex';,Databases,1
+,"react, backend",console.log('hello'),Databases,0
+working on a web app,,UPDATE users SET name='Alex';,Web Development,0
+testing a neural network,"training, dataset",import sklearn,Machine Learning,1
+fetching records,"table, index, accuracy",from tensorflow import keras,Databases,0
+idk doing coding,"code, computer",print('hello'),Web Development,0
+,"backend, api, node",<div>Hello</div>,Web Development,1
+handling data storage,,document.getElementById('app'),Databases,0
+trying to fix bugs,,INSERT INTO users VALUES ('John');,Machine Learning,0
+handling data storage,,UPDATE users SET name='Alex';,Databases,1
+fixing frontend bugs,"css, backend, training",from tensorflow import keras,Web Development,0
+debugging rn,"computer, typing",console.log('test'),Databases,0
+fetching records,,DELETE FROM users WHERE id=1;,Machine Learning,0
+improving accuracy,,SELECT * FROM users;,Machine Learning,0
+idk doing coding,"accuracy, prediction",from tensorflow import keras,Machine Learning,1
+,"dataset, neural network, model, accuracy",import sklearn,Machine Learning,1
+uh fixing stuff,"accuracy, training","model.fit(X, y)",Databases,0
+writing SQL queries,"database, table, query",DELETE FROM users WHERE id=1;,Databases,1
+building a website,,fetch('/api/data'),Web Development,1
+,"columns, index, api",<div>Hello</div>,Databases,0
+working on a web app,"node, frontend, index",SELECT * FROM users;,Web Development,0
+uh fixing stuff,"neural network, ai, model, accuracy",import sklearn,Machine Learning,1
+uh fixing stuff,"programming, computer",print('hello'),Machine Learning,0
+working on something,"typing, programming",int a = 5;,Machine Learning,0
+improving accuracy,"dataset, ai, neural network","model.fit(X, y)",Machine Learning,1
+improving accuracy,"ai, prediction, api",,Machine Learning,0
+improving accuracy,"neural network, dataset, javascript",<div>Hello</div>,Machine Learning,0
+idk doing coding,"react, css, accuracy","model.fit(X, y)",Web Development,0
+uh fixing stuff,"node, api, html, css",<div>Hello</div>,Web Development,1
+fixing frontend bugs,"frontend, javascript",function App() { return <h1>Hi</h1>; },Web Development,1
+testing a neural network,,predict(X_test),Machine Learning,1
+improving accuracy,,function App() { return <h1>Hi</h1>; },Machine Learning,0
+making something idk,"training, dataset",import sklearn,Web Development,0
+improving accuracy,"accuracy, ai",,Machine Learning,1
+working on something,"api, javascript, rows",DELETE FROM users WHERE id=1;,Web Development,0
+handling data storage,"columns, query, rows",INSERT INTO users VALUES ('John');,Databases,1
+building a website,"javascript, react, columns",INSERT INTO users VALUES ('John');,Web Development,0
+analyzing data,"training, ai, sql",INSERT INTO users VALUES ('John');,Machine Learning,0
+improving accuracy,"training, prediction, accuracy, dataset",predict(X_test),Machine Learning,1
+managing tables,,<div>Hello</div>,Databases,0
+testing a neural network,"training, neural network, columns",CREATE TABLE users(id INT);,Machine Learning,0
+debugging rn,"html, javascript, backend",console.log('hello'),Web Development,1
+fixing frontend bugs,,fetch('/api/data'),Databases,0
+,"backend, frontend, css",,Web Development,1
+fixing frontend bugs,"html, css, frontend, api",,Web Development,1
+,"api, javascript, query",INSERT INTO users VALUES ('John');,Web Development,0
+working on something,"rows, sql",DELETE FROM users WHERE id=1;,Databases,1
+uh fixing stuff,"programming, typing",int a = 5;,Machine Learning,0
+building a website,"frontend, css, dataset",loss.backward(),Web Development,0
+coding lang eh,"typing, computer",echo 'hi';,Databases,0
+working on a web app,"javascript, react, backend, api",function App() { return <h1>Hi</h1>; },Machine Learning,0
+making something idk,"typing, programming",console.log('test'),Databases,0
+handling data storage,"columns, database, dataset","model.fit(X, y)",Databases,0
+idk doing coding,"code, computer",echo 'hi';,Web Development,0
+trying to fix bugs,"computer, typing",int a = 5;,Web Development,0
+working on something,"programming, typing",int a = 5;,Web Development,0
+fetching records,"index, database, query",CREATE TABLE users(id INT);,Machine Learning,0
+testing a neural network,"model, dataset, react",document.getElementById('app'),Machine Learning,0
+uh fixing stuff,"javascript, css, prediction",import sklearn,Web Development,0
+,"prediction, ai, training",import sklearn,Machine Learning,1
+training a model,"accuracy, ai, css",fetch('/api/data'),Machine Learning,0
+creating a responsive layout,"css, backend",fetch('/api/data'),Databases,0
+working on something,"model, ai, neural network",predict(X_test),Machine Learning,1
+training a model,"accuracy, training, prediction",,Machine Learning,1
+working on something,"code, typing",echo 'hi';,Databases,0
+building a website,"css, react, node, frontend",<div>Hello</div>,Web Development,1
+working on something,"react, html, database",CREATE TABLE users(id INT);,Web Development,0
+analyzing data,,,Machine Learning,1
+fixing frontend bugs,"frontend, react, node",fetch('/api/data'),Machine Learning,0
+making a login system,"javascript, css, model",predict(X_test),Web Development,0
+coding lang eh,"code, computer",print('hello'),Databases,0
+fetching records,"columns, query",DELETE FROM users WHERE id=1;,Web Development,0
+making a login system,"api, html, css, react",function App() { return <h1>Hi</h1>; },Web Development,1
+handling data storage,"index, table, rows",SELECT * FROM users;,Web Development,0
+creating a responsive layout,"backend, react, javascript, css",fetch('/api/data'),Web Development,1
+managing tables,"sql, index, rows, columns",,Databases,1
+training a model,"accuracy, training",loss.backward(),Web Development,0
+fetching records,,INSERT INTO users VALUES ('John');,Web Development,0
+managing tables,"index, sql, columns, database",UPDATE users SET name='Alex';,Databases,1
+testing a neural network,"accuracy, prediction","model.fit(X, y)",Web Development,0
+fetching records,"database, rows, react",fetch('/api/data'),Databases,0
+trying to fix bugs,"programming, typing",console.log('test'),Machine Learning,0
+idk doing coding,"computer, programming",int a = 5;,Machine Learning,0
+debugging rn,"typing, programming",echo 'hi';,Databases,0
+building a website,"backend, javascript, training",loss.backward(),Web Development,0
+working on a web app,,SELECT * FROM users;,Web Development,0
+uh fixing stuff,"sql, database, table, index",DELETE FROM users WHERE id=1;,Machine Learning,0
+coding lang eh,"table, index, database, rows",UPDATE users SET name='Alex';,Databases,1
+,"api, node, css, html",function App() { return <h1>Hi</h1>; },Web Development,1
+idk doing coding,"programming, code",console.log('test'),Web Development,0
+making a login system,"api, css, database",INSERT INTO users VALUES ('John');,Web Development,0
+training a model,"training, neural network, prediction","model.fit(X, y)",Web Development,0
+building a website,"api, html",fetch('/api/data'),Web Development,1
+making something idk,"table, sql",CREATE TABLE users(id INT);,Web Development,0
+managing tables,"rows, query, frontend",fetch('/api/data'),Databases,0
+testing a neural network,"prediction, model",,Machine Learning,1
+coding lang eh,"computer, programming",echo 'hi';,Web Development,0
+debugging rn,"dataset, model, ai, accuracy",predict(X_test),Machine Learning,1
+,"ai, neural network",from tensorflow import keras,Machine Learning,1
+coding lang eh,"computer, typing",int a = 5;,Machine Learning,0
+building a website,"react, html, dataset",,Web Development,0
+making a login system,"css, javascript, node",function App() { return <h1>Hi</h1>; },Web Development,1
+working on predictions,"model, ai, html",document.getElementById('app'),Machine Learning,0
+coding lang eh,"typing, programming",echo 'hi';,Web Development,0
+,"node, api, backend, javascript",<div>Hello</div>,Web Development,1
+fetching records,"columns, table, rows",SELECT * FROM users;,Databases,1
+handling data storage,"database, index, react",function App() { return <h1>Hi</h1>; },Databases,0
+making a login system,"css, api, node",console.log('hello'),Machine Learning,0
+building a website,"node, frontend, accuracy",import sklearn,Web Development,0
+fetching records,"columns, rows, database, table",UPDATE users SET name='Alex';,Databases,1
+working on predictions,"accuracy, neural network, prediction",predict(X_test),Web Development,0
+,"columns, query, database",,Databases,1
+making a login system,"api, css, node, html",,Web Development,1
+writing SQL queries,"columns, rows",SELECT * FROM users;,Databases,1
+training a model,"prediction, dataset, ai, accuracy",,Machine Learning,1
+improving accuracy,"neural network, training, dataset",loss.backward(),Web Development,0
+working on a web app,,INSERT INTO users VALUES ('John');,Web Development,0
+writing SQL queries,"index, database, table, rows",,Databases,1
+working on a web app,"javascript, css, html, frontend",fetch('/api/data'),Web Development,1
+improving accuracy,"dataset, ai, table",SELECT * FROM users;,Machine Learning,0
+creating a responsive layout,"html, css, javascript, react",,Web Development,1
+debugging rn,"computer, code",int a = 5;,Machine Learning,0
+debugging rn,"programming, typing",echo 'hi';,Web Development,0
+building a website,"node, api",function App() { return <h1>Hi</h1>; },Machine Learning,0
+analyzing data,"prediction, accuracy, model",loss.backward(),Machine Learning,1
+working on predictions,"neural network, ai, dataset",import sklearn,Databases,0
+debugging rn,"programming, code",echo 'hi';,Machine Learning,0
+building a website,"node, css, dataset","model.fit(X, y)",Web Development,0
+improving accuracy,"training, ai, javascript",console.log('hello'),Machine Learning,0
+coding lang eh,"sql, columns",,Machine Learning,0
+handling data storage,,UPDATE users SET name='Alex';,Databases,1
+creating a responsive layout,"react, frontend, columns",UPDATE users SET name='Alex';,Web Development,0
+testing a neural network,"prediction, accuracy, model",from tensorflow import keras,Machine Learning,1
+building a website,"node, api, html, react",function App() { return <h1>Hi</h1>; },Web Development,1
+working on something,,import sklearn,Web Development,0
+uh fixing stuff,,DELETE FROM users WHERE id=1;,Databases,1
+testing a neural network,"ai, neural network",import sklearn,Machine Learning,1
+making a login system,"api, backend, node, css",console.log('hello'),Databases,0
+analyzing data,"ai, prediction, accuracy, dataset",loss.backward(),Machine Learning,1
+uh fixing stuff,"index, rows",DELETE FROM users WHERE id=1;,Databases,1
+analyzing data,"accuracy, dataset, neural network",predict(X_test),Machine Learning,1
+debugging rn,"computer, programming",int a = 5;,Databases,0
+making a login system,"backend, react, api",<div>Hello</div>,Web Development,1
+improving accuracy,"ai, prediction, model","model.fit(X, y)",Machine Learning,1
+analyzing data,"model, dataset, columns",SELECT * FROM users;,Machine Learning,0
+testing a neural network,"accuracy, dataset, training, prediction",import sklearn,Machine Learning,1
+testing a neural network,"dataset, ai, table",CREATE TABLE users(id INT);,Machine Learning,0
+trying to fix bugs,"typing, programming",print('hello'),Databases,0
+coding lang eh,"columns, table, html",document.getElementById('app'),Databases,0
+,"model, training, accuracy, neural network",loss.backward(),Machine Learning,1
+working on predictions,"prediction, model, accuracy","model.fit(X, y)",Machine Learning,1
+,"frontend, html, css, javascript",document.getElementById('app'),Web Development,1
+testing a neural network,"ai, neural network",import sklearn,Databases,0
+creating a responsive layout,"api, node",console.log('hello'),Web Development,1
+fixing frontend bugs,"javascript, react, ai",import sklearn,Web Development,0
+optimizing database,"database, table, api",,Databases,0
+creating a responsive layout,,document.getElementById('app'),Machine Learning,0
+creating a responsive layout,"react, html, model",predict(X_test),Web Development,0
+making a login system,"node, css, frontend, html",fetch('/api/data'),Web Development,1
+trying to fix bugs,"computer, typing",print('hello'),Web Development,0
+managing tables,,fetch('/api/data'),Databases,0
+analyzing data,"neural network, training",,Machine Learning,1
+trying to fix bugs,"columns, database, sql, index",SELECT * FROM users;,Databases,1
+fetching records,"sql, index, rows, columns",CREATE TABLE users(id INT);,Databases,1
+uh fixing stuff,"dataset, neural network, ai",loss.backward(),Machine Learning,1
+handling data storage,"sql, query, columns, table",DELETE FROM users WHERE id=1;,Databases,1
+managing tables,"query, sql, columns",SELECT * FROM users;,Machine Learning,0
+working on a web app,,SELECT * FROM users;,Web Development,0
+idk doing coding,"computer, typing",int a = 5;,Databases,0
+managing tables,"sql, rows",CREATE TABLE users(id INT);,Web Development,0
+idk doing coding,"code, computer",echo 'hi';,Web Development,0
+working on a web app,"css, node, rows",,Web Development,0
+writing SQL queries,"index, rows, query",SELECT * FROM users;,Databases,1
+debugging rn,"typing, code",print('hello'),Machine Learning,0
+idk doing coding,"sql, index, rows, table",,Databases,1
+training a model,"model, prediction",loss.backward(),Machine Learning,1
+debugging rn,"computer, code",print('hello'),Machine Learning,0
+testing a neural network,"accuracy, model, dataset, training",import sklearn,Machine Learning,1
+debugging rn,"computer, programming",echo 'hi';,Web Development,0
+idk doing coding,"react, css",console.log('hello'),Web Development,1
+uh fixing stuff,"neural network, training, database",DELETE FROM users WHERE id=1;,Machine Learning,0
+creating a responsive layout,"react, javascript, ai","model.fit(X, y)",Web Development,0
+managing tables,"database, columns, table",UPDATE users SET name='Alex';,Databases,1
+analyzing data,"accuracy, model, ai, neural network",,Databases,0
+optimizing database,"columns, query, sql",DELETE FROM users WHERE id=1;,Databases,1
+building a website,"node, backend, api, javascript",,Databases,0
+testing a neural network,"accuracy, dataset",from tensorflow import keras,Machine Learning,1
+writing SQL queries,"index, database",SELECT * FROM users;,Databases,1
+fetching records,"query, index",DELETE FROM users WHERE id=1;,Web Development,0
+making something idk,"query, database",INSERT INTO users VALUES ('John');,Machine Learning,0
+trying to fix bugs,"computer, programming",console.log('test'),Databases,0
+trying to fix bugs,"database, columns",UPDATE users SET name='Alex';,Databases,1
+managing tables,,,Databases,1
+working on something,"prediction, accuracy, training",import sklearn,Machine Learning,1
+debugging rn,"prediction, dataset",import sklearn,Machine Learning,1
+coding lang eh,"typing, code",console.log('test'),Machine Learning,0
+uh fixing stuff,"react, api",<div>Hello</div>,Web Development,1
+,"sql, query, backend",fetch('/api/data'),Databases,0
+analyzing data,"dataset, prediction, model",from tensorflow import keras,Databases,0
+writing SQL queries,"columns, query, table",CREATE TABLE users(id INT);,Databases,1
+making a login system,,console.log('hello'),Web Development,1
+making a login system,"css, react, frontend",document.getElementById('app'),Web Development,1
+training a model,"neural network, ai",predict(X_test),Machine Learning,1
+making something idk,"ai, model",predict(X_test),Web Development,0
+working on a web app,,function App() { return <h1>Hi</h1>; },Web Development,1
+,"database, columns, model","model.fit(X, y)",Databases,0
+managing tables,"rows, table",UPDATE users SET name='Alex';,Databases,1
+testing a neural network,"accuracy, prediction, dataset",from tensorflow import keras,Machine Learning,1
+making something idk,"typing, computer",echo 'hi';,Machine Learning,0
+working on a web app,"frontend, css",<div>Hello</div>,Machine Learning,0
+,"rows, query, table",INSERT INTO users VALUES ('John');,Web Development,0
+optimizing database,"rows, sql, dataset","model.fit(X, y)",Databases,0
+optimizing database,"index, columns",INSERT INTO users VALUES ('John');,Databases,1
+idk doing coding,"computer, programming",console.log('test'),Machine Learning,0
+working on a web app,"react, node, frontend",fetch('/api/data'),Databases,0
+testing a neural network,,predict(X_test),Databases,0
+debugging rn,"sql, database, model",predict(X_test),Databases,0
+,"html, css",<div>Hello</div>,Web Development,1
+training a model,"dataset, model, training",,Machine Learning,1
+creating a responsive layout,"api, html, frontend, backend",,Databases,0
+idk doing coding,"programming, computer",echo 'hi';,Machine Learning,0
+managing tables,"sql, database, index",SELECT * FROM users;,Databases,1
+creating a responsive layout,"css, api, react, html",document.getElementById('app'),Web Development,1
+building a website,"node, html, api, css",console.log('hello'),Web Development,1
+fetching records,"rows, sql, ai",loss.backward(),Databases,0
+building a website,"javascript, node",console.log('hello'),Web Development,1
+working on a web app,"react, javascript, html, node",,Web Development,1
+making something idk,"typing, code",echo 'hi';,Databases,0
+,"prediction, ai, training, accuracy","model.fit(X, y)",Databases,0
+working on something,"model, ai, training",,Machine Learning,1
+testing a neural network,"accuracy, prediction, columns",DELETE FROM users WHERE id=1;,Machine Learning,0
+training a model,"ai, training, accuracy, neural network",from tensorflow import keras,Machine Learning,1
+trying to fix bugs,"code, computer",print('hello'),Web Development,0
+building a website,"frontend, css",console.log('hello'),Databases,0
+uh fixing stuff,"react, api, css, javascript",fetch('/api/data'),Web Development,1
+,"react, node, javascript, css",console.log('hello'),Web Development,1
+working on a web app,"api, css, rows",INSERT INTO users VALUES ('John');,Web Development,0
+fixing frontend bugs,"javascript, backend, accuracy",from tensorflow import keras,Web Development,0
+trying to fix bugs,"typing, computer",print('hello'),Databases,0
+making a login system,"node, html, model",loss.backward(),Web Development,0
+analyzing data,"training, neural network, query",INSERT INTO users VALUES ('John');,Machine Learning,0
+working on something,"programming, computer",echo 'hi';,Machine Learning,0
+making something idk,"dataset, training, table",DELETE FROM users WHERE id=1;,Machine Learning,0
+testing a neural network,"ai, model",import sklearn,Machine Learning,1
+debugging rn,"columns, index, table, rows",SELECT * FROM users;,Machine Learning,0
+working on something,"sql, index, database, table",UPDATE users SET name='Alex';,Machine Learning,0
+,"columns, index",INSERT INTO users VALUES ('John');,Web Development,0
+building a website,"frontend, backend, react",document.getElementById('app'),Web Development,1
+fetching records,"index, query, react",,Databases,0
+analyzing data,"accuracy, training, ai",predict(X_test),Web Development,0
+making a login system,"css, javascript, accuracy",loss.backward(),Web Development,0
+idk doing coding,"accuracy, dataset",import sklearn,Web Development,0
+managing tables,"sql, database, frontend",console.log('hello'),Databases,0
+writing SQL queries,"index, database, sql, query",DELETE FROM users WHERE id=1;,Databases,1
+making something idk,"columns, database",UPDATE users SET name='Alex';,Machine Learning,0
+,"accuracy, ai, node",<div>Hello</div>,Machine Learning,0
+idk doing coding,"programming, typing",print('hello'),Web Development,0
+optimizing database,"columns, index, table",CREATE TABLE users(id INT);,Databases,1
+fixing frontend bugs,"css, frontend, query",SELECT * FROM users;,Web Development,0
+training a model,"prediction, dataset, model, accuracy",import sklearn,Machine Learning,1
+making a login system,"backend, frontend, node, api",<div>Hello</div>,Machine Learning,0
+trying to fix bugs,"table, query, index, database",UPDATE users SET name='Alex';,Databases,1
+building a website,"react, frontend, node",fetch('/api/data'),Databases,0
+,"html, react, api",console.log('hello'),Web Development,1
+trying to fix bugs,"code, computer",echo 'hi';,Machine Learning,0
+testing a neural network,"model, neural network, css",document.getElementById('app'),Machine Learning,0
+fetching records,"index, query",UPDATE users SET name='Alex';,Web Development,0
+coding lang eh,"rows, table, react",,Databases,0
+improving accuracy,"ai, neural network",predict(X_test),Web Development,0
+working on something,"code, typing",int a = 5;,Web Development,0
+optimizing database,"index, query, database, columns",DELETE FROM users WHERE id=1;,Databases,1
+analyzing data,"accuracy, prediction, sql",DELETE FROM users WHERE id=1;,Machine Learning,0
+making a login system,"react, javascript",document.getElementById('app'),Web Development,1
+working on something,"columns, sql, query",CREATE TABLE users(id INT);,Databases,1
+analyzing data,"prediction, neural network, ai, training","model.fit(X, y)",Web Development,0
+creating a responsive layout,"javascript, react, node, backend",<div>Hello</div>,Databases,0
+idk doing coding,"typing, code",console.log('test'),Machine Learning,0
+creating a responsive layout,"api, react, javascript, node",fetch('/api/data'),Databases,0
+working on a web app,"frontend, backend, html",console.log('hello'),Machine Learning,0
+,"rows, query",INSERT INTO users VALUES ('John');,Databases,1
+working on something,"ai, prediction",import sklearn,Machine Learning,1
+improving accuracy,"neural network, model, api",console.log('hello'),Machine Learning,0
+improving accuracy,"training, dataset, neural network",predict(X_test),Machine Learning,1
+managing tables,"table, sql, dataset",loss.backward(),Databases,0
+making a login system,"css, frontend, javascript, node",,Databases,0
+training a model,"ai, dataset",loss.backward(),Machine Learning,1
+managing tables,"index, query, database",INSERT INTO users VALUES ('John');,Databases,1
+uh fixing stuff,"api, react, ai",loss.backward(),Web Development,0
+handling data storage,"table, query",INSERT INTO users VALUES ('John');,Web Development,0
+analyzing data,"neural network, prediction, react",,Machine Learning,0
+writing SQL queries,,CREATE TABLE users(id INT);,Databases,1
+creating a responsive layout,"frontend, node, react, javascript",console.log('hello'),Web Development,1
+analyzing data,"training, model, prediction, dataset",from tensorflow import keras,Databases,0
+working on a web app,"javascript, backend, sql",UPDATE users SET name='Alex';,Web Development,0
+making a login system,"backend, javascript, css",console.log('hello'),Web Development,1
+building a website,"node, frontend, query",SELECT * FROM users;,Web Development,0
+writing SQL queries,"database, columns",DELETE FROM users WHERE id=1;,Databases,1
+optimizing database,"query, index, neural network",predict(X_test),Databases,0
+idk doing coding,"typing, programming",console.log('test'),Databases,0
+fetching records,"columns, rows, table",,Databases,1
+coding lang eh,"typing, programming",echo 'hi';,Web Development,0
+creating a responsive layout,"html, frontend, react",document.getElementById('app'),Machine Learning,0
+,"api, backend, table",CREATE TABLE users(id INT);,Web Development,0
+working on something,"typing, computer",int a = 5;,Databases,0
+making something idk,"css, react, query",DELETE FROM users WHERE id=1;,Web Development,0
+fixing frontend bugs,"css, api, react",<div>Hello</div>,Databases,0
+writing SQL queries,"columns, sql, database, rows",CREATE TABLE users(id INT);,Databases,1
+improving accuracy,"dataset, training, neural network",from tensorflow import keras,Databases,0
+analyzing data,"model, dataset, javascript",console.log('hello'),Machine Learning,0
+working on something,"training, prediction, database",UPDATE users SET name='Alex';,Machine Learning,0
+training a model,"prediction, neural network, accuracy, dataset",from tensorflow import keras,Machine Learning,1
+working on something,"neural network, accuracy, query",UPDATE users SET name='Alex';,Machine Learning,0
+managing tables,"table, database, query, index",DELETE FROM users WHERE id=1;,Databases,1
+coding lang eh,"code, typing",console.log('test'),Machine Learning,0
+handling data storage,"sql, database",DELETE FROM users WHERE id=1;,Databases,1
+making something idk,"programming, computer",int a = 5;,Databases,0
+working on a web app,"backend, frontend, ai",,Web Development,0
+testing a neural network,"prediction, accuracy",import sklearn,Machine Learning,1
+coding lang eh,"typing, computer",print('hello'),Databases,0
+writing SQL queries,"table, index, dataset",import sklearn,Databases,0
+creating a responsive layout,"api, css, dataset",from tensorflow import keras,Web Development,0
+testing a neural network,"training, model, database",INSERT INTO users VALUES ('John');,Machine Learning,0
+fixing frontend bugs,"api, react, css",function App() { return <h1>Hi</h1>; },Web Development,1
+working on a web app,"css, html, node, javascript",,Web Development,1
+idk doing coding,"computer, typing",echo 'hi';,Web Development,0
+coding lang eh,"api, backend, frontend",function App() { return <h1>Hi</h1>; },Web Development,1
+optimizing database,"database, sql, frontend",document.getElementById('app'),Databases,0
+working on a web app,,console.log('hello'),Web Development,1
+fetching records,"index, database",SELECT * FROM users;,Databases,1
+trying to fix bugs,"programming, computer",print('hello'),Machine Learning,0
+making something idk,"css, node, html, javascript",function App() { return <h1>Hi</h1>; },Web Development,1
+trying to fix bugs,"css, react, accuracy",import sklearn,Web Development,0
+trying to fix bugs,"computer, programming",console.log('test'),Databases,0
+handling data storage,"table, database",SELECT * FROM users;,Machine Learning,0
+fixing frontend bugs,,DELETE FROM users WHERE id=1;,Web Development,0
+making a login system,"node, api",<div>Hello</div>,Web Development,1
+making something idk,"dataset, accuracy, model",predict(X_test),Web Development,0
+,,DELETE FROM users WHERE id=1;,Databases,1
+making a login system,,document.getElementById('app'),Web Development,1
+making a login system,"frontend, javascript, accuracy",import sklearn,Web Development,0
+making a login system,"node, css, index",CREATE TABLE users(id INT);,Web Development,0
+training a model,,UPDATE users SET name='Alex';,Machine Learning,0
+creating a responsive layout,,fetch('/api/data'),Web Development,1
+fetching records,"query, index, html",fetch('/api/data'),Databases,0
+writing SQL queries,,CREATE TABLE users(id INT);,Databases,1
+managing tables,"rows, database, index",CREATE TABLE users(id INT);,Machine Learning,0
+,"ai, prediction, model, accuracy",,Web Development,0
+debugging rn,"code, computer",echo 'hi';,Databases,0
+working on something,"computer, programming",console.log('test'),Databases,0
+writing SQL queries,"database, sql",,Databases,1
+working on something,"model, ai","model.fit(X, y)",Machine Learning,1
+analyzing data,"ai, training, prediction",,Machine Learning,1
+making a login system,"api, backend, javascript",function App() { return <h1>Hi</h1>; },Web Development,1
+making something idk,"code, programming",print('hello'),Databases,0
+idk doing coding,"query, rows, database",CREATE TABLE users(id INT);,Databases,1
+creating a responsive layout,"frontend, css, neural network",import sklearn,Web Development,0
+improving accuracy,"ai, neural network",loss.backward(),Machine Learning,1
+handling data storage,"query, index",INSERT INTO users VALUES ('John');,Web Development,0
+coding lang eh,"table, columns, database",CREATE TABLE users(id INT);,Databases,1
+training a model,"training, accuracy, index",DELETE FROM users WHERE id=1;,Machine Learning,0
+fixing frontend bugs,"api, node, html",function App() { return <h1>Hi</h1>; },Databases,0
+handling data storage,"columns, sql, css",,Databases,0
+uh fixing stuff,"neural network, model, accuracy, prediction",loss.backward(),Web Development,0
+fetching records,"rows, table, index",DELETE FROM users WHERE id=1;,Web Development,0
+fetching records,"database, columns, api",<div>Hello</div>,Databases,0
+trying to fix bugs,"dataset, model, prediction, ai","model.fit(X, y)",Web Development,0
+working on a web app,"react, backend",fetch('/api/data'),Web Development,1
+working on something,"react, css, rows",DELETE FROM users WHERE id=1;,Web Development,0
+coding lang eh,"rows, table, html",function App() { return <h1>Hi</h1>; },Databases,0
+working on a web app,,console.log('hello'),Machine Learning,0
+optimizing database,"query, sql, javascript",<div>Hello</div>,Databases,0
+writing SQL queries,"table, sql, database",CREATE TABLE users(id INT);,Databases,1
+making a login system,"css, frontend",function App() { return <h1>Hi</h1>; },Web Development,1
+creating a responsive layout,"node, javascript",document.getElementById('app'),Web Development,1
+handling data storage,"table, index, api",,Databases,0
+testing a neural network,"model, accuracy, database",DELETE FROM users WHERE id=1;,Machine Learning,0
+optimizing database,"columns, rows, database, query",INSERT INTO users VALUES ('John');,Databases,1
+uh fixing stuff,"react, css, node, javascript",document.getElementById('app'),Databases,0
+optimizing database,"table, index, rows, database",SELECT * FROM users;,Databases,1
+,,loss.backward(),Machine Learning,1
+optimizing database,"database, columns, index",UPDATE users SET name='Alex';,Databases,1
+making something idk,"computer, programming",print('hello'),Machine Learning,0
+improving accuracy,"model, neural network",from tensorflow import keras,Machine Learning,1
+working on a web app,"css, react, frontend",document.getElementById('app'),Web Development,1
+optimizing database,"sql, rows, css",<div>Hello</div>,Databases,0
+analyzing data,"dataset, accuracy, training, model",predict(X_test),Machine Learning,1
+analyzing data,,"model.fit(X, y)",Machine Learning,1
+writing SQL queries,"database, query",UPDATE users SET name='Alex';,Databases,1
+analyzing data,"prediction, neural network, database",DELETE FROM users WHERE id=1;,Machine Learning,0
+coding lang eh,,from tensorflow import keras,Machine Learning,1
+handling data storage,"sql, database, index",INSERT INTO users VALUES ('John');,Databases,1
+working on predictions,"prediction, dataset",import sklearn,Machine Learning,1
+analyzing data,"accuracy, dataset, neural network",predict(X_test),Machine Learning,1
+training a model,,DELETE FROM users WHERE id=1;,Machine Learning,0
+making something idk,"react, node, database",DELETE FROM users WHERE id=1;,Web Development,0
+working on a web app,,CREATE TABLE users(id INT);,Web Development,0
+fixing frontend bugs,"javascript, node, react",fetch('/api/data'),Web Development,1
+,"prediction, neural network, dataset",loss.backward(),Machine Learning,1
+coding lang eh,"typing, code",int a = 5;,Databases,0
+training a model,"neural network, model, training, ai",from tensorflow import keras,Machine Learning,1
+fixing frontend bugs,"node, frontend",console.log('hello'),Databases,0
+making something idk,"computer, programming",echo 'hi';,Web Development,0
+managing tables,"columns, database, prediction",loss.backward(),Databases,0
+working on something,"prediction, dataset, training","model.fit(X, y)",Databases,0
+debugging rn,"prediction, dataset, index",INSERT INTO users VALUES ('John');,Machine Learning,0
+working on predictions,"neural network, dataset, accuracy, training",predict(X_test),Machine Learning,1
+making something idk,"columns, rows, css",function App() { return <h1>Hi</h1>; },Databases,0
+writing SQL queries,"index, columns, database, query",UPDATE users SET name='Alex';,Databases,1
+analyzing data,"model, ai",,Databases,0
+uh fixing stuff,"index, columns",DELETE FROM users WHERE id=1;,Databases,1
+debugging rn,"training, accuracy, backend",document.getElementById('app'),Machine Learning,0
+working on a web app,"javascript, api, columns",DELETE FROM users WHERE id=1;,Web Development,0
+working on predictions,"model, prediction",import sklearn,Databases,0
+working on predictions,"ai, prediction, accuracy, dataset",,Web Development,0
+improving accuracy,"accuracy, model, ai, training",predict(X_test),Machine Learning,1
+analyzing data,"accuracy, prediction, model",from tensorflow import keras,Machine Learning,1
+optimizing database,"table, sql, rows, index",CREATE TABLE users(id INT);,Databases,1
+writing SQL queries,"table, rows, neural network",,Databases,0
+working on predictions,"prediction, accuracy, training, neural network",,Machine Learning,1
+working on a web app,"node, api, css",fetch('/api/data'),Web Development,1
+coding lang eh,"computer, typing",int a = 5;,Databases,0
+idk doing coding,"code, computer",print('hello'),Machine Learning,0
+improving accuracy,"neural network, training, node",fetch('/api/data'),Machine Learning,0
+fixing frontend bugs,"react, javascript, query",INSERT INTO users VALUES ('John');,Web Development,0
+making a login system,"api, frontend, table",CREATE TABLE users(id INT);,Web Development,0
+handling data storage,"query, index",INSERT INTO users VALUES ('John');,Databases,1
+handling data storage,"table, columns, index",INSERT INTO users VALUES ('John');,Web Development,0
+uh fixing stuff,"query, sql, css",<div>Hello</div>,Databases,0
+making something idk,"index, query, backend",document.getElementById('app'),Databases,0
+,"html, css, database",UPDATE users SET name='Alex';,Web Development,0
+coding lang eh,"rows, index, columns, query",INSERT INTO users VALUES ('John');,Databases,1
+debugging rn,"typing, programming",echo 'hi';,Databases,0
+writing SQL queries,"database, rows",SELECT * FROM users;,Databases,1
+idk doing coding,"typing, code",print('hello'),Web Development,0
+uh fixing stuff,"sql, database, javascript",fetch('/api/data'),Databases,0
+,"javascript, html, api, frontend",function App() { return <h1>Hi</h1>; },Databases,0
+working on predictions,"ai, prediction, training, dataset",,Machine Learning,1
+coding lang eh,"programming, code",console.log('test'),Databases,0
+idk doing coding,"index, sql, html",fetch('/api/data'),Databases,0
+,"ai, training",from tensorflow import keras,Databases,0
+analyzing data,"ai, training, css",fetch('/api/data'),Machine Learning,0
+managing tables,"database, table",UPDATE users SET name='Alex';,Databases,1
+idk doing coding,"prediction, accuracy, dataset, training",from tensorflow import keras,Machine Learning,1
+trying to fix bugs,"html, frontend, backend, node",document.getElementById('app'),Web Development,1
+idk doing coding,"computer, programming",print('hello'),Web Development,0
+trying to fix bugs,"computer, code",console.log('test'),Web Development,0
+managing tables,"query, rows, columns, table",DELETE FROM users WHERE id=1;,Databases,1
+making a login system,"frontend, react, api, javascript",function App() { return <h1>Hi</h1>; },Web Development,1
+working on a web app,"node, html",console.log('hello'),Web Development,1
+improving accuracy,"neural network, accuracy, training, model",predict(X_test),Databases,0
+making a login system,,function App() { return <h1>Hi</h1>; },Web Development,1
+improving accuracy,"prediction, accuracy, html",function App() { return <h1>Hi</h1>; },Machine Learning,0
+optimizing database,"table, query, rows",CREATE TABLE users(id INT);,Databases,1
+idk doing coding,,INSERT INTO users VALUES ('John');,Databases,1
+managing tables,"index, sql",CREATE TABLE users(id INT);,Databases,1
+fetching records,"index, rows, query, database",SELECT * FROM users;,Databases,1
+creating a responsive layout,"frontend, backend, database",INSERT INTO users VALUES ('John');,Web Development,0
+handling data storage,"rows, columns, javascript",console.log('hello'),Databases,0
+improving accuracy,"neural network, accuracy, react",<div>Hello</div>,Machine Learning,0
+uh fixing stuff,"rows, database, table, sql",SELECT * FROM users;,Web Development,0
+idk doing coding,"training, neural network",import sklearn,Machine Learning,1
+handling data storage,"rows, database",INSERT INTO users VALUES ('John');,Web Development,0
+fetching records,"columns, table, index, rows",DELETE FROM users WHERE id=1;,Databases,1
+working on predictions,"training, neural network, frontend",<div>Hello</div>,Machine Learning,0
+writing SQL queries,,UPDATE users SET name='Alex';,Databases,1
+,"javascript, api, model",import sklearn,Web Development,0
+working on predictions,"ai, training, dataset, neural network",,Databases,0
+,"api, css, training",predict(X_test),Web Development,0
+trying to fix bugs,"computer, code",print('hello'),Web Development,0
+uh fixing stuff,"react, node, neural network",,Web Development,0
+creating a responsive layout,"backend, api, css, node",fetch('/api/data'),Machine Learning,0
+training a model,"accuracy, dataset, index",CREATE TABLE users(id INT);,Machine Learning,0
+handling data storage,"rows, sql, query",SELECT * FROM users;,Databases,1
+fixing frontend bugs,"api, javascript, columns",CREATE TABLE users(id INT);,Web Development,0
+testing a neural network,"prediction, ai, model",predict(X_test),Web Development,0
+,"css, frontend",<div>Hello</div>,Databases,0
+working on something,"programming, code",int a = 5;,Web Development,0
+optimizing database,"table, rows, sql",INSERT INTO users VALUES ('John');,Databases,1
+uh fixing stuff,"table, index, prediction",predict(X_test),Databases,0
+working on predictions,"model, neural network, ai, training",from tensorflow import keras,Web Development,0
+fetching records,"index, sql, query",CREATE TABLE users(id INT);,Machine Learning,0
+optimizing database,,SELECT * FROM users;,Databases,1
+handling data storage,"database, sql, css",document.getElementById('app'),Databases,0
+working on something,"dataset, prediction, query",UPDATE users SET name='Alex';,Machine Learning,0
+analyzing data,"prediction, neural network, model",predict(X_test),Machine Learning,1
+working on a web app,"node, css, javascript, react",function App() { return <h1>Hi</h1>; },Web Development,1
+fixing frontend bugs,,fetch('/api/data'),Web Development,1
+working on something,"computer, code",print('hello'),Databases,0
+,"api, css, javascript",function App() { return <h1>Hi</h1>; },Web Development,1
+managing tables,,loss.backward(),Databases,0
+writing SQL queries,"query, table, database",,Databases,1
+idk doing coding,"programming, code",print('hello'),Machine Learning,0
+building a website,"api, backend, sql",UPDATE users SET name='Alex';,Web Development,0
+managing tables,,predict(X_test),Databases,0
+fetching records,"rows, database",UPDATE users SET name='Alex';,Databases,1
+,"neural network, ai, rows",INSERT INTO users VALUES ('John');,Machine Learning,0
+debugging rn,"computer, code",print('hello'),Web Development,0
+working on a web app,"frontend, javascript, backend",fetch('/api/data'),Web Development,1
+improving accuracy,"prediction, training, ai","model.fit(X, y)",Machine Learning,1
+uh fixing stuff,"api, backend, rows",SELECT * FROM users;,Web Development,0
+analyzing data,"ai, dataset, prediction, model",loss.backward(),Web Development,0
+coding lang eh,,import sklearn,Machine Learning,1
+idk doing coding,"code, programming",echo 'hi';,Web Development,0
+,"backend, css",console.log('hello'),Web Development,1
+working on predictions,"model, neural network, training, accuracy",predict(X_test),Machine Learning,1
+improving accuracy,,INSERT INTO users VALUES ('John');,Machine Learning,0
+improving accuracy,"neural network, training, node",fetch('/api/data'),Machine Learning,0
+uh fixing stuff,"frontend, backend, index",DELETE FROM users WHERE id=1;,Web Development,0
+working on a web app,"javascript, frontend, css",document.getElementById('app'),Web Development,1
+coding lang eh,"computer, programming",int a = 5;,Databases,0
+fixing frontend bugs,"javascript, frontend, query",CREATE TABLE users(id INT);,Web Development,0
+improving accuracy,,"model.fit(X, y)",Web Development,0
+optimizing database,"sql, index, columns",SELECT * FROM users;,Machine Learning,0
+training a model,"model, training, frontend",function App() { return <h1>Hi</h1>; },Machine Learning,0
+managing tables,"index, columns, model",predict(X_test),Databases,0
+making something idk,"rows, index",CREATE TABLE users(id INT);,Web Development,0
+fixing frontend bugs,"html, frontend",document.getElementById('app'),Web Development,1
+making a login system,"node, react, css, backend",function App() { return <h1>Hi</h1>; },Web Development,1
+fetching records,"index, columns, table, rows",DELETE FROM users WHERE id=1;,Databases,1
+working on something,"programming, code",echo 'hi';,Machine Learning,0
+improving accuracy,"neural network, training, ai, model",,Machine Learning,1
+making something idk,"backend, javascript, frontend, node",document.getElementById('app'),Web Development,1
+creating a responsive layout,"html, frontend, dataset",from tensorflow import keras,Web Development,0
+improving accuracy,"neural network, prediction, javascript",console.log('hello'),Machine Learning,0
+writing SQL queries,"index, rows",,Databases,1
+fixing frontend bugs,"api, react, index",CREATE TABLE users(id INT);,Web Development,0
+fixing frontend bugs,"react, html",<div>Hello</div>,Web Development,1
+working on predictions,"accuracy, model, neural network, ai",predict(X_test),Machine Learning,1
+,"react, css, api, backend",fetch('/api/data'),Web Development,1
+improving accuracy,"neural network, dataset, prediction",predict(X_test),Machine Learning,1
+working on a web app,"react, backend, database",CREATE TABLE users(id INT);,Web Development,0
+training a model,"ai, accuracy, training",from tensorflow import keras,Web Development,0
+working on something,"computer, code",print('hello'),Databases,0
+making something idk,"css, react, columns",SELECT * FROM users;,Web Development,0
+managing tables,"sql, database, html",<div>Hello</div>,Databases,0
+,"api, css",,Web Development,1
+training a model,"ai, training, css",function App() { return <h1>Hi</h1>; },Machine Learning,0
+,"neural network, accuracy, training, ai","model.fit(X, y)",Machine Learning,1
+,"javascript, node, backend",,Web Development,1
+handling data storage,"columns, query, model","model.fit(X, y)",Databases,0
+,,CREATE TABLE users(id INT);,Machine Learning,0
+optimizing database,"table, rows, node",document.getElementById('app'),Databases,0
+coding lang eh,"html, frontend, javascript, react",console.log('hello'),Web Development,1
+testing a neural network,,"model.fit(X, y)",Databases,0
+working on a web app,"html, javascript, react, api",<div>Hello</div>,Web Development,1
+writing SQL queries,"query, database, index",INSERT INTO users VALUES ('John');,Databases,1
+debugging rn,"rows, index, database, table",UPDATE users SET name='Alex';,Databases,1
+trying to fix bugs,"ai, neural network, prediction, model",predict(X_test),Machine Learning,1
+analyzing data,"neural network, accuracy, table",DELETE FROM users WHERE id=1;,Machine Learning,0
+working on predictions,"model, ai, training","model.fit(X, y)",Machine Learning,1
+fetching records,"database, query, rows",DELETE FROM users WHERE id=1;,Databases,1
+analyzing data,"neural network, prediction, database",SELECT * FROM users;,Machine Learning,0
+working on a web app,"react, css, node",<div>Hello</div>,Web Development,1
+creating a responsive layout,"backend, css, react",document.getElementById('app'),Web Development,1
+working on a web app,"node, css, sql",INSERT INTO users VALUES ('John');,Web Development,0
+making something idk,"sql, index, query, table",DELETE FROM users WHERE id=1;,Databases,1
+managing tables,"database, sql, rows",UPDATE users SET name='Alex';,Databases,1
+trying to fix bugs,"computer, typing",console.log('test'),Web Development,0
+,"accuracy, prediction, dataset","model.fit(X, y)",Machine Learning,1
+,"api, frontend",<div>Hello</div>,Machine Learning,0
+training a model,,predict(X_test),Machine Learning,1
+fixing frontend bugs,"backend, css, index",UPDATE users SET name='Alex';,Web Development,0
+optimizing database,"database, table",DELETE FROM users WHERE id=1;,Databases,1
+building a website,"node, javascript, table",CREATE TABLE users(id INT);,Web Development,0
+idk doing coding,"html, css, backend, react",document.getElementById('app'),Web Development,1
+,"html, api, css, javascript",<div>Hello</div>,Web Development,1
+coding lang eh,"rows, database, index",INSERT INTO users VALUES ('John');,Web Development,0
+fixing frontend bugs,"frontend, css, javascript",fetch('/api/data'),Web Development,1
+building a website,"frontend, node",fetch('/api/data'),Web Development,1
+handling data storage,"columns, query, sql",UPDATE users SET name='Alex';,Databases,1
+writing SQL queries,"sql, columns, database, rows",CREATE TABLE users(id INT);,Databases,1
+making something idk,"code, typing",print('hello'),Web Development,0
+handling data storage,"query, database, training",predict(X_test),Databases,0
+working on a web app,"api, frontend, css",document.getElementById('app'),Machine Learning,0
+creating a responsive layout,"backend, node, javascript, css",console.log('hello'),Web Development,1
+fixing frontend bugs,"react, javascript, frontend, api",fetch('/api/data'),Web Development,1
+handling data storage,"database, table",CREATE TABLE users(id INT);,Web Development,0
+handling data storage,"sql, columns, dataset",predict(X_test),Databases,0
+optimizing database,"query, sql, rows",CREATE TABLE users(id INT);,Machine Learning,0
+analyzing data,"dataset, neural network, prediction, accuracy",,Machine Learning,1
+training a model,"prediction, accuracy, dataset, neural network",loss.backward(),Databases,0
+debugging rn,"prediction, model, query",SELECT * FROM users;,Machine Learning,0
+fixing frontend bugs,"frontend, html, database",INSERT INTO users VALUES ('John');,Web Development,0
+uh fixing stuff,"neural network, dataset",predict(X_test),Machine Learning,1
+idk doing coding,"programming, code",print('hello'),Databases,0
+working on predictions,"dataset, training, accuracy, neural network",loss.backward(),Machine Learning,1
+fixing frontend bugs,"api, css, react, node",document.getElementById('app'),Web Development,1
+analyzing data,"model, dataset, ai",from tensorflow import keras,Web Development,0
+optimizing database,"index, columns",INSERT INTO users VALUES ('John');,Web Development,0
+working on a web app,"css, javascript, api, react",function App() { return <h1>Hi</h1>; },Databases,0
+,"query, rows, node",<div>Hello</div>,Databases,0
+making something idk,"rows, query",CREATE TABLE users(id INT);,Web Development,0
+testing a neural network,"model, training, ai",import sklearn,Web Development,0
+uh fixing stuff,"database, rows, dataset",import sklearn,Databases,0
+building a website,"html, api, backend",fetch('/api/data'),Web Development,1
+creating a responsive layout,"html, api, rows",INSERT INTO users VALUES ('John');,Web Development,0
+optimizing database,,fetch('/api/data'),Databases,0
+handling data storage,"database, table, ai",predict(X_test),Databases,0
+working on something,"programming, typing",console.log('test'),Web Development,0
+making a login system,"backend, api, index",,Web Development,0
+making something idk,"typing, code",print('hello'),Machine Learning,0
+managing tables,"rows, sql, index, query",DELETE FROM users WHERE id=1;,Databases,1
+uh fixing stuff,"typing, code",print('hello'),Databases,0
+creating a responsive layout,"node, css",document.getElementById('app'),Web Development,1
+making something idk,"table, rows, database",,Machine Learning,0
+making a login system,,document.getElementById('app'),Web Development,1
+improving accuracy,"neural network, dataset, api",fetch('/api/data'),Machine Learning,0
+optimizing database,"columns, sql, table",UPDATE users SET name='Alex';,Databases,1
+working on predictions,"prediction, ai, dataset, accuracy","model.fit(X, y)",Machine Learning,1
+making something idk,"computer, code",console.log('test'),Machine Learning,0
+making something idk,,<div>Hello</div>,Web Development,1
+working on a web app,"backend, html, react",function App() { return <h1>Hi</h1>; },Web Development,1
+fixing frontend bugs,"node, frontend, css, api",function App() { return <h1>Hi</h1>; },Web Development,1
+fetching records,"columns, sql, query, index",SELECT * FROM users;,Web Development,0
+uh fixing stuff,"code, computer",int a = 5;,Databases,0
+,,DELETE FROM users WHERE id=1;,Web Development,0
+managing tables,"rows, sql, table, columns",CREATE TABLE users(id INT);,Databases,1
+managing tables,"rows, columns",SELECT * FROM users;,Web Development,0
+creating a responsive layout,"api, node",,Web Development,1
+fetching records,,,Databases,1
+testing a neural network,"training, neural network, dataset",predict(X_test),Web Development,0
+training a model,"dataset, prediction, sql",,Machine Learning,0
+improving accuracy,"neural network, dataset, prediction, training",from tensorflow import keras,Machine Learning,1
+fixing frontend bugs,"html, css, backend",document.getElementById('app'),Web Development,1
+making a login system,"javascript, html, css",document.getElementById('app'),Web Development,1
+,"table, database, query",UPDATE users SET name='Alex';,Databases,1
+training a model,,document.getElementById('app'),Machine Learning,0
+working on a web app,"javascript, frontend, react",<div>Hello</div>,Databases,0
+improving accuracy,,,Machine Learning,1
+optimizing database,"database, index, table, columns",UPDATE users SET name='Alex';,Web Development,0
+managing tables,,import sklearn,Databases,0
+testing a neural network,"model, accuracy, sql",SELECT * FROM users;,Machine Learning,0
+uh fixing stuff,"programming, typing",print('hello'),Web Development,0
+uh fixing stuff,"node, api",fetch('/api/data'),Machine Learning,0
+testing a neural network,"prediction, model",import sklearn,Machine Learning,1
+coding lang eh,"typing, code",print('hello'),Databases,0
+managing tables,"index, sql, dataset","model.fit(X, y)",Databases,0
+training a model,"accuracy, ai",import sklearn,Databases,0
+making a login system,"css, api",document.getElementById('app'),Machine Learning,0
+building a website,,import sklearn,Web Development,0
+working on a web app,"react, backend, css",function App() { return <h1>Hi</h1>; },Web Development,1
+debugging rn,"javascript, api, backend",console.log('hello'),Web Development,1
+working on something,"accuracy, model, prediction, training",from tensorflow import keras,Machine Learning,1
+uh fixing stuff,"typing, computer",console.log('test'),Machine Learning,0
+training a model,,<div>Hello</div>,Machine Learning,0
+building a website,"api, css, backend",console.log('hello'),Web Development,1
+working on a web app,"css, html, ai",predict(X_test),Web Development,0
+idk doing coding,"model, prediction, accuracy",from tensorflow import keras,Machine Learning,1
+fetching records,"database, rows, sql, columns",SELECT * FROM users;,Databases,1
+optimizing database,"table, query, index, database",DELETE FROM users WHERE id=1;,Web Development,0
+handling data storage,"table, index, columns, database",DELETE FROM users WHERE id=1;,Web Development,0
+improving accuracy,,function App() { return <h1>Hi</h1>; },Machine Learning,0
+making something idk,"typing, computer",console.log('test'),Machine Learning,0
+,"api, css, backend",document.getElementById('app'),Web Development,1
+working on predictions,"neural network, prediction, accuracy",from tensorflow import keras,Machine Learning,1
+working on something,"programming, typing",print('hello'),Machine Learning,0
+making a login system,,console.log('hello'),Machine Learning,0
+building a website,"html, css, neural network",predict(X_test),Web Development,0
+training a model,"neural network, prediction, backend",document.getElementById('app'),Machine Learning,0
+making a login system,"backend, frontend, react",console.log('hello'),Web Development,1
+testing a neural network,"prediction, ai, accuracy, dataset",loss.backward(),Machine Learning,1
+analyzing data,"accuracy, prediction","model.fit(X, y)",Machine Learning,1
+testing a neural network,"training, prediction, backend",function App() { return <h1>Hi</h1>; },Machine Learning,0
+fixing frontend bugs,"javascript, html",document.getElementById('app'),Databases,0
+fetching records,"rows, index",UPDATE users SET name='Alex';,Databases,1
+idk doing coding,"sql, query, table",INSERT INTO users VALUES ('John');,Web Development,0
+,"accuracy, model",import sklearn,Machine Learning,1
+fetching records,"sql, index, rows",SELECT * FROM users;,Databases,1
+working on a web app,"node, frontend, react",console.log('hello'),Machine Learning,0
+,,CREATE TABLE users(id INT);,Databases,1
+creating a responsive layout,"javascript, css",console.log('hello'),Web Development,1
+,"html, css, react, backend",document.getElementById('app'),Databases,0
+trying to fix bugs,"columns, sql",DELETE FROM users WHERE id=1;,Databases,1
+debugging rn,"typing, code",int a = 5;,Machine Learning,0
+,"training, neural network, model",loss.backward(),Machine Learning,1
+fetching records,"sql, database, query, table",,Databases,1
+coding lang eh,,DELETE FROM users WHERE id=1;,Databases,1
+handling data storage,"rows, sql, index, table",,Web Development,0
+fixing frontend bugs,"javascript, html",function App() { return <h1>Hi</h1>; },Web Development,1
+,"sql, query, columns",INSERT INTO users VALUES ('John');,Databases,1
+,"dataset, neural network, accuracy, prediction","model.fit(X, y)",Machine Learning,1
+creating a responsive layout,"backend, api, dataset",from tensorflow import keras,Web Development,0
+fetching records,"columns, query, database",CREATE TABLE users(id INT);,Databases,1
+coding lang eh,"programming, typing",print('hello'),Web Development,0
+analyzing data,"model, dataset, ai, accuracy",loss.backward(),Machine Learning,1
+working on something,"index, database",DELETE FROM users WHERE id=1;,Databases,1
+making a login system,"javascript, html",document.getElementById('app'),Web Development,1
+handling data storage,,DELETE FROM users WHERE id=1;,Machine Learning,0
+building a website,"frontend, css, index",UPDATE users SET name='Alex';,Web Development,0
+building a website,"backend, javascript, react",function App() { return <h1>Hi</h1>; },Machine Learning,0
+,"columns, query, rows",DELETE FROM users WHERE id=1;,Web Development,0
+working on something,"computer, code",console.log('test'),Machine Learning,0
+coding lang eh,"sql, columns, react",document.getElementById('app'),Databases,0
+improving accuracy,"dataset, training",from tensorflow import keras,Databases,0
+working on a web app,,fetch('/api/data'),Web Development,1
+making something idk,"computer, programming",console.log('test'),Databases,0
+trying to fix bugs,"computer, programming",int a = 5;,Machine Learning,0
+testing a neural network,"neural network, ai, columns",SELECT * FROM users;,Machine Learning,0
+,"training, neural network, query",CREATE TABLE users(id INT);,Machine Learning,0
+uh fixing stuff,"query, table, html",document.getElementById('app'),Databases,0
+building a website,"api, css, accuracy",from tensorflow import keras,Web Development,0
+managing tables,"sql, table, index, query",,Databases,1
+analyzing data,"accuracy, training, dataset","model.fit(X, y)",Machine Learning,1
+creating a responsive layout,"frontend, react, dataset","model.fit(X, y)",Web Development,0
+debugging rn,"code, typing",echo 'hi';,Machine Learning,0
+analyzing data,,CREATE TABLE users(id INT);,Machine Learning,0
+optimizing database,"columns, sql, table",CREATE TABLE users(id INT);,Databases,1
+training a model,"prediction, accuracy, training",predict(X_test),Machine Learning,1
+debugging rn,"sql, columns",SELECT * FROM users;,Web Development,0
+handling data storage,"table, database, query",,Machine Learning,0
+writing SQL queries,"columns, sql, training",,Databases,0
+fixing frontend bugs,"react, api, index",UPDATE users SET name='Alex';,Web Development,0
+creating a responsive layout,"api, frontend",<div>Hello</div>,Databases,0
+working on predictions,"dataset, training, neural network, model",loss.backward(),Web Development,0
+testing a neural network,"accuracy, prediction, neural network",import sklearn,Machine Learning,1
+writing SQL queries,"table, database",INSERT INTO users VALUES ('John');,Databases,1
+uh fixing stuff,"frontend, html, api",fetch('/api/data'),Web Development,1
+making something idk,,predict(X_test),Machine Learning,1
+working on a web app,"backend, css, html",,Web Development,1
+creating a responsive layout,"react, node, frontend",function App() { return <h1>Hi</h1>; },Databases,0
+making something idk,"code, computer",print('hello'),Machine Learning,0
+,"frontend, backend, index",DELETE FROM users WHERE id=1;,Web Development,0
+writing SQL queries,"index, sql, api",fetch('/api/data'),Databases,0
+building a website,"javascript, react, html, node",,Databases,0
+,"javascript, node, index",INSERT INTO users VALUES ('John');,Web Development,0
+improving accuracy,"ai, training",import sklearn,Machine Learning,1
+training a model,"accuracy, prediction, table",DELETE FROM users WHERE id=1;,Machine Learning,0
+writing SQL queries,,import sklearn,Databases,0
+optimizing database,"query, table, index",SELECT * FROM users;,Machine Learning,0
+improving accuracy,"accuracy, model, backend",<div>Hello</div>,Machine Learning,0
+handling data storage,"database, query",INSERT INTO users VALUES ('John');,Databases,1
+creating a responsive layout,"react, api, frontend, css",function App() { return <h1>Hi</h1>; },Web Development,1
+optimizing database,"table, columns, index, query",DELETE FROM users WHERE id=1;,Databases,1
+managing tables,"index, columns",CREATE TABLE users(id INT);,Databases,1
+uh fixing stuff,"computer, code",print('hello'),Web Development,0
+optimizing database,"query, columns, sql, index",CREATE TABLE users(id INT);,Web Development,0
+coding lang eh,"css, react, table",DELETE FROM users WHERE id=1;,Web Development,0
+improving accuracy,"neural network, dataset, api",console.log('hello'),Machine Learning,0
+working on predictions,,,Machine Learning,1
+uh fixing stuff,"ai, neural network, model","model.fit(X, y)",Machine Learning,1
+writing SQL queries,,CREATE TABLE users(id INT);,Databases,1
+,"react, css",,Web Development,1
+creating a responsive layout,"html, javascript",console.log('hello'),Machine Learning,0
+coding lang eh,"frontend, node, training",,Web Development,0
+training a model,"ai, prediction, query",INSERT INTO users VALUES ('John');,Machine Learning,0
+trying to fix bugs,"programming, computer",int a = 5;,Databases,0
+fetching records,"sql, index, database",CREATE TABLE users(id INT);,Machine Learning,0
+working on predictions,"accuracy, prediction, dataset",predict(X_test),Machine Learning,1
+writing SQL queries,,CREATE TABLE users(id INT);,Machine Learning,0
+uh fixing stuff,"api, css, javascript",,Web Development,1
+,"query, database, sql, columns",SELECT * FROM users;,Databases,1
+managing tables,"table, sql, columns, rows",SELECT * FROM users;,Databases,1
+fetching records,"rows, index, neural network",,Databases,0
+,"ai, dataset, javascript",function App() { return <h1>Hi</h1>; },Machine Learning,0
+improving accuracy,"dataset, training, html",fetch('/api/data'),Machine Learning,0
+writing SQL queries,"table, sql",,Web Development,0
+building a website,"node, backend, accuracy","model.fit(X, y)",Web Development,0
+writing SQL queries,"columns, query, model",loss.backward(),Databases,0
+creating a responsive layout,"html, css",function App() { return <h1>Hi</h1>; },Web Development,1
+optimizing database,"table, rows, training",from tensorflow import keras,Databases,0
+uh fixing stuff,"javascript, api, css",fetch('/api/data'),Web Development,1
+optimizing database,"index, columns, query, table",UPDATE users SET name='Alex';,Web Development,0
+idk doing coding,"computer, programming",console.log('test'),Web Development,0
+,"react, html, css",fetch('/api/data'),Web Development,1
+creating a responsive layout,"frontend, javascript, prediction",loss.backward(),Web Development,0
+improving accuracy,"model, training, table",CREATE TABLE users(id INT);,Machine Learning,0
+building a website,"javascript, backend, sql",CREATE TABLE users(id INT);,Web Development,0
+working on predictions,"neural network, prediction",from tensorflow import keras,Web Development,0
+fixing frontend bugs,"frontend, javascript, table",SELECT * FROM users;,Web Development,0
+fixing frontend bugs,"backend, html",<div>Hello</div>,Web Development,1
+handling data storage,"sql, query, columns",DELETE FROM users WHERE id=1;,Web Development,0
+working on something,"api, javascript, frontend",<div>Hello</div>,Machine Learning,0
+idk doing coding,"ai, training",predict(X_test),Machine Learning,1
+coding lang eh,"rows, database, sql, table",UPDATE users SET name='Alex';,Machine Learning,0
+building a website,"javascript, html",console.log('hello'),Web Development,1
+testing a neural network,"model, neural network, accuracy, training",loss.backward(),Machine Learning,1
+training a model,,from tensorflow import keras,Machine Learning,1
+trying to fix bugs,"columns, index, query, rows",SELECT * FROM users;,Machine Learning,0
+coding lang eh,"accuracy, dataset, database",,Machine Learning,0
+fetching records,"table, index, dataset",import sklearn,Databases,0
+training a model,,INSERT INTO users VALUES ('John');,Machine Learning,0
+creating a responsive layout,"api, backend",<div>Hello</div>,Machine Learning,0
+training a model,"neural network, ai","model.fit(X, y)",Machine Learning,1
+making something idk,"neural network, dataset, html",function App() { return <h1>Hi</h1>; },Machine Learning,0
+building a website,"frontend, javascript, index",DELETE FROM users WHERE id=1;,Web Development,0
+testing a neural network,"ai, accuracy, database",CREATE TABLE users(id INT);,Machine Learning,0
+working on a web app,"javascript, react, backend, css",,Web Development,1
+building a website,"frontend, api, css",function App() { return <h1>Hi</h1>; },Web Development,1
+working on a web app,,INSERT INTO users VALUES ('John');,Web Development,0
+analyzing data,,,Machine Learning,0
+writing SQL queries,"rows, table, database, sql",UPDATE users SET name='Alex';,Databases,1
+trying to fix bugs,"rows, query, neural network",predict(X_test),Databases,0
+making something idk,"typing, code",echo 'hi';,Web Development,0
+building a website,"api, react",<div>Hello</div>,Web Development,1
+handling data storage,"index, sql, backend",document.getElementById('app'),Databases,0
+building a website,"frontend, css, index",INSERT INTO users VALUES ('John');,Web Development,0
+working on something,"rows, table, sql",DELETE FROM users WHERE id=1;,Databases,1
+fixing frontend bugs,"api, backend, html",document.getElementById('app'),Web Development,1
+managing tables,"rows, database",UPDATE users SET name='Alex';,Databases,1
+fixing frontend bugs,"javascript, node",fetch('/api/data'),Web Development,1
+uh fixing stuff,"computer, code",int a = 5;,Databases,0
+testing a neural network,"accuracy, neural network, training",from tensorflow import keras,Web Development,0
+idk doing coding,"typing, programming",int a = 5;,Machine Learning,0
+,"rows, query",UPDATE users SET name='Alex';,Databases,1
+coding lang eh,"computer, programming",echo 'hi';,Web Development,0
+trying to fix bugs,"javascript, node, react, frontend",function App() { return <h1>Hi</h1>; },Web Development,1
+testing a neural network,"prediction, dataset, training",from tensorflow import keras,Machine Learning,1
+fixing frontend bugs,,DELETE FROM users WHERE id=1;,Web Development,0
+creating a responsive layout,"backend, html, rows",SELECT * FROM users;,Web Development,0
+uh fixing stuff,"index, columns, database",UPDATE users SET name='Alex';,Databases,1
+fixing frontend bugs,"api, frontend, html, react",function App() { return <h1>Hi</h1>; },Machine Learning,0
+improving accuracy,"training, neural network, prediction, ai",from tensorflow import keras,Databases,0
+debugging rn,"react, html, sql",SELECT * FROM users;,Web Development,0
+analyzing data,"prediction, model, training, ai",import sklearn,Machine Learning,1
+working on a web app,"api, javascript",console.log('hello'),Databases,0
+working on a web app,"css, api",console.log('hello'),Web Development,1
+uh fixing stuff,"table, query, database",CREATE TABLE users(id INT);,Databases,1
+making a login system,"node, frontend, dataset","model.fit(X, y)",Web Development,0
+coding lang eh,"code, computer",int a = 5;,Web Development,0
+making a login system,"backend, javascript",function App() { return <h1>Hi</h1>; },Web Development,1
+training a model,"ai, model, html",console.log('hello'),Machine Learning,0
+working on predictions,"accuracy, model, frontend",<div>Hello</div>,Machine Learning,0
+writing SQL queries,"index, rows, prediction",predict(X_test),Databases,0
+improving accuracy,"ai, training, dataset, neural network","model.fit(X, y)",Databases,0
+working on something,,loss.backward(),Machine Learning,1
+analyzing data,,loss.backward(),Databases,0
+working on a web app,"frontend, javascript, react",<div>Hello</div>,Machine Learning,0
+testing a neural network,"ai, prediction, dataset, neural network",from tensorflow import keras,Web Development,0
+managing tables,"columns, rows, sql, database",UPDATE users SET name='Alex';,Databases,1
+fixing frontend bugs,"css, api, node, javascript",document.getElementById('app'),Web Development,1
+trying to fix bugs,"training, model, dataset, accuracy",loss.backward(),Machine Learning,1
+building a website,"javascript, backend, prediction",from tensorflow import keras,Web Development,0
+working on predictions,"training, model, prediction",loss.backward(),Web Development,0
+trying to fix bugs,"sql, rows, columns",SELECT * FROM users;,Databases,1
+,"frontend, javascript, api",console.log('hello'),Web Development,1
+handling data storage,"table, query, columns",CREATE TABLE users(id INT);,Databases,1
+idk doing coding,"code, computer",console.log('test'),Web Development,0
+training a model,"neural network, model, frontend",fetch('/api/data'),Machine Learning,0
+working on predictions,"prediction, training, model",from tensorflow import keras,Machine Learning,1
+making something idk,"typing, code",console.log('test'),Databases,0
+coding lang eh,"typing, computer",int a = 5;,Web Development,0
+writing SQL queries,"index, columns",SELECT * FROM users;,Web Development,0
+building a website,"react, api",function App() { return <h1>Hi</h1>; },Web Development,1
+creating a responsive layout,"html, css, react, frontend",fetch('/api/data'),Web Development,1
+working on a web app,"node, frontend, css, html",,Web Development,1
+coding lang eh,"sql, query, table, database",SELECT * FROM users;,Databases,1
+making something idk,"computer, programming",echo 'hi';,Machine Learning,0
+creating a responsive layout,"html, backend, accuracy",from tensorflow import keras,Web Development,0
+making a login system,"node, html, css, javascript",console.log('hello'),Web Development,1
+debugging rn,"backend, css",function App() { return <h1>Hi</h1>; },Web Development,1
+writing SQL queries,"sql, index",DELETE FROM users WHERE id=1;,Web Development,0
+trying to fix bugs,"backend, node, index",SELECT * FROM users;,Web Development,0
+working on predictions,"accuracy, prediction","model.fit(X, y)",Machine Learning,1
+debugging rn,"html, node, react, backend",<div>Hello</div>,Web Development,1
+coding lang eh,"rows, query",SELECT * FROM users;,Databases,1
+,"css, html, prediction",loss.backward(),Web Development,0
+coding lang eh,"typing, computer",print('hello'),Web Development,0
+fixing frontend bugs,"backend, frontend, react, api",<div>Hello</div>,Web Development,1
+testing a neural network,"model, prediction, neural network","model.fit(X, y)",Databases,0
+idk doing coding,"typing, code",echo 'hi';,Databases,0
+working on predictions,"ai, training, backend",console.log('hello'),Machine Learning,0
+making something idk,"accuracy, neural network, training",import sklearn,Machine Learning,1
+working on predictions,"training, accuracy, dataset",,Machine Learning,1
+fetching records,"rows, index, sql",SELECT * FROM users;,Machine Learning,0
+building a website,"javascript, css, sql",,Web Development,0
+training a model,"prediction, dataset, react",,Machine Learning,0
+training a model,"prediction, model","model.fit(X, y)",Machine Learning,1
+creating a responsive layout,"javascript, node, react, backend",<div>Hello</div>,Databases,0
+making something idk,"code, computer",echo 'hi';,Web Development,0
+handling data storage,"rows, columns, table",INSERT INTO users VALUES ('John');,Databases,1
+working on something,"model, ai, html",function App() { return <h1>Hi</h1>; },Machine Learning,0
+,"training, model, prediction, dataset",,Machine Learning,1
+coding lang eh,"frontend, javascript, table",INSERT INTO users VALUES ('John');,Web Development,0
+building a website,"react, html, query",UPDATE users SET name='Alex';,Web Development,0
+working on predictions,"dataset, accuracy, model",loss.backward(),Machine Learning,1
+testing a neural network,"training, dataset, ai, neural network",import sklearn,Machine Learning,1
+trying to fix bugs,"javascript, node, react",function App() { return <h1>Hi</h1>; },Web Development,1
+training a model,"training, accuracy, prediction, dataset",,Machine Learning,1
+idk doing coding,"api, node, accuracy",import sklearn,Web Development,0
+writing SQL queries,"sql, table",SELECT * FROM users;,Databases,1
+training a model,"prediction, dataset, table",CREATE TABLE users(id INT);,Machine Learning,0
+writing SQL queries,"sql, index",DELETE FROM users WHERE id=1;,Databases,1
+idk doing coding,"table, query, index, rows",CREATE TABLE users(id INT);,Databases,1
+debugging rn,"api, react",console.log('hello'),Web Development,1
+making a login system,"frontend, html, query",SELECT * FROM users;,Web Development,0
+debugging rn,"sql, columns",DELETE FROM users WHERE id=1;,Databases,1
+creating a responsive layout,"react, api, query",UPDATE users SET name='Alex';,Web Development,0
+managing tables,"sql, database",INSERT INTO users VALUES ('John');,Web Development,0
+making something idk,"sql, table, ai",import sklearn,Databases,0
+managing tables,"database, rows",CREATE TABLE users(id INT);,Databases,1
+,"rows, database, index, query",UPDATE users SET name='Alex';,Web Development,0
+training a model,"ai, accuracy, prediction, neural network",loss.backward(),Machine Learning,1
+improving accuracy,"dataset, model, api",document.getElementById('app'),Machine Learning,0
+,"database, sql, table, query",INSERT INTO users VALUES ('John');,Machine Learning,0
+working on predictions,"ai, model, training, neural network",predict(X_test),Machine Learning,1
+testing a neural network,"ai, neural network, training",predict(X_test),Web Development,0
+uh fixing stuff,"code, programming",console.log('test'),Web Development,0
+fetching records,"rows, table, node",document.getElementById('app'),Databases,0
+coding lang eh,"typing, computer",int a = 5;,Web Development,0
+testing a neural network,"dataset, ai, query",SELECT * FROM users;,Machine Learning,0
+analyzing data,"ai, neural network, training","model.fit(X, y)",Machine Learning,1
+coding lang eh,"neural network, prediction, dataset",import sklearn,Machine Learning,1
+fetching records,"index, rows, sql",UPDATE users SET name='Alex';,Databases,1
+uh fixing stuff,"javascript, node, backend, html",fetch('/api/data'),Databases,0
+,,predict(X_test),Web Development,0
+working on predictions,"training, accuracy, node",fetch('/api/data'),Machine Learning,0
+analyzing data,"prediction, neural network","model.fit(X, y)",Machine Learning,1
+,"accuracy, neural network",from tensorflow import keras,Machine Learning,1
+analyzing data,"ai, dataset",predict(X_test),Machine Learning,1
+creating a responsive layout,"node, javascript",fetch('/api/data'),Web Development,1
+handling data storage,"query, table, javascript",document.getElementById('app'),Databases,0
+testing a neural network,"prediction, accuracy, model, training",from tensorflow import keras,Web Development,0
+uh fixing stuff,"training, prediction, table",UPDATE users SET name='Alex';,Machine Learning,0
+working on predictions,"model, dataset, prediction",loss.backward(),Machine Learning,1
+training a model,"model, training","model.fit(X, y)",Machine Learning,1
+making a login system,"react, node",<div>Hello</div>,Web Development,1
+handling data storage,"columns, query, index",DELETE FROM users WHERE id=1;,Databases,1
+,"database, index, columns, query",CREATE TABLE users(id INT);,Databases,1
+building a website,"backend, frontend, react, api",document.getElementById('app'),Machine Learning,0
+writing SQL queries,"index, columns",SELECT * FROM users;,Databases,1
+,"database, query",CREATE TABLE users(id INT);,Web Development,0
+optimizing database,"query, table, sql",INSERT INTO users VALUES ('John');,Databases,1
+working on something,"sql, database, ai",loss.backward(),Databases,0
+working on something,"typing, computer",echo 'hi';,Machine Learning,0
+analyzing data,"training, neural network, table",INSERT INTO users VALUES ('John');,Machine Learning,0
+trying to fix bugs,"database, sql, accuracy","model.fit(X, y)",Databases,0
+training a model,"prediction, ai, training",predict(X_test),Machine Learning,1
+improving accuracy,"training, neural network, dataset","model.fit(X, y)",Machine Learning,1
+coding lang eh,"index, columns, sql",UPDATE users SET name='Alex';,Databases,1
+creating a responsive layout,"css, api",fetch('/api/data'),Databases,0
+,"sql, index",DELETE FROM users WHERE id=1;,Databases,1
+,,UPDATE users SET name='Alex';,Databases,1
+building a website,"html, api, model","model.fit(X, y)",Web Development,0
+debugging rn,"accuracy, training, ai",,Web Development,0
+,"html, javascript, api, frontend",console.log('hello'),Web Development,1
+trying to fix bugs,"code, computer",echo 'hi';,Web Development,0
+idk doing coding,"programming, typing",int a = 5;,Databases,0
+making a login system,,,Machine Learning,0
+trying to fix bugs,"programming, code",echo 'hi';,Databases,0
+making something idk,"typing, computer",console.log('test'),Machine Learning,0
+working on predictions,"neural network, ai, table",CREATE TABLE users(id INT);,Machine Learning,0
+uh fixing stuff,"dataset, training, model","model.fit(X, y)",Web Development,0
+trying to fix bugs,"table, query",INSERT INTO users VALUES ('John');,Databases,1
+working on a web app,"html, javascript, rows",,Web Development,0
+debugging rn,"programming, typing",print('hello'),Web Development,0
+working on a web app,"backend, javascript, api, frontend",document.getElementById('app'),Web Development,1
+optimizing database,"rows, index",UPDATE users SET name='Alex';,Databases,1
+making a login system,,,Databases,0
+managing tables,"columns, query, css",<div>Hello</div>,Databases,0
+debugging rn,"api, css",function App() { return <h1>Hi</h1>; },Machine Learning,0
+working on a web app,"html, javascript",<div>Hello</div>,Web Development,1
+testing a neural network,"prediction, training, neural network, ai",loss.backward(),Web Development,0
+uh fixing stuff,"rows, sql, model",import sklearn,Databases,0
+testing a neural network,"training, neural network, prediction, ai",loss.backward(),Databases,0
+fetching records,"database, query, css",document.getElementById('app'),Databases,0
+fetching records,"index, query, prediction",from tensorflow import keras,Databases,0
+managing tables,"query, index, prediction",predict(X_test),Databases,0
+uh fixing stuff,"computer, code",int a = 5;,Machine Learning,0
+creating a responsive layout,"backend, api",console.log('hello'),Web Development,1
+optimizing database,"index, query, database, columns",INSERT INTO users VALUES ('John');,Databases,1
+testing a neural network,"training, accuracy, rows",CREATE TABLE users(id INT);,Machine Learning,0
+creating a responsive layout,"node, html, prediction",predict(X_test),Web Development,0
+trying to fix bugs,"node, react, javascript",<div>Hello</div>,Databases,0
+idk doing coding,"typing, code",console.log('test'),Web Development,0
+creating a responsive layout,"api, css, frontend",console.log('hello'),Web Development,1
+building a website,"javascript, html, database",CREATE TABLE users(id INT);,Web Development,0
+fixing frontend bugs,"frontend, api, table",SELECT * FROM users;,Web Development,0
+fixing frontend bugs,"css, api, backend",,Web Development,1
+fetching records,"index, query",CREATE TABLE users(id INT);,Databases,1
+,,fetch('/api/data'),Web Development,1
+managing tables,"index, sql, neural network",loss.backward(),Databases,0
+handling data storage,"database, sql, prediction",import sklearn,Databases,0
+,"backend, node, css, frontend",console.log('hello'),Web Development,1
+making something idk,"table, database, query",CREATE TABLE users(id INT);,Databases,1
+building a website,"css, javascript, sql",,Web Development,0
+uh fixing stuff,"code, programming",print('hello'),Web Development,0
+building a website,,loss.backward(),Web Development,0
+coding lang eh,"frontend, backend, prediction",predict(X_test),Web Development,0
+analyzing data,"training, prediction, ai",import sklearn,Machine Learning,1
+testing a neural network,"ai, dataset",,Machine Learning,1
+creating a responsive layout,"react, node",document.getElementById('app'),Machine Learning,0
+working on something,"javascript, react",function App() { return <h1>Hi</h1>; },Web Development,1
+debugging rn,"columns, query, node",function App() { return <h1>Hi</h1>; },Databases,0
+debugging rn,"accuracy, dataset, prediction, training",,Machine Learning,1
+building a website,"html, frontend",fetch('/api/data'),Web Development,1
+,"node, css, database",SELECT * FROM users;,Web Development,0
+making a login system,,,Web Development,0
+uh fixing stuff,"frontend, css, backend, html",function App() { return <h1>Hi</h1>; },Web Development,1
+improving accuracy,"neural network, prediction, table",INSERT INTO users VALUES ('John');,Machine Learning,0
+fixing frontend bugs,"html, node, react",function App() { return <h1>Hi</h1>; },Machine Learning,0
+optimizing database,"table, database",UPDATE users SET name='Alex';,Databases,1
+testing a neural network,"training, neural network",from tensorflow import keras,Machine Learning,1
+fixing frontend bugs,"css, javascript, node",<div>Hello</div>,Databases,0
+working on predictions,"dataset, neural network","model.fit(X, y)",Machine Learning,1
+uh fixing stuff,"computer, programming",print('hello'),Databases,0
+testing a neural network,"accuracy, model, react",document.getElementById('app'),Machine Learning,0
+uh fixing stuff,"model, accuracy",loss.backward(),Databases,0
+,"prediction, model","model.fit(X, y)",Web Development,0
+trying to fix bugs,"dataset, training",from tensorflow import keras,Databases,0
+working on a web app,"html, frontend, node, css",fetch('/api/data'),Web Development,1
+trying to fix bugs,"code, programming",int a = 5;,Web Development,0
+managing tables,"index, query",UPDATE users SET name='Alex';,Databases,1
+training a model,"prediction, model, backend",,Machine Learning,0
+fixing frontend bugs,"node, react, css",function App() { return <h1>Hi</h1>; },Web Development,1
+idk doing coding,"code, computer",echo 'hi';,Machine Learning,0
+handling data storage,"database, columns, dataset",import sklearn,Databases,0
+,"backend, react, api, css",document.getElementById('app'),Web Development,1
+working on something,,<div>Hello</div>,Machine Learning,0
+analyzing data,"accuracy, dataset",from tensorflow import keras,Machine Learning,1
+handling data storage,,DELETE FROM users WHERE id=1;,Databases,1
+building a website,"react, css, api, frontend",<div>Hello</div>,Databases,0
+training a model,"training, dataset, neural network, ai",from tensorflow import keras,Machine Learning,1
+coding lang eh,"table, sql, rows",CREATE TABLE users(id INT);,Machine Learning,0
+managing tables,"query, sql, training","model.fit(X, y)",Databases,0
+working on something,"ai, neural network",import sklearn,Machine Learning,1
+building a website,,function App() { return <h1>Hi</h1>; },Web Development,1
+working on predictions,"dataset, prediction, neural network",from tensorflow import keras,Machine Learning,1
+creating a responsive layout,,document.getElementById('app'),Machine Learning,0
+trying to fix bugs,"sql, table, database, columns",SELECT * FROM users;,Databases,1
+working on something,"node, html, api",function App() { return <h1>Hi</h1>; },Web Development,1
+making something idk,"css, frontend, html",,Databases,0
+optimizing database,"index, table, ai","model.fit(X, y)",Databases,0
+handling data storage,"sql, table, index",INSERT INTO users VALUES ('John');,Databases,1
+making something idk,"index, database, prediction",predict(X_test),Databases,0
+trying to fix bugs,"computer, typing",console.log('test'),Machine Learning,0
+optimizing database,"columns, query",DELETE FROM users WHERE id=1;,Machine Learning,0
+debugging rn,"api, frontend",console.log('hello'),Web Development,1
+making a login system,"api, frontend, ai",import sklearn,Web Development,0
+fixing frontend bugs,"javascript, api",console.log('hello'),Databases,0
+testing a neural network,"prediction, training, index",INSERT INTO users VALUES ('John');,Machine Learning,0
+analyzing data,"accuracy, dataset, css",console.log('hello'),Machine Learning,0
+fixing frontend bugs,,<div>Hello</div>,Web Development,1
+testing a neural network,"prediction, accuracy, model",import sklearn,Databases,0
+training a model,"dataset, model, accuracy, training",loss.backward(),Web Development,0
+building a website,"backend, frontend, ai",predict(X_test),Web Development,0
+idk doing coding,"query, index, sql",SELECT * FROM users;,Databases,1
+,"frontend, api, javascript, html",,Web Development,1
+idk doing coding,"rows, columns",INSERT INTO users VALUES ('John');,Machine Learning,0
+uh fixing stuff,"index, sql, frontend",<div>Hello</div>,Databases,0
+training a model,"neural network, accuracy, dataset",predict(X_test),Databases,0
+creating a responsive layout,"react, css, html",function App() { return <h1>Hi</h1>; },Web Development,1
+optimizing database,"sql, table",DELETE FROM users WHERE id=1;,Web Development,0
+fetching records,"columns, sql, database, query",DELETE FROM users WHERE id=1;,Databases,1
+debugging rn,"typing, programming",print('hello'),Web Development,0
+,"ai, training, rows",UPDATE users SET name='Alex';,Machine Learning,0
+creating a responsive layout,"frontend, backend",document.getElementById('app'),Web Development,1
+fetching records,"sql, rows, api",document.getElementById('app'),Databases,0
+improving accuracy,"prediction, neural network",from tensorflow import keras,Machine Learning,1
+working on predictions,"model, neural network",loss.backward(),Machine Learning,1
+fetching records,"database, columns",INSERT INTO users VALUES ('John');,Databases,1
+fixing frontend bugs,"backend, node",console.log('hello'),Web Development,1
+creating a responsive layout,"backend, html, ai",loss.backward(),Web Development,0
+coding lang eh,"ai, dataset, training, accuracy",loss.backward(),Databases,0
+handling data storage,"rows, query, model",loss.backward(),Databases,0
+analyzing data,"model, ai, node",console.log('hello'),Machine Learning,0
+creating a responsive layout,"api, node, html",console.log('hello'),Web Development,1
+,,loss.backward(),Web Development,0
+building a website,"css, javascript",<div>Hello</div>,Web Development,1
+working on a web app,"html, frontend, javascript, react",function App() { return <h1>Hi</h1>; },Databases,0
+training a model,"accuracy, training, dataset, neural network","model.fit(X, y)",Machine Learning,1
+coding lang eh,"programming, typing",print('hello'),Databases,0
+managing tables,"database, index, sql",CREATE TABLE users(id INT);,Databases,1
+debugging rn,"code, computer",echo 'hi';,Web Development,0
+handling data storage,"index, database",INSERT INTO users VALUES ('John');,Databases,1
+handling data storage,"sql, table",INSERT INTO users VALUES ('John');,Databases,1
+idk doing coding,"code, computer",print('hello'),Machine Learning,0
+working on a web app,"node, react, table",SELECT * FROM users;,Web Development,0
+handling data storage,"table, database",UPDATE users SET name='Alex';,Databases,1
+testing a neural network,"dataset, accuracy",predict(X_test),Machine Learning,1
+making something idk,"model, neural network, index",INSERT INTO users VALUES ('John');,Machine Learning,0
+creating a responsive layout,"javascript, css, react",console.log('hello'),Web Development,1
+working on a web app,"react, javascript, sql",UPDATE users SET name='Alex';,Web Development,0
+analyzing data,"prediction, training, query",DELETE FROM users WHERE id=1;,Machine Learning,0
+working on something,"code, programming",int a = 5;,Web Development,0
+analyzing data,"accuracy, neural network, columns",CREATE TABLE users(id INT);,Machine Learning,0
+testing a neural network,"prediction, neural network, accuracy",from tensorflow import keras,Machine Learning,1
+building a website,"backend, css",fetch('/api/data'),Machine Learning,0
+optimizing database,"sql, columns, database, query",DELETE FROM users WHERE id=1;,Machine Learning,0
+fetching records,"database, index",UPDATE users SET name='Alex';,Web Development,0
+debugging rn,"javascript, css, prediction",predict(X_test),Web Development,0
+training a model,,import sklearn,Machine Learning,1
+fixing frontend bugs,"frontend, react, backend, javascript",<div>Hello</div>,Web Development,1
+working on something,"sql, columns",CREATE TABLE users(id INT);,Databases,1
+testing a neural network,"model, prediction",loss.backward(),Machine Learning,1
+debugging rn,"index, query, frontend",<div>Hello</div>,Databases,0
+managing tables,"columns, sql, react",,Databases,0
+debugging rn,"sql, index, javascript",console.log('hello'),Databases,0
+improving accuracy,"dataset, neural network, training",from tensorflow import keras,Databases,0
+uh fixing stuff,"programming, typing",print('hello'),Databases,0
+working on a web app,"html, frontend",document.getElementById('app'),Machine Learning,0
+idk doing coding,"neural network, dataset, prediction",import sklearn,Databases,0
+idk doing coding,"api, css, html",console.log('hello'),Databases,0
+fixing frontend bugs,"css, api",document.getElementById('app'),Web Development,1
+,"react, frontend",fetch('/api/data'),Web Development,1
+working on something,"programming, computer",print('hello'),Web Development,0
+working on a web app,"javascript, css, api, node",console.log('hello'),Databases,0
+testing a neural network,,loss.backward(),Machine Learning,1
+,"neural network, model",loss.backward(),Databases,0
+fixing frontend bugs,"react, node, sql",CREATE TABLE users(id INT);,Web Development,0
+working on a web app,"frontend, html, rows",DELETE FROM users WHERE id=1;,Web Development,0
+working on predictions,"training, prediction, table",CREATE TABLE users(id INT);,Machine Learning,0
+making something idk,,<div>Hello</div>,Web Development,1
+debugging rn,"programming, code",print('hello'),Web Development,0
+writing SQL queries,"columns, table, javascript",document.getElementById('app'),Databases,0
+,"prediction, accuracy, html",,Machine Learning,0
+testing a neural network,"dataset, prediction, training, ai",loss.backward(),Machine Learning,1
+,"database, table",INSERT INTO users VALUES ('John');,Databases,1
+fixing frontend bugs,"javascript, react, neural network",loss.backward(),Web Development,0
+optimizing database,"index, table, query, columns",,Databases,1
+,"html, node, backend",function App() { return <h1>Hi</h1>; },Web Development,1
+optimizing database,,INSERT INTO users VALUES ('John');,Databases,1
+managing tables,"query, columns, accuracy",,Databases,0
+making a login system,"frontend, api, neural network",from tensorflow import keras,Web Development,0
+handling data storage,"table, columns, rows",DELETE FROM users WHERE id=1;,Databases,1
+creating a responsive layout,"backend, javascript",console.log('hello'),Web Development,1
+fetching records,,UPDATE users SET name='Alex';,Databases,1
+fixing frontend bugs,"javascript, html, backend",document.getElementById('app'),Web Development,1
+handling data storage,"query, table, columns, database",SELECT * FROM users;,Machine Learning,0
+working on predictions,,console.log('hello'),Machine Learning,0
+trying to fix bugs,"prediction, ai, model, accuracy",loss.backward(),Databases,0
+training a model,"ai, model, neural network, accuracy",import sklearn,Machine Learning,1
+managing tables,"columns, database, backend",,Databases,0
+fixing frontend bugs,"css, node, prediction",predict(X_test),Web Development,0
+working on predictions,"accuracy, training, dataset",from tensorflow import keras,Web Development,0
+improving accuracy,"dataset, ai, sql",INSERT INTO users VALUES ('John');,Machine Learning,0
+idk doing coding,"programming, computer",print('hello'),Databases,0
+uh fixing stuff,"html, node, frontend, api",function App() { return <h1>Hi</h1>; },Databases,0
+idk doing coding,"backend, frontend, react",fetch('/api/data'),Web Development,1
+handling data storage,"rows, database, javascript",,Databases,0
+working on predictions,"dataset, accuracy, columns",UPDATE users SET name='Alex';,Machine Learning,0
+optimizing database,"index, rows",SELECT * FROM users;,Databases,1
+,"backend, frontend, react, node",<div>Hello</div>,Web Development,1
+working on something,"node, api",console.log('hello'),Web Development,1
+,"prediction, ai",import sklearn,Machine Learning,1
+improving accuracy,"neural network, model, react",console.log('hello'),Machine Learning,0
+optimizing database,"sql, query, rows, columns",INSERT INTO users VALUES ('John');,Databases,1
+idk doing coding,"computer, programming",print('hello'),Machine Learning,0
+trying to fix bugs,"rows, table",DELETE FROM users WHERE id=1;,Machine Learning,0
+debugging rn,"rows, query",DELETE FROM users WHERE id=1;,Machine Learning,0
+debugging rn,"computer, programming",echo 'hi';,Machine Learning,0
+analyzing data,"neural network, model, accuracy",loss.backward(),Databases,0
+fetching records,"columns, rows, sql, database",SELECT * FROM users;,Databases,1
+working on predictions,"model, dataset, table",INSERT INTO users VALUES ('John');,Machine Learning,0
+optimizing database,"table, index, rows",DELETE FROM users WHERE id=1;,Web Development,0
+training a model,,INSERT INTO users VALUES ('John');,Machine Learning,0
+working on a web app,,document.getElementById('app'),Web Development,1
+making a login system,"javascript, html, prediction",predict(X_test),Web Development,0
+idk doing coding,"typing, computer",print('hello'),Databases,0
+writing SQL queries,"query, sql",DELETE FROM users WHERE id=1;,Databases,1
+fixing frontend bugs,"node, backend, javascript, frontend",<div>Hello</div>,Machine Learning,0
+working on a web app,"css, react, frontend",document.getElementById('app'),Web Development,1
+fixing frontend bugs,"html, javascript, node, css",fetch('/api/data'),Databases,0
+optimizing database,"database, table, ai",loss.backward(),Databases,0
+working on predictions,"training, dataset, query",SELECT * FROM users;,Machine Learning,0
+coding lang eh,,fetch('/api/data'),Web Development,1
+,"backend, react, javascript, html",console.log('hello'),Web Development,1
+improving accuracy,"accuracy, training, neural network",from tensorflow import keras,Machine Learning,1
+testing a neural network,"dataset, prediction, model, ai",from tensorflow import keras,Machine Learning,1
+optimizing database,"table, database, query",UPDATE users SET name='Alex';,Databases,1
+working on a web app,,document.getElementById('app'),Web Development,1
+making something idk,"computer, programming",print('hello'),Machine Learning,0
+,"index, columns, html",,Databases,0
+debugging rn,"training, neural network, dataset",loss.backward(),Databases,0
+analyzing data,"prediction, neural network, accuracy",from tensorflow import keras,Machine Learning,1
+debugging rn,"api, css, backend",document.getElementById('app'),Web Development,1
+idk doing coding,,INSERT INTO users VALUES ('John');,Databases,1
+making something idk,"database, query, table",DELETE FROM users WHERE id=1;,Databases,1
+creating a responsive layout,"react, api, node, backend",<div>Hello</div>,Machine Learning,0
+training a model,"prediction, ai",from tensorflow import keras,Machine Learning,1
+working on predictions,"prediction, neural network, frontend",<div>Hello</div>,Machine Learning,0
+trying to fix bugs,"programming, code",int a = 5;,Machine Learning,0
+making a login system,"css, react, node, javascript",,Web Development,1
+debugging rn,"prediction, model",from tensorflow import keras,Machine Learning,1
+trying to fix bugs,"code, programming",int a = 5;,Machine Learning,0
+working on predictions,"neural network, prediction","model.fit(X, y)",Web Development,0
+idk doing coding,"typing, code",print('hello'),Machine Learning,0
+working on a web app,"html, react, backend, css",document.getElementById('app'),Databases,0
+analyzing data,"neural network, accuracy, dataset, prediction",from tensorflow import keras,Web Development,0
+improving accuracy,"ai, model, accuracy",predict(X_test),Machine Learning,1
+fixing frontend bugs,"react, frontend, javascript, node",fetch('/api/data'),Web Development,1
+making a login system,"react, javascript, index",INSERT INTO users VALUES ('John');,Web Development,0
+fetching records,"table, query",CREATE TABLE users(id INT);,Machine Learning,0
+managing tables,"rows, query",INSERT INTO users VALUES ('John');,Web Development,0
+testing a neural network,"prediction, neural network",predict(X_test),Machine Learning,1
+fetching records,"table, index, react",function App() { return <h1>Hi</h1>; },Databases,0
+testing a neural network,"model, accuracy",,Machine Learning,1
+making a login system,"html, node",,Web Development,1
+improving accuracy,"ai, accuracy, react",console.log('hello'),Machine Learning,0
+building a website,"html, api, table",SELECT * FROM users;,Web Development,0
+working on predictions,"model, accuracy",,Machine Learning,1
+optimizing database,"index, columns, prediction",from tensorflow import keras,Databases,0
+handling data storage,"columns, database, sql, rows",SELECT * FROM users;,Machine Learning,0
+uh fixing stuff,"programming, code",int a = 5;,Databases,0
+uh fixing stuff,"programming, typing",echo 'hi';,Machine Learning,0
+optimizing database,,import sklearn,Databases,0
+making a login system,"react, css, backend, api",<div>Hello</div>,Web Development,1
+improving accuracy,"accuracy, dataset, ai",predict(X_test),Machine Learning,1
+handling data storage,"database, columns",CREATE TABLE users(id INT);,Web Development,0
+,"react, javascript",function App() { return <h1>Hi</h1>; },Web Development,1
+handling data storage,"table, rows",DELETE FROM users WHERE id=1;,Databases,1
+creating a responsive layout,"node, react, neural network",predict(X_test),Web Development,0
+uh fixing stuff,"code, programming",console.log('test'),Databases,0
+idk doing coding,"computer, code",print('hello'),Machine Learning,0
+working on something,"typing, computer",echo 'hi';,Databases,0
+coding lang eh,"rows, query, training","model.fit(X, y)",Databases,0
+,"index, sql",INSERT INTO users VALUES ('John');,Databases,1
+,"javascript, react, training",predict(X_test),Web Development,0
+working on something,"code, computer",console.log('test'),Web Development,0
+making something idk,"node, javascript, training",loss.backward(),Web Development,0
+building a website,"html, node",document.getElementById('app'),Databases,0
+uh fixing stuff,"programming, typing",console.log('test'),Databases,0
+handling data storage,"rows, columns, ai",,Databases,0
+trying to fix bugs,"computer, programming",console.log('test'),Databases,0
+coding lang eh,"ai, accuracy","model.fit(X, y)",Databases,0
+improving accuracy,"prediction, training, dataset, ai","model.fit(X, y)",Databases,0
+fetching records,"index, sql, table, database",INSERT INTO users VALUES ('John');,Web Development,0
+,"neural network, prediction, sql",CREATE TABLE users(id INT);,Machine Learning,0
+managing tables,"query, index, database, table",SELECT * FROM users;,Databases,1
+working on predictions,"prediction, accuracy",,Machine Learning,1
+writing SQL queries,"table, query, backend",,Databases,0
+handling data storage,"columns, query, sql, table",INSERT INTO users VALUES ('John');,Machine Learning,0
+working on predictions,"ai, prediction, neural network","model.fit(X, y)",Machine Learning,1
+training a model,"dataset, accuracy",import sklearn,Databases,0
+fetching records,"rows, columns, training",loss.backward(),Databases,0
+making a login system,"backend, css",function App() { return <h1>Hi</h1>; },Machine Learning,0
+testing a neural network,"accuracy, model, react",<div>Hello</div>,Machine Learning,0
+,"database, index, api",function App() { return <h1>Hi</h1>; },Databases,0
+handling data storage,"table, rows, index",DELETE FROM users WHERE id=1;,Databases,1
+,"training, ai, react",function App() { return <h1>Hi</h1>; },Machine Learning,0
+handling data storage,"query, table, api",console.log('hello'),Databases,0
+writing SQL queries,"rows, database, html",console.log('hello'),Databases,0
+building a website,"frontend, css, sql",INSERT INTO users VALUES ('John');,Web Development,0
+building a website,,document.getElementById('app'),Web Development,1
+working on predictions,"prediction, dataset, javascript",console.log('hello'),Machine Learning,0
+analyzing data,"dataset, model",loss.backward(),Machine Learning,1
+coding lang eh,"model, ai, training, prediction","model.fit(X, y)",Databases,0
+improving accuracy,"prediction, model",from tensorflow import keras,Machine Learning,1
+writing SQL queries,"table, columns, database",CREATE TABLE users(id INT);,Web Development,0
+improving accuracy,"model, dataset, javascript",function App() { return <h1>Hi</h1>; },Machine Learning,0
+,"sql, columns, table",,Databases,1
+writing SQL queries,"columns, table, rows, index",DELETE FROM users WHERE id=1;,Databases,1
+,"sql, index, dataset",from tensorflow import keras,Databases,0
+handling data storage,"index, sql, html",<div>Hello</div>,Databases,0
+building a website,"backend, css, html, javascript",document.getElementById('app'),Machine Learning,0
+improving accuracy,"prediction, ai, backend",document.getElementById('app'),Machine Learning,0
+working on something,"code, programming",console.log('test'),Databases,0
+training a model,"model, ai","model.fit(X, y)",Machine Learning,1
+trying to fix bugs,"code, typing",print('hello'),Web Development,0
+coding lang eh,"code, computer",print('hello'),Web Development,0
+debugging rn,"css, javascript, columns",INSERT INTO users VALUES ('John');,Web Development,0
+building a website,"html, react",function App() { return <h1>Hi</h1>; },Web Development,1
+coding lang eh,"javascript, react, node",<div>Hello</div>,Web Development,1
+training a model,"training, accuracy",predict(X_test),Machine Learning,1
+handling data storage,"rows, columns, sql, table",,Web Development,0
+managing tables,"query, index, table",,Databases,1
+managing tables,"query, table, database, columns",SELECT * FROM users;,Databases,1
+debugging rn,"computer, typing",console.log('test'),Web Development,0
+idk doing coding,"table, columns, accuracy","model.fit(X, y)",Databases,0
+analyzing data,"prediction, neural network, dataset, accuracy",from tensorflow import keras,Machine Learning,1
+training a model,"ai, accuracy","model.fit(X, y)",Machine Learning,1
+creating a responsive layout,"react, frontend, sql",INSERT INTO users VALUES ('John');,Web Development,0
+training a model,"training, neural network, backend",function App() { return <h1>Hi</h1>; },Machine Learning,0
+testing a neural network,"prediction, dataset, accuracy",predict(X_test),Web Development,0
+handling data storage,"rows, table, react",document.getElementById('app'),Databases,0
+,"columns, rows, index",SELECT * FROM users;,Machine Learning,0
+creating a responsive layout,"backend, javascript",function App() { return <h1>Hi</h1>; },Web Development,1
+writing SQL queries,"columns, table",CREATE TABLE users(id INT);,Databases,1
+trying to fix bugs,"ai, neural network, prediction, accuracy",,Web Development,0
+,"prediction, neural network, training, accuracy",from tensorflow import keras,Machine Learning,1
+managing tables,"query, columns, table, index",,Machine Learning,0
+making something idk,"dataset, ai, columns",UPDATE users SET name='Alex';,Machine Learning,0
+debugging rn,"rows, sql, node",fetch('/api/data'),Databases,0
+building a website,"html, react, accuracy",import sklearn,Web Development,0
+building a website,"html, backend, prediction",predict(X_test),Web Development,0
+,"css, react",<div>Hello</div>,Web Development,1
+writing SQL queries,"table, rows",INSERT INTO users VALUES ('John');,Databases,1
+making something idk,"computer, programming",int a = 5;,Databases,0
+,"index, sql",INSERT INTO users VALUES ('John');,Databases,1
+creating a responsive layout,"backend, frontend",console.log('hello'),Databases,0
+working on predictions,"dataset, accuracy, model",import sklearn,Databases,0
+idk doing coding,"computer, typing",console.log('test'),Web Development,0
+working on something,"html, frontend, css",,Web Development,1
+,"javascript, html",function App() { return <h1>Hi</h1>; },Web Development,1
+creating a responsive layout,"node, javascript, html, backend",<div>Hello</div>,Machine Learning,0
+fetching records,"index, columns, sql",DELETE FROM users WHERE id=1;,Databases,1
+trying to fix bugs,"table, rows",INSERT INTO users VALUES ('John');,Web Development,0
+managing tables,"columns, query, backend",fetch('/api/data'),Databases,0
+making something idk,"typing, programming",echo 'hi';,Web Development,0
+creating a responsive layout,"css, react",function App() { return <h1>Hi</h1>; },Web Development,1
+writing SQL queries,,CREATE TABLE users(id INT);,Databases,1
+trying to fix bugs,"computer, code",int a = 5;,Machine Learning,0
+managing tables,"rows, query, table, index",UPDATE users SET name='Alex';,Databases,1
+coding lang eh,,CREATE TABLE users(id INT);,Databases,1
+fixing frontend bugs,"javascript, frontend",function App() { return <h1>Hi</h1>; },Web Development,1
+creating a responsive layout,"react, backend",fetch('/api/data'),Web Development,1
+writing SQL queries,"sql, rows, index",INSERT INTO users VALUES ('John');,Databases,1
+,"javascript, frontend",console.log('hello'),Web Development,1
+training a model,"training, dataset, prediction",,Databases,0
+training a model,"prediction, accuracy, neural network, dataset",predict(X_test),Web Development,0
+testing a neural network,"accuracy, model",loss.backward(),Machine Learning,1
+training a model,"accuracy, training",loss.backward(),Machine Learning,1
+creating a responsive layout,"css, node, query",SELECT * FROM users;,Web Development,0
+uh fixing stuff,"programming, code",echo 'hi';,Databases,0
+fetching records,"columns, table, react",console.log('hello'),Databases,0
+making a login system,"frontend, backend, api, node",<div>Hello</div>,Machine Learning,0
+fetching records,"columns, rows, dataset",loss.backward(),Databases,0
+analyzing data,"dataset, training, columns",UPDATE users SET name='Alex';,Machine Learning,0
+fetching records,,DELETE FROM users WHERE id=1;,Databases,1
+fetching records,"database, rows, backend",document.getElementById('app'),Databases,0
+building a website,"backend, javascript, model",loss.backward(),Web Development,0
+debugging rn,"sql, query, rows",SELECT * FROM users;,Databases,1
+uh fixing stuff,"rows, sql, query",SELECT * FROM users;,Machine Learning,0
+making a login system,"frontend, react, api",document.getElementById('app'),Web Development,1
+working on something,"model, ai",predict(X_test),Machine Learning,1
+fixing frontend bugs,"html, backend",document.getElementById('app'),Databases,0
+making something idk,"programming, code",echo 'hi';,Web Development,0
+idk doing coding,"computer, code",int a = 5;,Web Development,0
+debugging rn,"columns, rows, query, index",DELETE FROM users WHERE id=1;,Databases,1
+testing a neural network,"accuracy, ai, query",,Machine Learning,0
+working on something,"prediction, ai, training",predict(X_test),Web Development,0
+fetching records,"index, table, columns",CREATE TABLE users(id INT);,Web Development,0
+idk doing coding,"accuracy, prediction",from tensorflow import keras,Web Development,0
+working on a web app,"api, frontend, backend, html",<div>Hello</div>,Web Development,1
+testing a neural network,"neural network, model, ai",predict(X_test),Databases,0
+analyzing data,"dataset, prediction, model",from tensorflow import keras,Machine Learning,1
+analyzing data,"accuracy, training, model, ai",import sklearn,Machine Learning,1
+building a website,"javascript, backend",fetch('/api/data'),Web Development,1
+working on predictions,"dataset, accuracy, neural network",loss.backward(),Databases,0
+managing tables,"sql, table, columns, query",DELETE FROM users WHERE id=1;,Databases,1
+building a website,"html, react, backend",<div>Hello</div>,Web Development,1
+uh fixing stuff,,import sklearn,Machine Learning,1
+,"accuracy, prediction, dataset, training","model.fit(X, y)",Machine Learning,1
+working on predictions,"dataset, prediction, frontend",fetch('/api/data'),Machine Learning,0
+fixing frontend bugs,"api, backend",console.log('hello'),Databases,0
+training a model,"ai, prediction",predict(X_test),Machine Learning,1
+working on something,"typing, code",echo 'hi';,Databases,0
+handling data storage,"rows, query, table",SELECT * FROM users;,Web Development,0
+analyzing data,"neural network, dataset",loss.backward(),Databases,0
+uh fixing stuff,"typing, programming",int a = 5;,Databases,0
+training a model,"dataset, training, database",,Machine Learning,0
+fetching records,"table, columns, ai",import sklearn,Databases,0
+fixing frontend bugs,"react, node",<div>Hello</div>,Web Development,1
+,"rows, table, query, columns",DELETE FROM users WHERE id=1;,Machine Learning,0
+writing SQL queries,"columns, rows, dataset",,Databases,0
+,,,Web Development,0
+creating a responsive layout,"css, javascript, api",<div>Hello</div>,Web Development,1
+,"sql, database, neural network",import sklearn,Databases,0
+working on a web app,"api, react, training",predict(X_test),Web Development,0
+fetching records,"rows, database, api",fetch('/api/data'),Databases,0
+debugging rn,"computer, typing",console.log('test'),Machine Learning,0
+working on predictions,"dataset, model, query",CREATE TABLE users(id INT);,Machine Learning,0
+coding lang eh,"database, rows",,Databases,1
+working on a web app,"css, html, rows",UPDATE users SET name='Alex';,Web Development,0
+improving accuracy,"prediction, training, react",fetch('/api/data'),Machine Learning,0
+uh fixing stuff,"computer, code",echo 'hi';,Web Development,0
+improving accuracy,"model, accuracy, index",UPDATE users SET name='Alex';,Machine Learning,0
+idk doing coding,"typing, code",print('hello'),Databases,0
+idk doing coding,"neural network, accuracy, training",from tensorflow import keras,Machine Learning,1
+,"frontend, node, html",function App() { return <h1>Hi</h1>; },Web Development,1
+training a model,"accuracy, prediction, ai",from tensorflow import keras,Machine Learning,1
+training a model,"neural network, accuracy, table",INSERT INTO users VALUES ('John');,Machine Learning,0
+fixing frontend bugs,"frontend, react, columns",SELECT * FROM users;,Web Development,0
+analyzing data,"model, dataset, index",CREATE TABLE users(id INT);,Machine Learning,0
+making a login system,"react, frontend",fetch('/api/data'),Web Development,1
+working on predictions,"prediction, dataset, accuracy, neural network",from tensorflow import keras,Machine Learning,1
+debugging rn,"css, backend, rows",,Web Development,0
+building a website,"node, api, react",console.log('hello'),Web Development,1
+working on predictions,"dataset, training",predict(X_test),Machine Learning,1
+making something idk,"code, computer",int a = 5;,Machine Learning,0
+making something idk,"code, typing",echo 'hi';,Databases,0
+creating a responsive layout,"backend, frontend, javascript",fetch('/api/data'),Web Development,1
+working on a web app,"backend, frontend, index",CREATE TABLE users(id INT);,Web Development,0
+optimizing database,"database, sql, frontend",document.getElementById('app'),Databases,0
+working on something,"computer, programming",echo 'hi';,Databases,0
+training a model,"dataset, prediction, react",<div>Hello</div>,Machine Learning,0
+working on predictions,"ai, training, table",DELETE FROM users WHERE id=1;,Machine Learning,0
+trying to fix bugs,"javascript, backend, query",INSERT INTO users VALUES ('John');,Web Development,0
+creating a responsive layout,"html, node",fetch('/api/data'),Web Development,1
+fetching records,"sql, rows",,Databases,1
+,"index, query, columns, sql",INSERT INTO users VALUES ('John');,Databases,1
+working on a web app,"react, javascript, node, html",console.log('hello'),Machine Learning,0
+trying to fix bugs,"typing, programming",console.log('test'),Web Development,0
+working on something,"programming, typing",echo 'hi';,Machine Learning,0
+working on something,"programming, computer",int a = 5;,Machine Learning,0
+,,predict(X_test),Web Development,0
+working on a web app,"frontend, react",document.getElementById('app'),Databases,0
+debugging rn,"node, frontend",function App() { return <h1>Hi</h1>; },Web Development,1
+managing tables,"columns, query",UPDATE users SET name='Alex';,Machine Learning,0
+working on a web app,"backend, node, api, css",document.getElementById('app'),Web Development,1
+idk doing coding,"table, database, columns",CREATE TABLE users(id INT);,Databases,1
+improving accuracy,"neural network, ai, table",INSERT INTO users VALUES ('John');,Machine Learning,0
+optimizing database,"rows, query",UPDATE users SET name='Alex';,Databases,1
+creating a responsive layout,"html, frontend, model",import sklearn,Web Development,0
+,"index, query, accuracy",import sklearn,Databases,0
+optimizing database,"database, table",DELETE FROM users WHERE id=1;,Machine Learning,0
+optimizing database,"database, table",INSERT INTO users VALUES ('John');,Web Development,0
+optimizing database,"database, table, index",INSERT INTO users VALUES ('John');,Databases,1
+working on something,"computer, code",console.log('test'),Machine Learning,0
+idk doing coding,"computer, programming",echo 'hi';,Databases,0
+testing a neural network,"dataset, training",,Machine Learning,1
+managing tables,"table, rows, columns, sql",CREATE TABLE users(id INT);,Web Development,0
+fixing frontend bugs,"javascript, backend, query",INSERT INTO users VALUES ('John');,Web Development,0
+fixing frontend bugs,"frontend, api",,Web Development,1
+working on a web app,"css, node, dataset",from tensorflow import keras,Web Development,0
+making something idk,"sql, rows, api",console.log('hello'),Databases,0
+working on something,"accuracy, ai, training, neural network",predict(X_test),Machine Learning,1
+creating a responsive layout,"html, backend, css",console.log('hello'),Web Development,1
+analyzing data,,,Machine Learning,0
+training a model,"ai, neural network, dataset, prediction",import sklearn,Machine Learning,1
+uh fixing stuff,"backend, api, html",<div>Hello</div>,Web Development,1
+fixing frontend bugs,"css, javascript, frontend",fetch('/api/data'),Web Development,1
+idk doing coding,"computer, code",echo 'hi';,Databases,0
+analyzing data,"dataset, training, sql",DELETE FROM users WHERE id=1;,Machine Learning,0
+working on something,"react, api",document.getElementById('app'),Web Development,1
+analyzing data,"accuracy, prediction, dataset",from tensorflow import keras,Machine Learning,1
+working on something,"rows, sql, query",INSERT INTO users VALUES ('John');,Web Development,0
+working on a web app,"react, javascript",console.log('hello'),Web Development,1
+making something idk,"accuracy, prediction, model, neural network",predict(X_test),Machine Learning,1
+working on something,"computer, programming",console.log('test'),Web Development,0
+writing SQL queries,"sql, index, query, table",DELETE FROM users WHERE id=1;,Web Development,0
+building a website,"html, css, frontend, node",function App() { return <h1>Hi</h1>; },Web Development,1
+working on predictions,"dataset, neural network, ai, prediction",,Machine Learning,1
+fetching records,"index, sql, react",document.getElementById('app'),Databases,0
+debugging rn,"typing, code",int a = 5;,Databases,0
+training a model,"ai, dataset, prediction",import sklearn,Web Development,0
+building a website,"javascript, node, react",console.log('hello'),Web Development,1
+,"rows, table, sql, columns",CREATE TABLE users(id INT);,Machine Learning,0
+uh fixing stuff,"typing, programming",print('hello'),Web Development,0
+optimizing database,"columns, sql, prediction",predict(X_test),Databases,0
+debugging rn,"code, computer",int a = 5;,Web Development,0
+optimizing database,"index, table",CREATE TABLE users(id INT);,Databases,1
+debugging rn,"typing, programming",print('hello'),Databases,0
+trying to fix bugs,"programming, typing",echo 'hi';,Machine Learning,0
+idk doing coding,"code, computer",console.log('test'),Databases,0
+writing SQL queries,"index, sql",SELECT * FROM users;,Databases,1
+handling data storage,"columns, query, sql",DELETE FROM users WHERE id=1;,Web Development,0
+,"sql, database, css",document.getElementById('app'),Databases,0
+building a website,,INSERT INTO users VALUES ('John');,Web Development,0
+fetching records,"query, sql, table",INSERT INTO users VALUES ('John');,Databases,1
+trying to fix bugs,"node, backend",document.getElementById('app'),Databases,0
+fixing frontend bugs,,fetch('/api/data'),Web Development,1
+trying to fix bugs,"columns, rows, api",document.getElementById('app'),Databases,0
+optimizing database,"query, table, node",document.getElementById('app'),Databases,0
+making something idk,"computer, code",console.log('test'),Web Development,0
+working on a web app,"backend, css, node, javascript",function App() { return <h1>Hi</h1>; },Web Development,1
+testing a neural network,"dataset, prediction, accuracy, neural network",predict(X_test),Machine Learning,1
+testing a neural network,,document.getElementById('app'),Machine Learning,0
+,,SELECT * FROM users;,Machine Learning,0
+fixing frontend bugs,"html, javascript",<div>Hello</div>,Databases,0
+analyzing data,"ai, training, accuracy",,Databases,0
+making something idk,"sql, query, api",document.getElementById('app'),Databases,0
+working on a web app,"node, html, frontend",document.getElementById('app'),Web Development,1
+creating a responsive layout,"node, css, ai",from tensorflow import keras,Web Development,0
+uh fixing stuff,"programming, code",console.log('test'),Machine Learning,0
+uh fixing stuff,"programming, typing",echo 'hi';,Web Development,0
+uh fixing stuff,"training, neural network, accuracy, dataset",loss.backward(),Machine Learning,1
+handling data storage,"query, table, neural network","model.fit(X, y)",Databases,0
+trying to fix bugs,"sql, rows, react",<div>Hello</div>,Databases,0
+training a model,"prediction, neural network, query",UPDATE users SET name='Alex';,Machine Learning,0
+handling data storage,"database, query",INSERT INTO users VALUES ('John');,Databases,1
+idk doing coding,"dataset, prediction, model, ai",loss.backward(),Web Development,0
+working on a web app,"node, frontend, training",from tensorflow import keras,Web Development,0
+working on predictions,"training, neural network",from tensorflow import keras,Web Development,0
+building a website,"html, javascript",function App() { return <h1>Hi</h1>; },Databases,0
+uh fixing stuff,"html, react, database",SELECT * FROM users;,Web Development,0
+improving accuracy,"training, accuracy, sql",INSERT INTO users VALUES ('John');,Machine Learning,0
+debugging rn,"react, css, neural network",import sklearn,Web Development,0
+,"accuracy, dataset, react",,Machine Learning,0
+analyzing data,"neural network, prediction, ai",predict(X_test),Machine Learning,1
+debugging rn,"typing, computer",console.log('test'),Databases,0
+coding lang eh,"ai, training, css",console.log('hello'),Machine Learning,0
+managing tables,"rows, query, database, sql",UPDATE users SET name='Alex';,Databases,1
+coding lang eh,"dataset, prediction",,Machine Learning,1
+,"columns, rows, sql, database",SELECT * FROM users;,Databases,1
+uh fixing stuff,"programming, code",console.log('test'),Machine Learning,0
+trying to fix bugs,"typing, programming",int a = 5;,Databases,0
+training a model,"ai, model, training",,Machine Learning,1
+working on something,"programming, typing",echo 'hi';,Machine Learning,0
+handling data storage,"query, columns, database, sql",CREATE TABLE users(id INT);,Machine Learning,0
+uh fixing stuff,"code, programming",print('hello'),Web Development,0
+,"accuracy, neural network, training, ai",loss.backward(),Databases,0
+working on predictions,"accuracy, training, dataset",from tensorflow import keras,Web Development,0
+trying to fix bugs,"code, programming",echo 'hi';,Web Development,0
+debugging rn,"query, rows",CREATE TABLE users(id INT);,Web Development,0
+working on predictions,"training, model, neural network, dataset",import sklearn,Web Development,0
+handling data storage,"columns, table, sql, rows",UPDATE users SET name='Alex';,Machine Learning,0
+uh fixing stuff,"code, typing",console.log('test'),Web Development,0
+debugging rn,"sql, database, query",CREATE TABLE users(id INT);,Databases,1
+fixing frontend bugs,,function App() { return <h1>Hi</h1>; },Web Development,1
+fixing frontend bugs,"node, html, index",UPDATE users SET name='Alex';,Web Development,0
+working on something,"computer, code",print('hello'),Databases,0
+optimizing database,"index, columns, database, sql",SELECT * FROM users;,Databases,1
+making something idk,"javascript, frontend, backend, node",fetch('/api/data'),Databases,0
+optimizing database,"index, sql, columns",INSERT INTO users VALUES ('John');,Databases,1
+managing tables,"columns, query, index, sql",CREATE TABLE users(id INT);,Databases,1
+analyzing data,"prediction, ai, node",document.getElementById('app'),Machine Learning,0
+fetching records,"query, table, training",from tensorflow import keras,Databases,0
+working on a web app,"frontend, react",console.log('hello'),Web Development,1
+testing a neural network,"training, prediction",predict(X_test),Machine Learning,1
+coding lang eh,"computer, programming",print('hello'),Databases,0
+uh fixing stuff,"computer, programming",echo 'hi';,Machine Learning,0
+idk doing coding,"dataset, prediction, ai",predict(X_test),Machine Learning,1
+making a login system,"api, css, frontend",fetch('/api/data'),Web Development,1
+working on a web app,"react, frontend, backend, api",function App() { return <h1>Hi</h1>; },Web Development,1
+creating a responsive layout,"node, frontend, javascript",<div>Hello</div>,Machine Learning,0
+making a login system,"react, javascript, frontend, api",<div>Hello</div>,Machine Learning,0
+uh fixing stuff,"query, table",UPDATE users SET name='Alex';,Web Development,0
+improving accuracy,"ai, prediction, accuracy","model.fit(X, y)",Machine Learning,1
+,"columns, query, prediction",predict(X_test),Databases,0
+working on predictions,"ai, training, model, neural network",,Databases,0
+debugging rn,"frontend, backend",console.log('hello'),Web Development,1
+analyzing data,"training, dataset, model, accuracy",,Web Development,0
+handling data storage,"query, sql, index, columns",SELECT * FROM users;,Databases,1
+working on a web app,,,Databases,0
+working on something,"code, typing",echo 'hi';,Machine Learning,0
+fixing frontend bugs,"javascript, react, backend, api",<div>Hello</div>,Web Development,1
+trying to fix bugs,"model, dataset, prediction, ai",predict(X_test),Web Development,0
+creating a responsive layout,"html, javascript, node",function App() { return <h1>Hi</h1>; },Web Development,1
+working on something,,function App() { return <h1>Hi</h1>; },Web Development,1
+working on predictions,"accuracy, dataset, api",document.getElementById('app'),Machine Learning,0
+creating a responsive layout,"javascript, node, backend, css",fetch('/api/data'),Web Development,1
+debugging rn,,function App() { return <h1>Hi</h1>; },Web Development,1
+managing tables,"columns, rows, query",SELECT * FROM users;,Databases,1
+fetching records,"table, database",INSERT INTO users VALUES ('John');,Web Development,0
+working on predictions,"ai, accuracy, dataset",,Web Development,0
+working on something,"html, api, css, backend",document.getElementById('app'),Machine Learning,0
+building a website,"api, node, css, react",fetch('/api/data'),Machine Learning,0
+,,loss.backward(),Databases,0
+working on a web app,"css, api, index",,Web Development,0
+optimizing database,"table, database",CREATE TABLE users(id INT);,Databases,1
+fetching records,"query, sql, backend",<div>Hello</div>,Databases,0
+analyzing data,"accuracy, ai, backend",<div>Hello</div>,Machine Learning,0
+idk doing coding,"backend, css",<div>Hello</div>,Web Development,1
+,"node, html",console.log('hello'),Machine Learning,0
+handling data storage,"query, sql",SELECT * FROM users;,Databases,1
+working on something,"computer, programming",echo 'hi';,Databases,0
+debugging rn,"ai, prediction, html",document.getElementById('app'),Machine Learning,0
+training a model,,predict(X_test),Machine Learning,1
+training a model,"neural network, training, prediction, accuracy",predict(X_test),Machine Learning,1
+analyzing data,"ai, model, api",function App() { return <h1>Hi</h1>; },Machine Learning,0
+analyzing data,"training, dataset, ai, model",,Machine Learning,1
+analyzing data,"training, prediction",from tensorflow import keras,Machine Learning,1
+,"node, api",,Machine Learning,0
+debugging rn,"typing, programming",int a = 5;,Web Development,0
+optimizing database,"table, database",UPDATE users SET name='Alex';,Web Development,0
+making something idk,"api, node",,Web Development,1
+working on something,"dataset, training, model, accuracy",import sklearn,Web Development,0
+analyzing data,"accuracy, model, html",console.log('hello'),Machine Learning,0
+writing SQL queries,"columns, sql, database, index",DELETE FROM users WHERE id=1;,Databases,1
+working on predictions,"prediction, ai, query",UPDATE users SET name='Alex';,Machine Learning,0
+testing a neural network,"dataset, model, sql",DELETE FROM users WHERE id=1;,Machine Learning,0
+,"ai, training, javascript",function App() { return <h1>Hi</h1>; },Machine Learning,0
+working on something,"ai, prediction",from tensorflow import keras,Machine Learning,1
+idk doing coding,"frontend, backend, model",import sklearn,Web Development,0
+working on a web app,"javascript, react, node, frontend",document.getElementById('app'),Web Development,1
+improving accuracy,"model, prediction, api",console.log('hello'),Machine Learning,0
+fixing frontend bugs,"react, node, css",document.getElementById('app'),Web Development,1
+fetching records,"columns, index, table",SELECT * FROM users;,Databases,1
+testing a neural network,"ai, dataset, database",CREATE TABLE users(id INT);,Machine Learning,0
+building a website,"css, html, frontend",console.log('hello'),Web Development,1
+idk doing coding,"database, columns",INSERT INTO users VALUES ('John');,Databases,1
+coding lang eh,"code, typing",print('hello'),Web Development,0
+,"prediction, model, rows",INSERT INTO users VALUES ('John');,Machine Learning,0
+uh fixing stuff,"database, rows, api",console.log('hello'),Databases,0
+training a model,"neural network, model","model.fit(X, y)",Databases,0
+making something idk,"code, typing",print('hello'),Machine Learning,0
+building a website,"css, react, backend",fetch('/api/data'),Web Development,1
+creating a responsive layout,"html, javascript",fetch('/api/data'),Web Development,1
+fetching records,"index, columns, rows, sql",SELECT * FROM users;,Web Development,0
+creating a responsive layout,,<div>Hello</div>,Machine Learning,0
+fixing frontend bugs,"backend, javascript, react, node",console.log('hello'),Machine Learning,0
+coding lang eh,"database, table, javascript",document.getElementById('app'),Databases,0
+writing SQL queries,"table, database",DELETE FROM users WHERE id=1;,Databases,1
+working on predictions,"dataset, model, react",console.log('hello'),Machine Learning,0
+,"accuracy, prediction, columns",DELETE FROM users WHERE id=1;,Machine Learning,0
+testing a neural network,,"model.fit(X, y)",Web Development,0
+trying to fix bugs,"prediction, dataset",predict(X_test),Web Development,0
+debugging rn,"computer, typing",echo 'hi';,Web Development,0
+creating a responsive layout,"node, backend, columns",UPDATE users SET name='Alex';,Web Development,0
+fixing frontend bugs,,<div>Hello</div>,Web Development,1
+testing a neural network,"model, accuracy, ai",loss.backward(),Machine Learning,1
+building a website,"frontend, react",document.getElementById('app'),Web Development,1
+uh fixing stuff,"computer, typing",console.log('test'),Databases,0
+debugging rn,"javascript, frontend, model",predict(X_test),Web Development,0
+debugging rn,"dataset, model, columns",UPDATE users SET name='Alex';,Machine Learning,0
+working on something,"javascript, frontend",document.getElementById('app'),Databases,0
+managing tables,"database, rows, html",document.getElementById('app'),Databases,0
+debugging rn,"typing, programming",echo 'hi';,Databases,0
