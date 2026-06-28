@@ -43,7 +43,6 @@ const GameScreen: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [blink, setBlink] = useState(true);
   
-  // 👇 initialize from navigation state
   const [impostorId, setImpostorId] = useState(initialImpostorId || null);
   const [realTheme, setRealTheme] = useState(initialRealTheme || "");
   const [fakeTheme, setFakeTheme] = useState(initialFakeTheme || "");
@@ -61,7 +60,7 @@ const GameScreen: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Timer
+  // Timer + auto-submit
   useEffect(() => {
     if (isSubmitted) return;
     if (timeLeft <= 0) {
@@ -72,26 +71,14 @@ const GameScreen: React.FC = () => {
     return () => clearTimeout(timer);
   }, [timeLeft, isSubmitted]);
 
-  // 🔥 FIX: Request game state on mount so we don't miss the event
+  // Request game state on mount (only once)
   useEffect(() => {
     if (!roomId) return;
-
     console.log("[GameScreen] Mounting, requesting game state for room:", roomId);
     socket.emit("get_game_state", { roomId });
   }, [roomId]);
 
-  useEffect(() => {
-    if (!roomId) return;
-    // If no initial data, ask server again after a short delay
-    if (!initialRealTheme && !initialFakeTheme) {
-      const timeout = setTimeout(() => {
-        socket.emit("get_game_state", { roomId });
-      }, 500);
-      return () => clearTimeout(timeout);
-    }
-  }, [roomId, initialRealTheme, initialFakeTheme]);
-
-  // Socket listeners
+  // Socket listeners (unchanged, but keep them)
   useEffect(() => {
     const handleGameStarted = (data: any) => {
       console.log("[GameScreen] Received game_started:", data);
@@ -107,20 +94,14 @@ const GameScreen: React.FC = () => {
 
     const handleGameState = (data: any) => {
       console.log("[GameScreen] Received game_state:", data);
-      // Same shape as game_started, used for late joiners / remounts
       setRealTheme(data.real_theme ?? data.realTheme ?? "");
       setFakeTheme(data.fake_theme ?? data.fakeTheme ?? "");
       setImpostorId(data.impostorId ?? data.impostor_id ?? null);
       setPlayers(data.players ?? []);
       setStep(data.step ?? 0);
       setTimeLeft(data.timeLeft ?? 45);
-      // Don't reset answers if game is already in progress
-      if (data.answers) {
-        setAnswers(data.answers);
-      }
-      if (data.isSubmitted) {
-        setIsSubmitted(true);
-      }
+      if (data.answers) setAnswers(data.answers);
+      if (data.isSubmitted) setIsSubmitted(true);
     };
 
     const handleNextQuestion = (data: any) => {
@@ -149,7 +130,7 @@ const GameScreen: React.FC = () => {
     };
 
     socket.on("game_started", handleGameStarted);
-    socket.on("game_state", handleGameState);          // 🔥 NEW
+    socket.on("game_state", handleGameState);
     socket.on("next_question", handleNextQuestion);
     socket.on("round_finished", handleRoundFinished);
     socket.on("impostor_reassigned", handleImpostorReassigned);
@@ -186,9 +167,8 @@ const GameScreen: React.FC = () => {
   const isImpostor = socket.id === impostorId;
   const displayTheme = isImpostor ? fakeTheme : realTheme;
 
-  // Debug overlay (remove later)
   const [showDebug, setShowDebug] = useState(false);
-
+  
   return (
     <div className="relative min-h-screen text-white font-mono selection:bg-[#ff51fa] overflow-hidden">
       <style>{`
@@ -370,64 +350,60 @@ const GameScreen: React.FC = () => {
             step {step + 1}/{QUESTIONS.length}
           </span>
         </div>
+        
+              <main className="flex-1 flex flex-col items-center justify-center px-6 py-10">
+                <div key={step} className="w-full max-w-2xl space-y-5 fade-in">
+                  <div className="text-xs text-[#46465c] tracking-widest">{q.prefix}</div>
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-[#ff51fa] glow-pink text-lg font-bold">{">"}</span>
+                    <h2 className="text-base font-bold text-[#81ecff] glow-cyan uppercase tracking-[0.2em]">
+                      {q.label}
+                    </h2>
+                  </div>
+                  <div className="relative border border-[#46465c]/50 rounded-sm bg-black/50 overflow-hidden">
+                    <div
+                      className="absolute left-0 top-0 bottom-0 w-10 border-r border-[#46465c]/30 flex flex-col items-center pt-3 gap-[1px]"
+                      style={{ background: "rgba(0,0,0,0.3)" }}
+                    >
+                      {Array.from({ length: 9 }).map((_, i) => (
+                        <span key={i} className="text-[#2a2a3c] text-xs leading-6 select-none">
+                          {i + 1}
+                        </span>
+                      ))}
+                    </div>
+                    <textarea
+                      disabled={isSubmitted}
+                      value={answers[q.key as keyof typeof answers]}
+                      onChange={(e) => handleChange(e.target.value)}
+                      className="dev-textarea w-full h-44 pl-14 pr-4 pt-3 pb-3 text-sm"
+                      placeholder={q.placeholder}
+                      spellCheck={false}
+                    />
+                    <div className="flex justify-between items-center px-3 py-1 bg-black/40 border-t border-[#46465c]/30 text-[10px] text-[#2a2a3c]">
+                      <span>UTF-8 · LF</span>
+                      <span>
+                        {answers[q.key as keyof typeof answers].length} chars
+                        {blink && !isSubmitted ? (
+                          <span className="text-[#ff51fa] ml-1">█</span>
+                        ) : (
+                          <span className="text-transparent ml-1">█</span>
+                        )}
+                      </span>
+                    </div>
+                  </div>
 
-        {/* Main */}
-        <main className="flex-1 flex flex-col items-center justify-center px-6 py-10">
-          <div key={step} className="w-full max-w-2xl space-y-5 fade-in">
-            <div className="text-xs text-[#46465c] tracking-widest">{q.prefix}</div>
-            <div className="flex items-baseline gap-3">
-              <span className="text-[#ff51fa] glow-pink text-lg font-bold">{">"}</span>
-              <h2 className="text-base font-bold text-[#81ecff] glow-cyan uppercase tracking-[0.2em]">
-                {q.label}
-              </h2>
-            </div>
-            <div className="relative border border-[#46465c]/50 rounded-sm bg-black/50 overflow-hidden">
-              <div
-                className="absolute left-0 top-0 bottom-0 w-10 border-r border-[#46465c]/30 flex flex-col items-center pt-3 gap-[1px]"
-                style={{ background: "rgba(0,0,0,0.3)" }}
-              >
-                {Array.from({ length: 9 }).map((_, i) => (
-                  <span key={i} className="text-[#2a2a3c] text-xs leading-6 select-none">
-                    {i + 1}
-                  </span>
-                ))}
-              </div>
-              <textarea
-                disabled={isSubmitted}
-                value={answers[q.key as keyof typeof answers]}
-                onChange={(e) => handleChange(e.target.value)}
-                className="dev-textarea w-full h-44 pl-14 pr-4 pt-3 pb-3 text-sm"
-                placeholder={q.placeholder}
-                spellCheck={false}
-              />
-              <div className="flex justify-between items-center px-3 py-1 bg-black/40 border-t border-[#46465c]/30 text-[10px] text-[#2a2a3c]">
-                <span>UTF-8 · LF</span>
-                <span>
-                  {answers[q.key as keyof typeof answers].length} chars
-                  {blink && !isSubmitted ? (
-                    <span className="text-[#ff51fa] ml-1">█</span>
+                  {/* Auto-submit hint (replaces the button) */}
+                  {!isSubmitted ? (
+                    <div className="text-center text-[#46465c] text-xs tracking-wider py-2">
+                      ⏳ Your answer will be submitted automatically when the timer reaches 0
+                    </div>
                   ) : (
-                    <span className="text-transparent ml-1">█</span>
+                    <div className="text-center text-[#28c840] text-xs tracking-wider py-2">
+                      ✓ Answer submitted — waiting for other players...
+                    </div>
                   )}
-                </span>
-              </div>
-            </div>
-            <button
-              onClick={handleSubmit}
-              disabled={isSubmitted}
-              className="submit-btn w-full bg-[#ff51fa] text-[#300030] py-3.5 rounded-sm font-black text-sm uppercase"
-            >
-              {isSubmitted ? (
-                <span className="flex items-center justify-center gap-2">
-                  <span className="opacity-60">{"// awaiting peers..."}</span>
-                  {blink && <span className="text-[#300030]">█</span>}
-                </span>
-              ) : (
-                <span>{"$ submit_answer.sh --step=" + step}</span>
-              )}
-            </button>
-          </div>
-        </main>
+                </div>
+              </main>
 
         {/* Footer */}
         <footer className="px-6 py-2 border-t border-[#46465c]/20 bg-black/20 flex justify-between text-[10px] text-[#2a2a3c]">
