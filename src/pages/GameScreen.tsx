@@ -83,24 +83,17 @@ const GameScreen: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // 🔥 FIXED Timer + auto-submit (uses refs to always get latest values)
   useEffect(() => {
-    if (isSubmittedRef.current) return;
-    
-    if (timeLeft <= 0) {
-      // Submit using current values from refs (no stale closure!)
+    // Auto-submit when timer reaches 0 (triggered by server timer_update)
+    if (!isSubmittedRef.current && timeLeft === 0) {
       socket.emit("submit_answer_step", {
         roomId: roomIdRef.current,
         step: stepRef.current,
         answer: answersRef.current[QUESTIONS[stepRef.current].key as keyof typeof answersRef.current],
       });
       setIsSubmitted(true);
-      return;
     }
-    
-    const timer = setTimeout(() => setTimeLeft((t) => t - 1), 1000);
-    return () => clearTimeout(timer);
-  }, [timeLeft]); // ✅ Only depends on timeLeft - safe!
+  }, [timeLeft]);
 
   // Request game state on mount
   useEffect(() => {
@@ -161,6 +154,21 @@ const GameScreen: React.FC = () => {
       setImpostorId(data.newImpostorId ?? data.impostorId);
     };
 
+        // Add this inside your socket listeners useEffect
+    const handleTimerUpdate = (data: any) => {
+      console.log("[GameScreen] Timer update:", data.timeLeft);
+      setTimeLeft(data.timeLeft);
+    };
+
+    const handleSubmittedConfirmed = (data: any) => {
+      console.log("[GameScreen] Submission confirmed for step:", data.step);
+      setIsSubmitted(true);
+    };
+
+    // Add these to socket.on
+    socket.on("timer_update", handleTimerUpdate);
+    socket.on("submitted_confirmed", handleSubmittedConfirmed);
+
     socket.on("game_started", handleGameStarted);
     socket.on("game_state", handleGameState);
     socket.on("next_question", handleNextQuestion);
@@ -173,6 +181,8 @@ const GameScreen: React.FC = () => {
       socket.off("next_question", handleNextQuestion);
       socket.off("round_finished", handleRoundFinished);
       socket.off("impostor_reassigned", handleImpostorReassigned);
+      socket.off("timer_update", handleTimerUpdate);
+      socket.off("submitted_confirmed", handleSubmittedConfirmed);
     };
   }, [navigate, roomId, players, realTheme]);
 
