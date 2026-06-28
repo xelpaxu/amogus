@@ -9,22 +9,25 @@ type PlayerResult = {
   prediction: string;
   confidence: number;
   is_suspicious: boolean;
-  avatarId?: string;   // 👈 added optional avatarId
+  avatarId?: string;   
 };
 
 type LocationState = {
   results: PlayerResult[];
   theme: string;
+  fake_theme?: string; // 👈 Added to receive fake theme
   impostorId: string;
   roomId: string;
-  players?: { id: string; avatarId: string }[]; // 👈 optional avatar mapping
+  players?: { id: string; avatarId: string }[]; 
 };
 
 const ResultScreen: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const state = location.state as LocationState;
-  const { results, theme, impostorId, roomId, players } = state || {};
+  
+  // 👈 Grab fake_theme here
+  const { results, theme, fake_theme, impostorId, roomId, players } = state || {};
 
   const handleReturnToLobby = () => {
     socket.emit("leave_room_manually", { room_id: roomId });
@@ -48,14 +51,12 @@ const ResultScreen: React.FC = () => {
     );
   }
 
-  // Build a map from playerId to avatarId
   const avatarMap: Record<string, string> = {};
   if (players) {
     players.forEach((p) => {
       avatarMap[p.id] = p.avatarId;
     });
   } else {
-    // Fallback: use avatarId from result if present, or default to first avatar
     results.forEach((p) => {
       avatarMap[p.playerId] = p.avatarId || AVATARS[0].id;
     });
@@ -64,10 +65,9 @@ const ResultScreen: React.FC = () => {
   const impostor = results.find((p) => p.playerId === impostorId);
   const impostorName = impostor?.name || "Unknown";
 
-  // Safe avatar fetcher
   const getSafeAvatar = (avatarId: string) => {
     const avatar = getAvatarById(avatarId);
-    return avatar || AVATARS[0]; // fallback to first avatar
+    return avatar || AVATARS[0]; 
   };
 
   return (
@@ -120,80 +120,88 @@ const ResultScreen: React.FC = () => {
             <h1 className="text-5xl md:text-7xl font-black italic text-[#ffe483] uppercase tracking-tighter glow-pink">
               ROUND <span className="text-[#ff51fa]">FINISHED</span>
             </h1>
-            <div className="mt-4 text-sm uppercase tracking-widest text-[#81ecff]">
-              THEME: <span className="font-bold">{theme.toUpperCase()}</span>
-            </div>
           </div>
 
-          {/* Impostor Reveal */}
+          {/* Impostor Reveal & Theme Comparison */}
           <div className="mb-12 p-6 bg-red-900/30 border-2 border-red-500 rounded-2xl text-center backdrop-blur-md">
             <div className="text-6xl mb-2">🔪</div>
             <div className="text-2xl font-black uppercase tracking-wider text-red-300">
               THE IMPOSTOR WAS
             </div>
             <div className="text-4xl font-black text-white mt-2">{impostorName}</div>
-            <div className="text-xs text-red-200/70 mt-2">
-              {impostor?.is_suspicious ? "✅ Correctly identified as suspicious" : "⚠️ Avoided detection"}
+            
+            {/* 👇 Theme Comparison Box */}
+            <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4 text-sm">
+              <div className="bg-green-900/40 px-5 py-3 rounded-lg border border-green-500/50 flex-1 max-w-xs mx-auto">
+                <span className="text-green-400 uppercase tracking-widest text-xs">Crewmates saw:</span>
+                <div className="text-white font-bold mt-1 text-base">{theme.toUpperCase()}</div>
+              </div>
+              <div className="bg-red-900/40 px-5 py-3 rounded-lg border border-red-500/50 flex-1 max-w-xs mx-auto">
+                <span className="text-red-400 uppercase tracking-widest text-xs">Impostor saw:</span>
+                <div className="text-white font-bold mt-1 text-base">{fake_theme ? fake_theme.toUpperCase() : "UNKNOWN"}</div>
+              </div>
+            </div>
+
+            <div className="text-xs text-red-200/70 mt-4">
+              {impostor?.is_suspicious ? "✅ Model correctly flagged as suspicious" : "⚠️ Model failed to detect low similarity"}
             </div>
           </div>
 
           {/* Players Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {results.map((player) => {
-            const isImpostor = player.playerId === impostorId;
-            const avatar = getSafeAvatar(player.avatarId || "cyber");
-            
-            // Convert ML similarity (e.g. 0.92) to a percentage for the UI
-            const similarityPercent = (player.confidence * 100).toFixed(1);
-            
-            return (
-              <div
-                key={player.playerId}
-                className={`result-card rounded-xl p-5 border-2 backdrop-blur-xl ${
-                  isImpostor
-                    ? "bg-red-950/40 border-red-500 shadow-[0_0_20px_rgba(255,0,0,0.3)]"
-                    : "bg-[#17172f]/60 border-white/10"
-                }`}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#81ecff] bg-black/50">
-                    <img src={avatar.image} alt={avatar.alt} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <span className="font-black text-lg text-white">{player.name}</span>
-                      {isImpostor ? (
-                        <span className="text-xs bg-red-600 text-white px-2 py-0.5 rounded-full uppercase font-bold">Impostor</span>
-                      ) : (
-                        <span className="text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full uppercase">Crewmate</span>
-                      )}
+              const isImpostor = player.playerId === impostorId;
+              const avatar = getSafeAvatar(player.avatarId || "cyber");
+              const similarityPercent = (player.confidence * 100).toFixed(1);
+              
+              return (
+                <div
+                  key={player.playerId}
+                  className={`result-card rounded-xl p-5 border-2 backdrop-blur-xl ${
+                    isImpostor
+                      ? "bg-red-950/40 border-red-500 shadow-[0_0_20px_rgba(255,0,0,0.3)]"
+                      : "bg-[#17172f]/60 border-white/10"
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#81ecff] bg-black/50">
+                      <img src={avatar.image} alt={avatar.alt} className="w-full h-full object-cover" />
                     </div>
-                    <div className="mt-2 text-xs text-gray-300 space-y-1">
-                      {/* Show actual ML Similarity Score */}
-                      <div className="flex justify-between items-center">
-                        <span>Group Similarity:</span>
-                        <span className={`font-mono font-bold ${parseFloat(similarityPercent) < 85 ? "text-red-400" : "text-green-400"}`}>
-                          {similarityPercent}%
-                        </span>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="font-black text-lg text-white">{player.name}</span>
+                        {isImpostor ? (
+                          <span className="text-xs bg-red-600 text-white px-2 py-0.5 rounded-full uppercase font-bold">Impostor</span>
+                        ) : (
+                          <span className="text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full uppercase">Crewmate</span>
+                        )}
                       </div>
-                      <div className="w-full bg-gray-700 rounded-full h-1.5 mt-1">
-                        <div 
-                          className={`h-1.5 rounded-full ${parseFloat(similarityPercent) < 85 ? "bg-red-500" : "bg-green-500"}`}
-                          style={{ width: `${similarityPercent}%` }}
-                        ></div>
-                      </div>
-                      <div className="flex justify-between mt-1">
-                        <span>Verdict:</span>
-                        <span className={parseFloat(similarityPercent) < 85 ? "text-red-400 font-bold" : "text-green-400"}>
-                          {parseFloat(similarityPercent) < 85 ? "SUSPICIOUS" : "NORMAL"}
-                        </span>
+                      <div className="mt-2 text-xs text-gray-300 space-y-1">
+                        <div className="flex justify-between items-center">
+                          <span>Group Similarity:</span>
+                          <span className={`font-mono font-bold ${parseFloat(similarityPercent) < 85 ? "text-red-400" : "text-green-400"}`}>
+                            {similarityPercent}%
+                          </span>
+                        </div>
+                        <div className="w-full bg-gray-700 rounded-full h-1.5 mt-1">
+                          <div 
+                            className={`h-1.5 rounded-full ${parseFloat(similarityPercent) < 85 ? "bg-red-500" : "bg-green-500"}`}
+                            style={{ width: `${similarityPercent}%` }}
+                          ></div>
+                        </div>
+                        <div className="flex justify-between mt-1">
+                          <span>Verdict:</span>
+                          <span className={parseFloat(similarityPercent) < 85 ? "text-red-400 font-bold" : "text-green-400"}>
+                            {parseFloat(similarityPercent) < 85 ? "SUSPICIOUS" : "NORMAL"}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div> 
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -213,7 +221,7 @@ const ResultScreen: React.FC = () => {
         </div>
       </div>
     </div>
-    </div>
+    // 👈 The extra </div> that was crashing your app is now GONE
   );
 };
 

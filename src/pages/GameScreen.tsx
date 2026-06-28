@@ -141,10 +141,11 @@ const GameScreen: React.FC = () => {
       navigate(`/result/${roomId}`, {
         state: {
           results: data.results,
-          theme: realTheme,
+          theme: data.theme || realTheme,      
+          fake_theme: data.fake_theme || fakeTheme, 
           impostorId: data.impostorId,
           roomId,
-          players: players,
+          players: data.results // The backend now includes avatarId directly in results!
         },
       });
     };
