@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { socket } from "../socket";
 import bgvid from "../../assets/ui-assets/bg.mp4";
@@ -54,31 +54,62 @@ const GameScreen: React.FC = () => {
     code: "",
   });
 
+  // 🔥 REFS to avoid stale closures in timer
+  const answersRef = useRef(answers);
+  const stepRef = useRef(step);
+  const isSubmittedRef = useRef(isSubmitted);
+  const roomIdRef = useRef(roomId);
+
+  // Update refs whenever state changes
+  useEffect(() => {
+    answersRef.current = answers;
+  }, [answers]);
+  
+  useEffect(() => {
+    stepRef.current = step;
+  }, [step]);
+  
+  useEffect(() => {
+    isSubmittedRef.current = isSubmitted;
+  }, [isSubmitted]);
+  
+  useEffect(() => {
+    roomIdRef.current = roomId;
+  }, [roomId]);
+
   // Blinking cursor effect
   useEffect(() => {
     const interval = setInterval(() => setBlink((b) => !b), 530);
     return () => clearInterval(interval);
   }, []);
 
-  // Timer + auto-submit
+  // 🔥 FIXED Timer + auto-submit (uses refs to always get latest values)
   useEffect(() => {
-    if (isSubmitted) return;
+    if (isSubmittedRef.current) return;
+    
     if (timeLeft <= 0) {
-      handleSubmit();
+      // Submit using current values from refs (no stale closure!)
+      socket.emit("submit_answer_step", {
+        roomId: roomIdRef.current,
+        step: stepRef.current,
+        answer: answersRef.current[QUESTIONS[stepRef.current].key as keyof typeof answersRef.current],
+      });
+      setIsSubmitted(true);
       return;
     }
+    
     const timer = setTimeout(() => setTimeLeft((t) => t - 1), 1000);
     return () => clearTimeout(timer);
-  }, [timeLeft, isSubmitted]);
+  }, [timeLeft]); // ✅ Only depends on timeLeft - safe!
 
-  // Request game state on mount (only once)
+  // Request game state on mount
   useEffect(() => {
     if (!roomId) return;
     console.log("[GameScreen] Mounting, requesting game state for room:", roomId);
     socket.emit("get_game_state", { roomId });
   }, [roomId]);
 
-  // Socket listeners (unchanged, but keep them)
+  // Socket listeners
   useEffect(() => {
     const handleGameStarted = (data: any) => {
       console.log("[GameScreen] Received game_started:", data);
@@ -109,6 +140,7 @@ const GameScreen: React.FC = () => {
       setStep(data.step);
       setTimeLeft(data.timeLeft ?? 45);
       setIsSubmitted(false);
+      // Reset answers for new question? No - keep existing for next step
     };
 
     const handleRoundFinished = (data: any) => {
@@ -143,16 +175,6 @@ const GameScreen: React.FC = () => {
       socket.off("impostor_reassigned", handleImpostorReassigned);
     };
   }, [navigate, roomId, players, realTheme]);
-
-  const handleSubmit = () => {
-    if (isSubmitted) return;
-    setIsSubmitted(true);
-    socket.emit("submit_answer_step", {
-      roomId,
-      step,
-      answer: answers[QUESTIONS[step].key as keyof typeof answers],
-    });
-  };
 
   const handleChange = (value: string) => {
     const key = QUESTIONS[step].key;
@@ -232,23 +254,6 @@ const GameScreen: React.FC = () => {
           to { opacity: 1; transform: translateY(0); }
         }
         .fade-in { animation: fadeSlide 0.35s ease forwards; }
-        .submit-btn {
-          position: relative;
-          overflow: hidden;
-          transition: all 0.2s;
-          letter-spacing: 0.15em;
-        }
-        .submit-btn::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
-          transform: translateX(-100%);
-          transition: transform 0.4s;
-        }
-        .submit-btn:hover:not(:disabled)::before { transform: translateX(100%); }
-        .submit-btn:hover:not(:disabled) { filter: brightness(1.1); box-shadow: 0 0 20px rgba(255,81,250,0.4); }
-        .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
       `}</style>
 
       {/* Debug panel - click top-left dots to toggle */}
@@ -261,6 +266,8 @@ const GameScreen: React.FC = () => {
           <div>impostorId: "{impostorId}"</div>
           <div>isImpostor: {String(isImpostor)}</div>
           <div>step: {step}</div>
+          <div>timeLeft: {timeLeft}</div>
+          <div>isSubmitted: {String(isSubmitted)}</div>
           <div>socket.connected: {String(socket.connected)}</div>
         </div>
       )}
@@ -351,59 +358,59 @@ const GameScreen: React.FC = () => {
           </span>
         </div>
         
-              <main className="flex-1 flex flex-col items-center justify-center px-6 py-10">
-                <div key={step} className="w-full max-w-2xl space-y-5 fade-in">
-                  <div className="text-xs text-[#46465c] tracking-widest">{q.prefix}</div>
-                  <div className="flex items-baseline gap-3">
-                    <span className="text-[#ff51fa] glow-pink text-lg font-bold">{">"}</span>
-                    <h2 className="text-base font-bold text-[#81ecff] glow-cyan uppercase tracking-[0.2em]">
-                      {q.label}
-                    </h2>
-                  </div>
-                  <div className="relative border border-[#46465c]/50 rounded-sm bg-black/50 overflow-hidden">
-                    <div
-                      className="absolute left-0 top-0 bottom-0 w-10 border-r border-[#46465c]/30 flex flex-col items-center pt-3 gap-[1px]"
-                      style={{ background: "rgba(0,0,0,0.3)" }}
-                    >
-                      {Array.from({ length: 9 }).map((_, i) => (
-                        <span key={i} className="text-[#2a2a3c] text-xs leading-6 select-none">
-                          {i + 1}
-                        </span>
-                      ))}
-                    </div>
-                    <textarea
-                      disabled={isSubmitted}
-                      value={answers[q.key as keyof typeof answers]}
-                      onChange={(e) => handleChange(e.target.value)}
-                      className="dev-textarea w-full h-44 pl-14 pr-4 pt-3 pb-3 text-sm"
-                      placeholder={q.placeholder}
-                      spellCheck={false}
-                    />
-                    <div className="flex justify-between items-center px-3 py-1 bg-black/40 border-t border-[#46465c]/30 text-[10px] text-[#2a2a3c]">
-                      <span>UTF-8 · LF</span>
-                      <span>
-                        {answers[q.key as keyof typeof answers].length} chars
-                        {blink && !isSubmitted ? (
-                          <span className="text-[#ff51fa] ml-1">█</span>
-                        ) : (
-                          <span className="text-transparent ml-1">█</span>
-                        )}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Auto-submit hint (replaces the button) */}
-                  {!isSubmitted ? (
-                    <div className="text-center text-[#46465c] text-xs tracking-wider py-2">
-                      ⏳ Your answer will be submitted automatically when the timer reaches 0
-                    </div>
+        <main className="flex-1 flex flex-col items-center justify-center px-6 py-10">
+          <div key={step} className="w-full max-w-2xl space-y-5 fade-in">
+            <div className="text-xs text-[#46465c] tracking-widest">{q.prefix}</div>
+            <div className="flex items-baseline gap-3">
+              <span className="text-[#ff51fa] glow-pink text-lg font-bold">{">"}</span>
+              <h2 className="text-base font-bold text-[#81ecff] glow-cyan uppercase tracking-[0.2em]">
+                {q.label}
+              </h2>
+            </div>
+            <div className="relative border border-[#46465c]/50 rounded-sm bg-black/50 overflow-hidden">
+              <div
+                className="absolute left-0 top-0 bottom-0 w-10 border-r border-[#46465c]/30 flex flex-col items-center pt-3 gap-[1px]"
+                style={{ background: "rgba(0,0,0,0.3)" }}
+              >
+                {Array.from({ length: 9 }).map((_, i) => (
+                  <span key={i} className="text-[#2a2a3c] text-xs leading-6 select-none">
+                    {i + 1}
+                  </span>
+                ))}
+              </div>
+              <textarea
+                disabled={isSubmitted}
+                value={answers[q.key as keyof typeof answers]}
+                onChange={(e) => handleChange(e.target.value)}
+                className="dev-textarea w-full h-44 pl-14 pr-4 pt-3 pb-3 text-sm"
+                placeholder={q.placeholder}
+                spellCheck={false}
+              />
+              <div className="flex justify-between items-center px-3 py-1 bg-black/40 border-t border-[#46465c]/30 text-[10px] text-[#2a2a3c]">
+                <span>UTF-8 · LF</span>
+                <span>
+                  {answers[q.key as keyof typeof answers].length} chars
+                  {blink && !isSubmitted ? (
+                    <span className="text-[#ff51fa] ml-1">█</span>
                   ) : (
-                    <div className="text-center text-[#28c840] text-xs tracking-wider py-2">
-                      ✓ Answer submitted — waiting for other players...
-                    </div>
+                    <span className="text-transparent ml-1">█</span>
                   )}
-                </div>
-              </main>
+                </span>
+              </div>
+            </div>
+
+            {/* Auto-submit hint */}
+            {!isSubmitted ? (
+              <div className="text-center text-[#46465c] text-xs tracking-wider py-2">
+                ⏳ Your answer will be submitted automatically when the timer reaches 0
+              </div>
+            ) : (
+              <div className="text-center text-[#28c840] text-xs tracking-wider py-2">
+                ✓ Answer submitted — waiting for other players...
+              </div>
+            )}
+          </div>
+        </main>
 
         {/* Footer */}
         <footer className="px-6 py-2 border-t border-[#46465c]/20 bg-black/20 flex justify-between text-[10px] text-[#2a2a3c]">
