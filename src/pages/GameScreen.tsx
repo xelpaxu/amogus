@@ -35,18 +35,16 @@ const GameScreen: React.FC = () => {
     realTheme: initialRealTheme,
     fakeTheme: initialFakeTheme,
     impostorId: initialImpostorId,
-    players: initialPlayers
   } = location.state || {};
 
   const [step, setStep] = useState(0);
   const [timeLeft, setTimeLeft] = useState(45);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedStep, setSubmittedStep] = useState<number | null>(null);
   const [blink, setBlink] = useState(true);
   
   const [impostorId, setImpostorId] = useState(initialImpostorId || null);
   const [realTheme, setRealTheme] = useState(initialRealTheme || "");
   const [fakeTheme, setFakeTheme] = useState(initialFakeTheme || "");
-  const [players, setPlayers] = useState(initialPlayers || []);
 
   const [answers, setAnswers] = useState({
     sentence: "",
@@ -57,7 +55,7 @@ const GameScreen: React.FC = () => {
   // 🔥 REFS to avoid stale closures in timer
   const answersRef = useRef(answers);
   const stepRef = useRef(step);
-  const isSubmittedRef = useRef(isSubmitted);
+  const submittedStepRef = useRef<number | null>(submittedStep);
   const roomIdRef = useRef(roomId);
 
   // Update refs whenever state changes
@@ -70,8 +68,8 @@ const GameScreen: React.FC = () => {
   }, [step]);
   
   useEffect(() => {
-    isSubmittedRef.current = isSubmitted;
-  }, [isSubmitted]);
+    submittedStepRef.current = submittedStep;
+  }, [submittedStep]);
   
   useEffect(() => {
     roomIdRef.current = roomId;
@@ -82,18 +80,6 @@ const GameScreen: React.FC = () => {
     const interval = setInterval(() => setBlink((b) => !b), 530);
     return () => clearInterval(interval);
   }, []);
-
-  useEffect(() => {
-    // Auto-submit when timer reaches 0 (triggered by server timer_update)
-    if (!isSubmittedRef.current && timeLeft === 0) {
-      socket.emit("submit_answer_step", {
-        roomId: roomIdRef.current,
-        step: stepRef.current,
-        answer: answersRef.current[QUESTIONS[stepRef.current].key as keyof typeof answersRef.current],
-      });
-      setIsSubmitted(true);
-    }
-  }, [timeLeft]);
 
   // Request game state on mount
   useEffect(() => {
@@ -109,10 +95,9 @@ const GameScreen: React.FC = () => {
       setRealTheme(data.real_theme ?? data.realTheme ?? "");
       setFakeTheme(data.fake_theme ?? data.fakeTheme ?? "");
       setImpostorId(data.impostorId ?? data.impostor_id ?? null);
-      setPlayers(data.players ?? []);
       setStep(data.step ?? 0);
       setTimeLeft(data.timeLeft ?? 45);
-      setIsSubmitted(false);
+      setSubmittedStep(null);
       setAnswers({ sentence: "", keywords: "", code: "" });
     };
 
@@ -121,18 +106,19 @@ const GameScreen: React.FC = () => {
       setRealTheme(data.real_theme ?? data.realTheme ?? "");
       setFakeTheme(data.fake_theme ?? data.fakeTheme ?? "");
       setImpostorId(data.impostorId ?? data.impostor_id ?? null);
-      setPlayers(data.players ?? []);
       setStep(data.step ?? 0);
       setTimeLeft(data.timeLeft ?? 45);
       if (data.answers) setAnswers(data.answers);
-      if (data.isSubmitted) setIsSubmitted(true);
+      if (data.isSubmitted) {
+        setSubmittedStep(data.step ?? 0);
+      }
     };
 
     const handleNextQuestion = (data: any) => {
       console.log("[GameScreen] Received next_question:", data);
       setStep(data.step);
       setTimeLeft(data.timeLeft ?? 45);
-      setIsSubmitted(false);
+      setSubmittedStep(null);
       // Reset answers for new question? No - keep existing for next step
     };
 
@@ -157,13 +143,16 @@ const GameScreen: React.FC = () => {
 
         // Add this inside your socket listeners useEffect
     const handleTimerUpdate = (data: any) => {
-      console.log("[GameScreen] Timer update:", data.timeLeft);
+      if (data.step !== stepRef.current) return;
+
+      if (data.timeLeft < 0) return;
+
       setTimeLeft(data.timeLeft);
     };
 
     const handleSubmittedConfirmed = (data: any) => {
       console.log("[GameScreen] Submission confirmed for step:", data.step);
-      setIsSubmitted(true);
+      setSubmittedStep(data.step);
     };
 
     // Add these to socket.on
@@ -185,11 +174,19 @@ const GameScreen: React.FC = () => {
       socket.off("timer_update", handleTimerUpdate);
       socket.off("submitted_confirmed", handleSubmittedConfirmed);
     };
-  }, [navigate, roomId, players, realTheme]);
+  }, [navigate, roomId]);
 
   const handleChange = (value: string) => {
-    const key = QUESTIONS[step].key;
-    setAnswers((prev) => ({ ...prev, [key]: value }));
+    const currentQuestion = QUESTIONS[stepRef.current];
+
+    if (!currentQuestion) return;
+
+    const key = currentQuestion.key;
+
+    setAnswers((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
   };
 
   const timerPct = (timeLeft / 45) * 100;
@@ -201,6 +198,7 @@ const GameScreen: React.FC = () => {
   const displayTheme = isImpostor ? fakeTheme : realTheme;
 
   const [showDebug, setShowDebug] = useState(false);
+  const isSubmitted = submittedStep === step;
   
   return (
     <div className="relative min-h-screen text-white font-mono selection:bg-[#ff51fa] overflow-hidden">
