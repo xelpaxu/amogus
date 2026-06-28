@@ -140,62 +140,60 @@ const ResultScreen: React.FC = () => {
           {/* Players Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {results.map((player) => {
-              const isImpostor = player.playerId === impostorId;
-              const avatarId = avatarMap[player.playerId] || AVATARS[0].id;
-              const avatar = getSafeAvatar(avatarId);
-              return (
-                <div
-                  key={player.playerId}
-                  className={`result-card rounded-xl p-5 border-2 backdrop-blur-xl ${
-                    isImpostor
-                      ? "bg-red-950/40 border-red-500 shadow-[0_0_20px_rgba(255,0,0,0.3)]"
-                      : "bg-[#17172f]/60 border-white/10"
-                  }`}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#81ecff] bg-black/50">
-                      <img
-                        src={avatar.image}
-                        alt={avatar.alt}
-                        className="w-full h-full object-cover"
-                      />
+            const isImpostor = player.playerId === impostorId;
+            const avatar = getSafeAvatar(player.avatarId || "cyber");
+            
+            // Convert ML similarity (e.g. 0.92) to a percentage for the UI
+            const similarityPercent = (player.confidence * 100).toFixed(1);
+            
+            return (
+              <div
+                key={player.playerId}
+                className={`result-card rounded-xl p-5 border-2 backdrop-blur-xl ${
+                  isImpostor
+                    ? "bg-red-950/40 border-red-500 shadow-[0_0_20px_rgba(255,0,0,0.3)]"
+                    : "bg-[#17172f]/60 border-white/10"
+                }`}
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#81ecff] bg-black/50">
+                    <img src={avatar.image} alt={avatar.alt} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="font-black text-lg text-white">{player.name}</span>
+                      {isImpostor ? (
+                        <span className="text-xs bg-red-600 text-white px-2 py-0.5 rounded-full uppercase font-bold">Impostor</span>
+                      ) : (
+                        <span className="text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full uppercase">Crewmate</span>
+                      )}
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="font-black text-lg text-white">{player.name}</span>
-                        {isImpostor && (
-                          <span className="text-xs bg-red-600 text-white px-2 py-0.5 rounded-full uppercase font-bold">
-                            Impostor
-                          </span>
-                        )}
-                        {!isImpostor && (
-                          <span className="text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full uppercase">
-                            Crewmate
-                          </span>
-                        )}
+                    <div className="mt-2 text-xs text-gray-300 space-y-1">
+                      {/* Show actual ML Similarity Score */}
+                      <div className="flex justify-between items-center">
+                        <span>Group Similarity:</span>
+                        <span className={`font-mono font-bold ${parseFloat(similarityPercent) < 85 ? "text-red-400" : "text-green-400"}`}>
+                          {similarityPercent}%
+                        </span>
                       </div>
-                      <div className="mt-2 text-xs text-gray-300">
-                        <div className="flex justify-between">
-                          <span>ML Prediction:</span>
-                          <span className="font-mono">{player.prediction}</span>
-                        </div>
-                        <div className="flex justify-between mt-1">
-                          <span>Confidence:</span>
-                          <span className="font-mono">{(player.confidence * 100).toFixed(0)}%</span>
-                        </div>
-                        <div className="flex justify-between mt-1">
-                          <span>Suspicious:</span>
-                          <span className={player.is_suspicious ? "text-red-400" : "text-green-400"}>
-                            {player.is_suspicious ? "YES" : "NO"}
-                          </span>
-                        </div>
+                      <div className="w-full bg-gray-700 rounded-full h-1.5 mt-1">
+                        <div 
+                          className={`h-1.5 rounded-full ${parseFloat(similarityPercent) < 85 ? "bg-red-500" : "bg-green-500"}`}
+                          style={{ width: `${similarityPercent}%` }}
+                        ></div>
+                      </div>
+                      <div className="flex justify-between mt-1">
+                        <span>Verdict:</span>
+                        <span className={parseFloat(similarityPercent) < 85 ? "text-red-400 font-bold" : "text-green-400"}>
+                          {parseFloat(similarityPercent) < 85 ? "SUSPICIOUS" : "NORMAL"}
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -214,6 +212,7 @@ const ResultScreen: React.FC = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
