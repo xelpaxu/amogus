@@ -10,6 +10,7 @@ import {
   Lock,
   ArrowLeft,
 } from 'lucide-react';
+import bgvid from '../../assets/ui-assets/bg.mp4';
 
 interface Server {
   id: string;
@@ -45,12 +46,13 @@ const GameLobby: React.FC = () => {
     maxPlayers: 16,
   });
 
+  const API_URL = import.meta.env.VITE_GAME_API_URL;
+
   // Inside your GameLobby component
   useEffect(() => {
     const fetchServers = async () => {
       try {
-        // FIX: Ensure this is port 8000, NOT 5000
-        const response = await fetch('http://localhost:8000/api/servers');
+        const response = await fetch(`${API_URL}/api/servers`);
         if (!response.ok) throw new Error("Server not responding");
         const data = await response.json();
         setServers(data);
@@ -103,9 +105,31 @@ const GameLobby: React.FC = () => {
         .tonal-carving-no-borders { background-color: #0c0c1f; }
         .server-card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .server-card-hover:hover { transform: translateY(-4px); box-shadow: 0 0 30px rgba(255, 81, 250, 0.3); }
+
+        .bg-gradient-radial {
+          background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
+        }
       `}</style>
 
-      <div className="min-h-screen bg-[#0c0c1f] text-[#e5e3ff] font-body selection:bg-[#ff51fa] selection:text-white overflow-hidden">
+      {/* ── Background: A/B crossfade video ── */}
+      <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none">
+        <video
+          className="absolute w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src={bgvid} type="video/mp4" />
+        </video>
+
+        {/* Dark cinematic overlay */}
+        <div className="absolute inset-0 bg-black/60" />
+
+        {/* Radial cyber glow */}
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/20 to-black/80" />
+      </div>
+      <div className="relative min-h-screen text-[#e5e3ff] font-body selection:bg-[#ff51fa] selection:text-white overflow-hidden">
         <header className="w-full top-0 px-6 py-4 flex justify-between items-center max-w-screen-2xl mx-auto tonal-carving-no-borders z-50 border-b border-[#46465c]/20">
           <div className="flex items-center gap-3">
             {view === 'create' && (
@@ -114,7 +138,7 @@ const GameLobby: React.FC = () => {
               </button>
             )}
             <div className="text-2xl font-black text-[#ffe483] uppercase italic font-headline tracking-tight">
-              {view === 'servers' ? 'SYNT-ASK SERVERS' : 'CREATE SERVER'}
+              {view === 'servers' ? 'Servers' : 'CREATE SERVER'}
             </div>
           </div>
           <div className="flex items-center gap-6">
@@ -135,10 +159,10 @@ const GameLobby: React.FC = () => {
               <div className="space-y-6">
                 <div>
                   <h1 className="font-headline font-black text-4xl md:text-5xl tracking-tighter text-[#ffe483] italic uppercase">
-                    FIND A <span className="text-[#81ecff]">SERVER</span>
+                    TI DIN KA <span className="text-[#81ecff]">MASULOD</span>
                   </h1>
                   <p className="text-[#aaa8c3] font-body font-bold tracking-widest uppercase text-sm mt-2">
-                    {filteredServers.length} servers available
+                    {filteredServers.length} suludlan available
                   </p>
                 </div>
 

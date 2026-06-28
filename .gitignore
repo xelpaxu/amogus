@@ -25,3 +25,5 @@ dist-ssr
 
 servers/saved_model
 servers/impostor_model
+
+.env

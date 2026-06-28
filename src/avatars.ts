@@ -19,56 +19,56 @@ export interface Avatar {
 export const AVATARS: Avatar[] = [
   {
     id: 'syntax',
-    name: 'SYNTAX',
+    name: 'UY ASO',
     image: avatar1,
     alt: 'vibrant 2d cartoon fox avatar with orange fur and a mischievous grin on a cosmic dark blue background',
     color: 'primary'
   },    
   {
     id: 'buffer',
-    name: 'BUFFER',
+    name: 'NCOV STARTER',
     image: avatar2,
     alt: 'sleek futuristic 2d robot avatar with cyan neon lights and a digital display face on a dark background',
     color: 'tertiary'
   },
   {
     id: 'binary',
-    name: 'BINARY',
+    name: 'KIKO BARZAGA',
     image: avatar3,
     alt: 'mystical 2d wizard avatar with a purple hat and glowing magic staff on a cosmic dark background',
     color: 'secondary'
   },
   {
     id: 'uplink',
-    name: 'UPLINK',
+    name: 'UNLI REGEN',
     image: avatar4,
     alt: 'cute spooky 2d ghost avatar with glowing eyes and a soft spectral blue outline on a dark background',
     color: 'primary'
   },
     {
     id: 'vector',
-    name: 'VECTOR',
+    name: 'VECTOR MAGTANGGOL',
     image: avatar5,
     alt: 'vibrant 2d cartoon fox avatar with orange fur and a mischievous grin on a cosmic dark blue background',
     color: 'primary'
   },    
   {
     id: 'patch',
-    name: 'PATCH',
+    name: 'SUSHIII',
     image: avatar6,
     alt: 'sleek futuristic 2d robot avatar with cyan neon lights and a digital display face on a dark background',
     color: 'tertiary'
   },
   {
     id: 'kernel',
-    name: 'KERNEL',
+    name: 'LADY UNICORN',
     image: avatar7,
     alt: 'mystical 2d wizard avatar with a purple hat and glowing magic staff on a cosmic dark background',
     color: 'secondary'
   },
   {
     id: 'cobalt',
-    name: 'COBALT',
+    name: 'AGILA NG BUHAY',
     image: avatar8,
     alt: 'cute spooky 2d ghost avatar with glowing eyes and a soft spectral blue outline on a dark background',
     color: 'primary'
