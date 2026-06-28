@@ -123,15 +123,19 @@ const GameScreen: React.FC = () => {
     };
 
     const handleRoundFinished = (data: any) => {
-      console.log("[GameScreen] Received round_finished:", data);
+      console.log("[GameScreen] Received round_finished from server:", data);
+      
+      // Make sure your backend wraps the raw Flask keys or names them exactly like this:
       navigate(`/result/${roomId}`, {
         state: {
-          results: data.results,
-          theme: data.theme || realTheme,      
-          fake_theme: data.fake_theme || fakeTheme, 
-          impostorId: data.impostorId,
+          results: data.results,                     // Flask parsed evaluation data: array of { name, group_similarity }
+          impostor: data.impostor,                   // Name of the caught impostor string
+          similarity_matrix: data.similarity_matrix, // Full cross-correlation array from Python
+          theme: data.theme || realTheme,            
+          fake_theme: data.fake_theme || fakeTheme,  
           roomId,
-          players: data.results // The backend now includes avatarId directly in results!
+          // Pass the complete game-state ledger so the text boxes can display the code/sentence strings
+          players: data.players || data.submissions || [] 
         },
       });
     };
