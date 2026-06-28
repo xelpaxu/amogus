@@ -30,16 +30,24 @@ const QUESTIONS = [
 const GameScreen: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { roomId } = location.state || {};
+  const { 
+    roomId,
+    realTheme: initialRealTheme,
+    fakeTheme: initialFakeTheme,
+    impostorId: initialImpostorId,
+    players: initialPlayers
+  } = location.state || {};
 
   const [step, setStep] = useState(0);
   const [timeLeft, setTimeLeft] = useState(45);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [blink, setBlink] = useState(true);
-  const [impostorId, setImpostorId] = useState<string | null>(null);
-  const [realTheme, setRealTheme] = useState("");
-  const [fakeTheme, setFakeTheme] = useState("");
-  const [players, setPlayers] = useState<{ id: string; name: string; avatarId: string }[]>([]);
+  
+  // 👇 initialize from navigation state
+  const [impostorId, setImpostorId] = useState(initialImpostorId || null);
+  const [realTheme, setRealTheme] = useState(initialRealTheme || "");
+  const [fakeTheme, setFakeTheme] = useState(initialFakeTheme || "");
+  const [players, setPlayers] = useState(initialPlayers || []);
 
   const [answers, setAnswers] = useState({
     sentence: "",
@@ -71,6 +79,17 @@ const GameScreen: React.FC = () => {
     console.log("[GameScreen] Mounting, requesting game state for room:", roomId);
     socket.emit("get_game_state", { roomId });
   }, [roomId]);
+
+  useEffect(() => {
+    if (!roomId) return;
+    // If no initial data, ask server again after a short delay
+    if (!initialRealTheme && !initialFakeTheme) {
+      const timeout = setTimeout(() => {
+        socket.emit("get_game_state", { roomId });
+      }, 500);
+      return () => clearTimeout(timeout);
+    }
+  }, [roomId, initialRealTheme, initialFakeTheme]);
 
   // Socket listeners
   useEffect(() => {
