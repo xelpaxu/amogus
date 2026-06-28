@@ -46,8 +46,8 @@ const GameLobby: React.FC = () => {
     maxPlayers: 16,
   });
 
-  const API_URL = import.meta.env.VITE_GAME_API_URL;
-
+  const API_URL = import.meta.env.VITE_GAME_SERVER_URL;
+  
   // Inside your GameLobby component
   useEffect(() => {
     const fetchServers = async () => {
