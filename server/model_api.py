@@ -12,10 +12,13 @@ import os
 
 app = Flask(__name__)
 
-# Directory path pointing to the fine-tuned Siamese DistilBERT weights
-MODEL_PATH = r"train/impostor_model"
+from huggingface_hub import snapshot_download
+HF_REPO = "xelpaxu/syntask-model"
 
-print("🧠 Initializing system and loading language model weights...")
+print("📥 Downloading model from Hugging Face...")
+
+MODEL_PATH = snapshot_download(repo_id=HF_REPO, local_files_only=False)
+
 tokenizer = DistilBertTokenizer.from_pretrained(MODEL_PATH)
 model = DistilBertModel.from_pretrained(MODEL_PATH)
 
