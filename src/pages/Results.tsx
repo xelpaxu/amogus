@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import {
-  FiAlertOctagon, FiUser, FiCode, FiTerminal,
+  FiAlertOctagon, FiUser, FiCode, FiTerminal, FiHash,
   FiActivity, FiZap, FiCornerDownRight, FiChevronRight,
   FiHome, FiEye, FiCrosshair, FiRadio, FiLock, FiUnlock,
   FiClock, FiLayers, FiServer, FiGitBranch,
@@ -21,7 +21,7 @@ interface PlayerResult {
   prediction: "IMPOSTOR" | "CREWMATE"; group_similarity: number; is_suspicious: boolean;
 }
 interface PlayerSubmission {
-  id: string; name: string; avatarId: string; sentence: string; code: string;
+  id: string; name: string; avatarId: string; sentence: string; keywords: string; code: string;
 }
 interface Particle {
   id: number; x: number; y: number; size: string;
@@ -701,6 +701,15 @@ const ResultScreen: React.FC = () => {
                             {auditPlayer.sentence || <span className="text-gray-700 italic">// No input recorded</span>}
                           </div>
                         </div>
+                        <div className="space-y-2">
+                        <div className="text-[9px] text-gray-600 uppercase tracking-widest flex items-center gap-1.5">
+                          <FiHash className="w-3 h-3" /> prompt_02 — Keywords
+                        </div>
+                        <div className="rounded-lg border px-4 py-3 text-xs text-gray-300 leading-relaxed min-h-[48px]" 
+                            style={{ background: "rgba(0,0,0,0.4)", borderColor: "rgba(255,255,255,0.06)" }}>
+                          {auditPlayer.keywords || <span className="text-gray-700 italic">// No keywords recorded</span>}
+                        </div>
+                      </div>
                         <div className="space-y-2">
                           <div className="text-[9px] text-gray-600 uppercase tracking-widest flex items-center gap-1.5"><FiCode className="w-3 h-3" /> prompt_03 — Code Sample</div>
                           <div className="relative rounded-lg border overflow-hidden" style={{ background: "rgba(0,0,8,0.7)", borderColor: "rgba(255,255,255,0.06)" }}>
