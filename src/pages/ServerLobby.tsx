@@ -47,7 +47,7 @@ const GameLobby: React.FC = () => {
   });
 
   const API_URL = import.meta.env.VITE_GAME_SERVER_URL;
-  
+
   // Inside your GameLobby component
   useEffect(() => {
     const fetchServers = async () => {
@@ -159,7 +159,7 @@ const GameLobby: React.FC = () => {
               <div className="space-y-6">
                 <div>
                   <h1 className="font-headline font-black text-4xl md:text-5xl tracking-tighter text-[#ffe483] italic uppercase">
-                    TI DIN KA <span className="text-[#81ecff]">MASULOD</span>
+                    choose a server to <span className="text-[#81ecff]">join</span>
                   </h1>
                   <p className="text-[#aaa8c3] font-body font-bold tracking-widest uppercase text-sm mt-2">
                     {filteredServers.length} suludlan available

@@ -221,7 +221,7 @@ const PlayerSetup: React.FC = () => {
           <div className="w-full max-w-7xl mx-auto space-y-3">
             <div className="text-center space-y-4">
               <h1 className="font-headline font-black text-5xl md:text-7xl tracking-tighter text-[#ffe483] italic uppercase">
-                choose your <span className="text-[#ff51fa]">character</span> po
+                choose your <span className="text-[#ff51fa]">character</span>
               </h1>
             </div>
 

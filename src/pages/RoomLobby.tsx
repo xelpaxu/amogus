@@ -305,7 +305,7 @@ const RoomLobby: React.FC = () => {
       {/* MAIN */}
       <main className="px-6 text-center py-12">
         <h1 className="text-6xl md:text-8xl font-black italic text-[#ffe483] uppercase tracking-tighter">
-          tililipon ta <span className="text-[#ff51fa]">di</span>
+          gather <span className="text-[#ff51fa]">room</span>
         </h1>
 
         {/* PLAYERS */}
@@ -335,7 +335,7 @@ const RoomLobby: React.FC = () => {
               disabled={players.length < 4}
               className="bg-[#ffe483] text-[#635200] font-black text-3xl px-16 py-6 rounded-lg hover:scale-[1.05] active:scale-95 transition-all shadow-[0_10px_0_#635200] disabled:opacity-50"
             >
-              SUGOD TA
+              START ROUND
             </button>
           ) : (
             <div className="text-[#81ecff] font-bold animate-pulse uppercase tracking-widest py-4">
@@ -360,7 +360,7 @@ const RoomLobby: React.FC = () => {
           <div className="px-5 py-3 border-b border-white/10 flex items-center justify-between bg-black/30 cursor-pointer" onClick={handleToggleChat}>
             <div className="flex items-center gap-2">
               <h2 className="text-md font-black text-[#81ecff] tracking-wider">
-                storhanay kamo di ah
+                CHAT
               </h2>
               {unreadCount > 0 && chatCollapsed && (
                 <span className="bg-red-500 text-white text-xs font-bold rounded-full px-2 py-0.5">

@@ -124,6 +124,7 @@ const GameScreen: React.FC = () => {
 
     const handleRoundFinished = (data: any) => {
       console.log("[GameScreen] Received round_finished from server:", data);
+      console.log("FULL round_finished payload:", JSON.stringify(data, null, 2));
       
       // Make sure your backend wraps the raw Flask keys or names them exactly like this:
       navigate(`/result/${roomId}`, {
@@ -145,13 +146,23 @@ const GameScreen: React.FC = () => {
       setImpostorId(data.newImpostorId ?? data.impostorId);
     };
 
-        // Add this inside your socket listeners useEffect
     const handleTimerUpdate = (data: any) => {
       if (data.step !== stepRef.current) return;
-
       if (data.timeLeft < 0) return;
 
       setTimeLeft(data.timeLeft);
+
+      // Only auto-submit if timer truly runs out and player hasn't submitted yet
+      if (data.timeLeft === 0 && submittedStepRef.current !== stepRef.current) {
+        const currentQuestion = QUESTIONS[stepRef.current];
+        if (!currentQuestion) return;
+
+        socket.emit("submit_answer_step", {
+          roomId: roomIdRef.current,
+          step: stepRef.current,
+          answer: answersRef.current[currentQuestion.key as keyof typeof answersRef.current],
+        });
+      }
     };
 
     const handleSubmittedConfirmed = (data: any) => {
@@ -191,6 +202,21 @@ const GameScreen: React.FC = () => {
       ...prev,
       [key]: value,
     }));
+  };
+
+  const handleSubmit = () => {
+    if (isSubmitted) return;
+    
+    const currentQuestion = QUESTIONS[stepRef.current];
+    if (!currentQuestion) return;
+
+    const currentAnswer = answersRef.current[currentQuestion.key as keyof typeof answersRef.current];
+
+    socket.emit("submit_answer_step", {
+      roomId: roomIdRef.current,
+      step: stepRef.current,
+      answer: currentAnswer,
+    });
   };
 
   const timerPct = (timeLeft / 45) * 100;
@@ -414,11 +440,19 @@ const GameScreen: React.FC = () => {
 
             {/* Auto-submit hint */}
             {!isSubmitted ? (
-              <div className="text-center text-[#46465c] text-xs tracking-wider py-2">
-                ⏳ Your answer will be submitted automatically when the timer reaches 0
+              <div className="flex flex-col items-center gap-3">
+                <button
+                  onClick={handleSubmit}
+                  className="px-8 py-2.5 bg-[#0c0c1f] border border-[#81ecff]/50 text-[#81ecff] text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#81ecff]/10 hover:border-[#81ecff] hover:shadow-[0_0_15px_rgba(129,236,255,0.2)] active:scale-95 transition-all duration-150"
+                >
+                  ▶ Submit Answer
+                </button>
+                <div className="text-center text-[#46465c] text-xs tracking-wider">
+                  ⏳ Auto-submits when timer reaches 0
+                </div>
               </div>
             ) : (
-              <div className="text-center text-[#28c840] text-xs tracking-wider py-2">
+              <div className="text-center text-[#28c840] text-xs tracking-wider py-2 animate-pulse">
                 ✓ Answer submitted — waiting for other players...
               </div>
             )}
