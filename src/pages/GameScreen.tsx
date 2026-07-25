@@ -303,10 +303,6 @@ const GameScreen: React.FC = () => {
         <CornerBracket position="bl" delay={1.0} color="#81ecff" size={30} />
       </div>
 
-      {/* ── Random terminal flash ── */}
-      <div className="absolute inset-0 bg-[#81ecff] pointer-events-none z-[34]" style={{ animation: 'terminalFlash 8s 3s infinite' }} />
-      <div className="absolute inset-0 bg-[#ff51fa] pointer-events-none z-[34]" style={{ animation: 'terminalFlash 12s 7s infinite' }} />
-
       {/* ── Debug Panel ── */}
       {showDebug && (
         <div className="fixed top-16 left-4 z-[100] bg-black/95 border border-[#ff51fa]/40 rounded-lg p-4 text-[10px] text-[#81ecff] max-w-xs space-y-1 shadow-[0_0_30px_rgba(255,81,250,0.2)]" style={{ animation: 'fadeSlideUp 0.3s both' }}>
