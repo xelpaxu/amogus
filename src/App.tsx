@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import LandingScreen from "./pages/Landing";
 import PlayerSetup from "./pages/PlayerSetup";
 import GameLobby from "./pages/ServerLobby";
 import RoomLobby from "./pages/RoomLobby";
@@ -70,7 +71,9 @@ export default function App() {
 
       <div className="dark min-h-screen bg-background text-on-background font-body selection:bg-secondary selection:text-white overflow-hidden">
         <Routes>
-          <Route path="/" element={<PlayerSetup />} />
+
+          <Route path="/" element={<LandingScreen />} />
+          <Route path="/setup" element={<PlayerSetup />} />
           <Route path="/game_lobby" element={<GameLobby />} />
           <Route path="/room_lobby/:roomId" element={<RoomLobby />} />
           <Route path="/game_screen/:roomId" element={<GameScreen />} />

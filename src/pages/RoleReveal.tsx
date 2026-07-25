@@ -1,7 +1,92 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { Fingerprint, Crosshair, ShieldCheck, Wifi, ShieldAlert } from "lucide-react";
 
 const ROLE_DURATION_MS = 4200;
+
+// ─── Helpers ───────────────────────────────────────────────────
+const rand = (min: number, max: number) => Math.random() * (max - min) + min;
+const pick = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
+
+// ─── Particle ──────────────────────────────────────────────────
+interface Particle {
+  id: number;
+  x: number;
+  y: number;
+  size: string;
+  duration: number;
+  delay: number;
+  color: string;
+  drift: number;
+}
+
+const Particle: React.FC<{ p: Particle }> = ({ p }) => (
+  <div
+    className="absolute rounded-full pointer-events-none"
+    style={{
+      left: `${p.x}%`,
+      top: `${p.y}%`,
+      width: p.size,
+      height: p.size,
+      background: p.color,
+      boxShadow: `0 0 ${parseInt(p.size) * 3}px ${p.color}, 0 0 ${parseInt(p.size) * 6}px ${p.color}44`,
+      animation: `particleFloat ${p.duration}s ${p.delay}s infinite ease-in-out`,
+      '--drift': `${p.drift}px`,
+    } as React.CSSProperties}
+  />
+);
+
+// ─── Corner Bracket ────────────────────────────────────────────
+const CornerBracket: React.FC<{
+  position: 'tl' | 'tr' | 'bl' | 'br';
+  delay: number;
+  color?: string;
+}> = ({ position, delay, color = '#ff51fa' }) => {
+  const rotations = { tl: '0deg', tr: '90deg', br: '180deg', bl: '270deg' };
+  const positions: Record<string, string> = {
+    tl: 'top: 0; left: 0;',
+    tr: 'top: 0; right: 0;',
+    br: 'bottom: 0; right: 0;',
+    bl: 'bottom: 0; left: 0;',
+  };
+
+  const parseStyle = (s: string): React.CSSProperties => {
+    const style: Record<string, string> = {};
+    s.split(';').forEach((part) => {
+      const [key, val] = part.split(':').map((x) => x.trim());
+      if (key && val) {
+        const camel = key.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+        style[camel] = val;
+      }
+    });
+    return style as React.CSSProperties;
+  };
+
+  return (
+    <div
+      className="absolute w-6 h-6 pointer-events-none"
+      style={{
+        ...parseStyle(positions[position]),
+        transform: `rotate(${rotations[position]})`,
+        animation: `bracketDraw 0.5s ${delay}s both cubic-bezier(0.22, 1, 0.36, 1)`,
+      }}
+    >
+      <div
+        className="absolute top-0 left-0 w-full h-[2px]"
+        style={{ background: `linear-gradient(90deg, ${color}, transparent)` }}
+      />
+      <div
+        className="absolute top-0 left-0 h-full w-[2px]"
+        style={{ background: `linear-gradient(180deg, ${color}, transparent)` }}
+      />
+      <div
+        className="absolute top-0 left-0 w-1.5 h-1.5"
+        style={{ background: color, boxShadow: `0 0 6px ${color}` }}
+      />
+    </div>
+  );
+};
+
 
 const RoleRevealScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -12,11 +97,25 @@ const RoleRevealScreen: React.FC = () => {
     real_theme: string;
     fake_theme: string;
     impostorId: string;
-    currentPlayerId: string;               // 👈 added: the ID of this client
+    currentPlayerId: string;               
     players: { id: string; name: string; avatarId: string }[];
   };
 
   const [phase, setPhase] = useState<"reveal" | "leaving">("reveal");
+  
+  // Stable particles ref
+  const particles = useRef<Particle[]>(
+    Array.from({ length: 15 }, (_, i) => ({
+      id: i,
+      x: rand(0, 100),
+      y: rand(0, 100),
+      size: `${rand(1, 3)}px`,
+      duration: rand(8, 16),
+      delay: rand(0, 6),
+      color: pick(['#ff51fa', '#81ecff', '#ffe483', '#ff51fa88', '#81ecff66']),
+      drift: rand(-30, 30),
+    }))
+  ).current;
 
   useEffect(() => {
     if (!gameData) {
@@ -45,37 +144,30 @@ const RoleRevealScreen: React.FC = () => {
   const isImpostor = gameData.currentPlayerId === gameData.impostorId;
   const me = gameData.players.find((p) => p.id === gameData.currentPlayerId);
   const displayTheme = isImpostor ? gameData.fake_theme : gameData.real_theme;
+  
+  const accentColor = isImpostor ? '#ff51fa' : '#81ecff';
+  const CIRCUMFERENCE = 290; // 2 * PI * 46
 
   return (
-    <div
-      className="relative min-h-screen overflow-hidden flex items-center justify-center font-mono"
-      style={{ background: "#070712" }}
-    >
+    <div className="dark h-screen w-screen overflow-hidden relative flex items-center justify-center font-mono text-[#e5e3ff]">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;900&display=swap');
-        * { font-family: 'JetBrains Mono', monospace !important; }
-
+        @keyframes particleFloat {
+          0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+          25% { transform: translate(calc(var(--drift) * 0.5), -15px) scale(1.2); opacity: 0.9; }
+          50% { transform: translate(var(--drift), -30px) scale(0.7); opacity: 0.3; }
+          75% { transform: translate(calc(var(--drift) * -0.3), -10px) scale(1.1); opacity: 0.7; }
+        }
+        @keyframes bracketDraw {
+          0% { opacity: 0; clip-path: inset(0 100% 100% 0); }
+          100% { opacity: 1; clip-path: inset(0 0 0 0); }
+        }
         @keyframes scanMove {
           0% { transform: translateY(-100%); }
           100% { transform: translateY(100vh); }
         }
-        .scanline-sweep {
-          position: fixed; inset: 0; pointer-events: none; z-index: 0;
-          background: linear-gradient(to bottom, transparent 0%, rgba(129,236,255,0.04) 50%, transparent 100%);
-          height: 40px;
-          animation: scanMove 3s linear infinite;
-        }
-        .grid-bg {
-          position: fixed; inset: 0; pointer-events: none;
-          background-image:
-            linear-gradient(rgba(70,70,92,0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(70,70,92,0.08) 1px, transparent 1px);
-          background-size: 40px 40px;
-        }
-
         @keyframes roleReveal {
-          0%   { opacity: 0; transform: scale(0.85) translateY(30px); filter: blur(12px); }
-          60%  { opacity: 1; transform: scale(1.03) translateY(-4px); filter: blur(0); }
+          0%   { opacity: 0; transform: scale(0.85) translateY(20px); filter: blur(12px); }
+          60%  { opacity: 1; transform: scale(1.03) translateY(-2px); filter: blur(0); }
           100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
         }
         .reveal-enter { animation: roleReveal 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
@@ -88,21 +180,15 @@ const RoleRevealScreen: React.FC = () => {
 
         @keyframes avatarFloat {
           0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
+          50% { transform: translateY(-6px); }
         }
         .avatar-float { animation: avatarFloat 3s ease-in-out infinite; }
 
-        @keyframes impostorGlow {
-          0%, 100% { box-shadow: 0 0 30px rgba(255,60,60,0.5), 0 0 80px rgba(255,60,60,0.2); }
-          50%       { box-shadow: 0 0 50px rgba(255,60,60,0.9), 0 0 120px rgba(255,60,60,0.4); }
+        @keyframes roleGlow {
+          0%, 100% { box-shadow: 0 0 20px ${isImpostor ? 'rgba(255,81,250,0.4)' : 'rgba(129,236,255,0.3)'}, 0 0 60px ${isImpostor ? 'rgba(255,81,250,0.1)' : 'rgba(129,236,255,0.1)'}; }
+          50%       { box-shadow: 0 0 30px ${isImpostor ? 'rgba(255,81,250,0.8)' : 'rgba(129,236,255,0.6)'}, 0 0 80px ${isImpostor ? 'rgba(255,81,250,0.2)' : 'rgba(129,236,255,0.2)'}; }
         }
-        .impostor-ring { animation: impostorGlow 1.8s ease-in-out infinite; }
-
-        @keyframes crewGlow {
-          0%, 100% { box-shadow: 0 0 30px rgba(129,236,255,0.4), 0 0 80px rgba(129,236,255,0.15); }
-          50%       { box-shadow: 0 0 50px rgba(129,236,255,0.7), 0 0 120px rgba(129,236,255,0.3); }
-        }
-        .crew-ring { animation: crewGlow 2s ease-in-out infinite; }
+        .role-ring { animation: roleGlow 1.8s ease-in-out infinite; }
 
         @keyframes labelFlash {
           0%, 100% { opacity: 1; }
@@ -112,145 +198,196 @@ const RoleRevealScreen: React.FC = () => {
         .label-flash { animation: labelFlash 0.6s ease 0.5s 2; }
 
         @keyframes themeFade {
-          from { opacity: 0; transform: translateY(12px); }
+          from { opacity: 0; transform: translateY(8px); }
           to   { opacity: 1; transform: translateY(0); }
         }
         .theme-fade { animation: themeFade 0.5s ease 1.2s both; }
 
-        .corner-tl { position: fixed; top: 24px; left: 24px; width: 48px; height: 48px;
-          border-top: 2px solid rgba(129,236,255,0.25); border-left: 2px solid rgba(129,236,255,0.25); }
-        .corner-br { position: fixed; bottom: 24px; right: 24px; width: 48px; height: 48px;
-          border-bottom: 2px solid rgba(129,236,255,0.25); border-right: 2px solid rgba(129,236,255,0.25); }
-        .corner-tr { position: fixed; top: 24px; right: 24px; width: 48px; height: 48px;
-          border-top: 2px solid rgba(129,236,255,0.25); border-right: 2px solid rgba(129,236,255,0.25); }
-        .corner-bl { position: fixed; bottom: 24px; left: 24px; width: 48px; height: 48px;
-          border-bottom: 2px solid rgba(129,236,255,0.25); border-left: 2px solid rgba(129,236,255,0.25); }
-
         @keyframes countdown {
           from { stroke-dashoffset: 0; }
-          to   { stroke-dashoffset: 264; }
+          to   { stroke-dashoffset: ${CIRCUMFERENCE}; }
         }
         .countdown-ring {
-          stroke-dasharray: 264;
+          stroke-dasharray: ${CIRCUMFERENCE};
           stroke-dashoffset: 0;
           animation: countdown ${ROLE_DURATION_MS}ms linear forwards;
           transform: rotate(-90deg);
           transform-origin: center;
         }
+        .cyber-grid {
+          position: absolute; inset: 0; pointer-events: none;
+          background-image:
+            linear-gradient(rgba(129,236,255,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(129,236,255,0.06) 1px, transparent 1px);
+          background-size: 40px 40px;
+        }
+        .trace-frame {
+          position: absolute;
+          inset: 8px;
+          border: 1px solid transparent;
+          background:
+            linear-gradient(${accentColor}44, ${accentColor}44) top left,
+            linear-gradient(#81ecff44, #81ecff44) top right,
+            linear-gradient(#ffe48344, #ffe48344) bottom right,
+            linear-gradient(${accentColor}44, ${accentColor}44) bottom left;
+          background-size: 25% 1px, 25% 1px, 25% 1px, 25% 1px;
+          background-repeat: no-repeat;
+          animation: borderTrace 6s linear infinite;
+          pointer-events: none;
+        }
+        @keyframes borderTrace {
+          0% { background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%; }
+          25% { background-position: 100% 0%, 100% 100%, 0% 100%, 0% 0%; }
+          50% { background-position: 100% 100%, 0% 100%, 0% 0%, 100% 0%; }
+          75% { background-position: 0% 100%, 0% 0%, 100% 0%, 100% 100%; }
+          100% { background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%; }
+        }
+        @keyframes dataPulse {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 0.8; }
+        }
       `}</style>
 
-      {/* Background layers */}
-      <div className="grid-bg" />
-      <div className="scanline-sweep" />
-      <div className="corner-tl" /><div className="corner-tr" />
-      <div className="corner-bl" /><div className="corner-br" />
+      {/* Background Layers */}
+      <div className="absolute inset-0 bg-[#070712]" />
+      <div className="cyber-grid z-[5]" />
+      
+      {/* CRT Scanlines */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[size:100%_4px,3px_100%] pointer-events-none z-40" />
+      
+      {/* Moving Scanline Bar */}
+      <div
+        className="absolute left-0 w-full h-[2px] z-40 pointer-events-none"
+        style={{
+          background: 'linear-gradient(90deg, transparent, rgba(129,236,255,0.12), transparent)',
+          animation: 'scanMove 4s linear infinite',
+        }}
+      />
 
-      {/* Ambient colored orbs */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+      {/* Particles */}
+      <div className="absolute inset-0 pointer-events-none z-30">
+        {particles.map((p) => (
+          <Particle key={p.id} p={p} />
+        ))}
+      </div>
+
+      {/* Ambient Orbs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-[6]">
         <div
-          className="absolute w-96 h-96 rounded-full blur-3xl opacity-10"
-          style={{
-            background: isImpostor ? "#ff3c3c" : "#81ecff",
-            top: "10%", left: "15%",
-          }}
+          className="absolute w-64 h-64 rounded-full blur-3xl opacity-10"
+          style={{ background: accentColor, top: "10%", left: "15%" }}
         />
         <div
-          className="absolute w-64 h-64 rounded-full blur-3xl opacity-8"
-          style={{
-            background: isImpostor ? "#ff51fa" : "#00b894",
-            bottom: "15%", right: "20%",
-          }}
+          className="absolute w-48 h-48 rounded-full blur-3xl opacity-[0.08]"
+          style={{ background: "#ffe483", bottom: "15%", right: "20%" }}
         />
       </div>
 
+      {/* Trace Frame */}
+      <div className="trace-frame z-[35]" />
+
+      {/* Corner Brackets */}
+      <div className="absolute inset-0 z-[36] pointer-events-none p-2">
+        <CornerBracket position="tl" delay={0.2} color={accentColor} />
+        <CornerBracket position="tr" delay={0.4} color="#81ecff" />
+        <CornerBracket position="br" delay={0.6} color={accentColor} />
+        <CornerBracket position="bl" delay={0.8} color="#81ecff" />
+      </div>
+
       {/* ── REVEAL STATE ── */}
-      <div className={`relative z-10 flex flex-col items-center gap-8 ${phase === "leaving" ? "reveal-leave" : "reveal-enter"}`}>
+      <div className={`relative z-20 flex flex-col items-center gap-3 px-4 ${phase === "leaving" ? "reveal-leave" : "reveal-enter"}`}>
+        
         {/* System header */}
-        <div className="text-[10px] tracking-[0.5em] text-[#46465c] uppercase">
-          // identity_reveal.exe
+        <div className="text-[8px] tracking-[0.5em] text-[#46465c] uppercase flex items-center gap-2">
+          <span className="w-4 h-[1px] bg-[#46465c]" />
+          identity_reveal.exe
+          <span className="w-4 h-[1px] bg-[#46465c]" />
         </div>
 
-        {/* Avatar + ring */}
-        <div className="relative avatar-float">
-          <svg width="160" height="160" className="absolute inset-0" style={{ zIndex: 2 }}>
+        {/* Avatar + Ring Container */}
+        <div className="relative avatar-float my-2">
+          {/* SVG Countdown Ring */}
+          <svg width="96" height="96" className="absolute inset-0" style={{ zIndex: 2 }}>
             <circle
-              cx="80" cy="80" r="42" fill="none"
-              stroke={isImpostor ? "rgba(255,60,60,0.15)" : "rgba(129,236,255,0.1)"}
-              strokeWidth="3"
+              cx="48" cy="48" r="46" fill="none"
+              stroke={`${accentColor}15`}
+              strokeWidth="2"
             />
             <circle
-              cx="80" cy="80" r="42" fill="none"
-              stroke={isImpostor ? "#ff3c3c" : "#81ecff"}
-              strokeWidth="3"
+              cx="48" cy="48" r="46" fill="none"
+              stroke={accentColor}
+              strokeWidth="2"
               strokeLinecap="round"
               className="countdown-ring"
             />
           </svg>
 
           <div
-            className={`w-40 h-40 rounded-full flex items-center justify-center ${isImpostor ? "impostor-ring" : "crew-ring"}`}
-            style={{ background: isImpostor ? "rgba(255,60,60,0.06)" : "rgba(129,236,255,0.06)" }}
+            className={`w-24 h-24 rounded-full flex items-center justify-center role-ring`}
+            style={{ background: `${accentColor}10` }}
           >
             <div
-              className="w-28 h-28 rounded-full flex items-center justify-center text-5xl select-none"
+              className="w-[76px] h-[76px] rounded-full flex items-center justify-center"
               style={{
-                background: isImpostor
-                  ? "radial-gradient(circle at 35% 35%, #3d0000, #1a0000)"
-                  : "radial-gradient(circle at 35% 35%, #001a2e, #000d1a)",
-                border: `2px solid ${isImpostor ? "rgba(255,60,60,0.4)" : "rgba(129,236,255,0.3)"}`,
+                background: `radial-gradient(circle at 35% 35%, ${accentColor}20, #070712)`,
+                border: `1px solid ${accentColor}40`,
               }}
             >
-              {me?.avatarId ? (
-                <span>
-                  {["🤖","👾","🦊","🐸","🐼","🦁","🐯","🐺"][parseInt(me.avatarId) % 8] ?? "👾"}
-                </span>
-              ) : "👾"}
+              {/* Replaced Emoji with Lucide Icon */}
+              {isImpostor ? (
+                <ShieldAlert size={32} className="text-[#ff51fa] drop-shadow-[0_0_10px_rgba(255,81,250,0.8)]" />
+              ) : (
+                <Fingerprint size={32} className="text-[#81ecff] drop-shadow-[0_0_10px_rgba(129,236,255,0.8)]" />
+              )}
             </div>
           </div>
         </div>
 
-        {/* Player name */}
-        <div className="flex flex-col items-center gap-1">
-          <span className="text-[#46465c] text-[10px] tracking-[0.4em] uppercase">player</span>
-          <span className="text-white text-xl font-black tracking-widest uppercase">
+        {/* Player Name */}
+        <div className="flex flex-col items-center gap-0.5">
+          <span className="text-[#46465c] text-[8px] tracking-[0.4em] uppercase">player</span>
+          <span className="text-white text-sm font-black tracking-widest uppercase" style={{ textShadow: `0 0 10px ${accentColor}40` }}>
             {me?.name ?? "Unknown"}
           </span>
         </div>
 
-        {/* Role badge */}
+        {/* Role Badge */}
         <div
-          className={`label-flash px-8 py-3 rounded-sm border font-black text-lg tracking-[0.3em] uppercase ${
-            isImpostor
-              ? "bg-red-950/60 border-red-500/60 text-red-400"
-              : "bg-cyan-950/40 border-cyan-500/40 text-cyan-300"
-          }`}
+          className={`label-flash relative px-6 py-2 border font-black text-xs tracking-[0.3em] uppercase flex items-center gap-2`}
           style={{
-            boxShadow: isImpostor
-              ? "inset 0 0 30px rgba(255,60,60,0.1)"
-              : "inset 0 0 30px rgba(129,236,255,0.08)",
+            background: `${accentColor}15`,
+            borderColor: `${accentColor}60`,
+            color: accentColor,
+            boxShadow: `inset 0 0 20px ${accentColor}10, 0 0 15px ${accentColor}20`
           }}
         >
-          {isImpostor ? "🔪 IMPOSTOR" : "👾 CREWMATE"}
+          <div className="absolute top-1 left-1 w-2 h-2 border-t border-l" style={{ borderColor: `${accentColor}80` }} />
+          <div className="absolute top-1 right-1 w-2 h-2 border-t border-r" style={{ borderColor: `${accentColor}80` }} />
+          <div className="absolute bottom-1 left-1 w-2 h-2 border-b border-l" style={{ borderColor: `${accentColor}80` }} />
+          <div className="absolute bottom-1 right-1 w-2 h-2 border-b border-r" style={{ borderColor: `${accentColor}80` }} />
+          
+          {isImpostor ? <Crosshair size={14} /> : <ShieldCheck size={14} />}
+          {isImpostor ? "Impostor" : "Crewmate"}
         </div>
 
-        {/* Role description */}
-        <p className="text-[#46465c] text-xs text-center max-w-xs leading-relaxed tracking-wide">
+        {/* Role Description */}
+        <p className="text-[#46465c] text-[10px] text-center max-w-[280px] leading-relaxed tracking-wide">
           {isImpostor
-            ? "You have been given a FAKE theme. Blend in — don't get caught."
+            ? "You received a FAKE theme. Blend in — don't get caught."
             : "You have the real theme. Code well and sniff out the impostor."}
         </p>
 
-        {/* Theme reveal */}
-        <div className="theme-fade flex flex-col items-center gap-2 mt-2">
-          <span className="text-[#46465c] text-[10px] tracking-[0.4em] uppercase">your theme</span>
-          <div className="px-6 py-2 border border-[#46465c]/40 rounded-sm bg-black/40">
+        {/* Theme Reveal */}
+        <div className="theme-fade flex flex-col items-center gap-1.5 mt-1">
+          <span className="text-[#46465c] text-[8px] tracking-[0.4em] uppercase">your theme</span>
+          <div className="relative px-5 py-1.5 border border-[#ffe48333] rounded-sm bg-black/60">
+            <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#ffe48355]" />
+            <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#ffe48355]" />
             <span
-              className="font-black text-2xl tracking-widest uppercase"
+              className="font-black text-base tracking-widest uppercase"
               style={{
-                color: isImpostor ? "#ff6b6b" : "#ff51fa",
-                textShadow: isImpostor
-                  ? "0 0 20px rgba(255,107,107,0.6)"
-                  : "0 0 20px rgba(255,81,250,0.6)",
+                color: "#ffe483",
+                textShadow: "0 0 15px rgba(255,228,131,0.6)",
               }}
             >
               {displayTheme?.toUpperCase()}
@@ -259,14 +396,23 @@ const RoleRevealScreen: React.FC = () => {
         </div>
 
         {/* Footer hint */}
-        <p className="text-[#2a2a3c] text-[10px] tracking-widest mt-4">
-          game starting automatically...
-        </p>
+        <div className="flex items-center gap-2 mt-2">
+          <div className="w-1.5 h-1.5 rounded-full bg-[#4ade80] shadow-[0_0_6px_#4ade8088]" style={{ animation: 'dataPulse 1s infinite' }} />
+          <p className="text-[#2a2a3c] text-[8px] tracking-widest uppercase">
+            synchronizing game state...
+          </p>
+        </div>
       </div>
 
-      {/* Room ID watermark */}
-      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 text-[#1e1e2e] text-[10px] tracking-[0.4em]">
-        ROOM:{roomId ?? "????"}
+      {/* Room ID & Side HUD Watermark */}
+      <div className="absolute bottom-2 left-0 right-0 flex justify-between items-end px-4 z-30 pointer-events-none">
+        <div className="flex items-center gap-2 text-[7px] font-mono tracking-widest text-[#81ecff22] uppercase">
+          <Wifi size={8} />
+          <span>Node: Secure</span>
+        </div>
+        <div className="text-[#1e1e2e] text-[8px] tracking-[0.4em]">
+          ROOM:{roomId ?? "????"}
+        </div>
       </div>
     </div>
   );
