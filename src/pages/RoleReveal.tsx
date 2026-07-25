@@ -1,14 +1,17 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { Fingerprint, Crosshair, ShieldCheck, Wifi, ShieldAlert } from "lucide-react";
+import { getAvatarById } from "../avatars"; // adjust path as needed
 
 const ROLE_DURATION_MS = 4200;
+const AVATAR_SIZE = 140; // px
+const CIRCUMFERENCE = 2 * Math.PI * (AVATAR_SIZE / 2 - 6); // r = 64 -> ~402
 
 // ─── Helpers ───────────────────────────────────────────────────
 const rand = (min: number, max: number) => Math.random() * (max - min) + min;
 const pick = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
 
-// ─── Particle ──────────────────────────────────────────────────
+// ─── Particle (scaled up slightly) ─────────────────────────────
 interface Particle {
   id: number;
   x: number;
@@ -29,14 +32,14 @@ const Particle: React.FC<{ p: Particle }> = ({ p }) => (
       width: p.size,
       height: p.size,
       background: p.color,
-      boxShadow: `0 0 ${parseInt(p.size) * 3}px ${p.color}, 0 0 ${parseInt(p.size) * 6}px ${p.color}44`,
+      boxShadow: `0 0 ${parseInt(p.size) * 4}px ${p.color}, 0 0 ${parseInt(p.size) * 8}px ${p.color}44`,
       animation: `particleFloat ${p.duration}s ${p.delay}s infinite ease-in-out`,
       '--drift': `${p.drift}px`,
     } as React.CSSProperties}
   />
 );
 
-// ─── Corner Bracket ────────────────────────────────────────────
+// ─── Corner Bracket (larger) ───────────────────────────────────
 const CornerBracket: React.FC<{
   position: 'tl' | 'tr' | 'bl' | 'br';
   delay: number;
@@ -64,7 +67,7 @@ const CornerBracket: React.FC<{
 
   return (
     <div
-      className="absolute w-6 h-6 pointer-events-none"
+      className="absolute w-10 h-10 pointer-events-none"
       style={{
         ...parseStyle(positions[position]),
         transform: `rotate(${rotations[position]})`,
@@ -80,13 +83,12 @@ const CornerBracket: React.FC<{
         style={{ background: `linear-gradient(180deg, ${color}, transparent)` }}
       />
       <div
-        className="absolute top-0 left-0 w-1.5 h-1.5"
-        style={{ background: color, boxShadow: `0 0 6px ${color}` }}
+        className="absolute top-0 left-0 w-2 h-2"
+        style={{ background: color, boxShadow: `0 0 8px ${color}` }}
       />
     </div>
   );
 };
-
 
 const RoleRevealScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -97,23 +99,23 @@ const RoleRevealScreen: React.FC = () => {
     real_theme: string;
     fake_theme: string;
     impostorId: string;
-    currentPlayerId: string;               
+    currentPlayerId: string;
     players: { id: string; name: string; avatarId: string }[];
   };
 
   const [phase, setPhase] = useState<"reveal" | "leaving">("reveal");
-  
-  // Stable particles ref
+
+  // Particles (slightly larger count and size)
   const particles = useRef<Particle[]>(
-    Array.from({ length: 15 }, (_, i) => ({
+    Array.from({ length: 20 }, (_, i) => ({
       id: i,
       x: rand(0, 100),
       y: rand(0, 100),
-      size: `${rand(1, 3)}px`,
+      size: `${rand(2, 5)}px`,
       duration: rand(8, 16),
       delay: rand(0, 6),
       color: pick(['#ff51fa', '#81ecff', '#ffe483', '#ff51fa88', '#81ecff66']),
-      drift: rand(-30, 30),
+      drift: rand(-40, 40),
     }))
   ).current;
 
@@ -144,9 +146,11 @@ const RoleRevealScreen: React.FC = () => {
   const isImpostor = gameData.currentPlayerId === gameData.impostorId;
   const me = gameData.players.find((p) => p.id === gameData.currentPlayerId);
   const displayTheme = isImpostor ? gameData.fake_theme : gameData.real_theme;
-  
   const accentColor = isImpostor ? '#ff51fa' : '#81ecff';
-  const CIRCUMFERENCE = 290; // 2 * PI * 46
+
+  // Get avatar image
+  const avatarObj = getAvatarById(me?.avatarId || '');
+  const avatarImage = avatarObj?.image || null;
 
   return (
     <div className="dark h-screen w-screen overflow-hidden relative flex items-center justify-center font-mono text-[#e5e3ff]">
@@ -171,38 +175,32 @@ const RoleRevealScreen: React.FC = () => {
           100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
         }
         .reveal-enter { animation: roleReveal 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
-
         @keyframes revealLeave {
           0%   { opacity: 1; transform: scale(1); filter: blur(0); }
           100% { opacity: 0; transform: scale(1.08); filter: blur(10px); }
         }
         .reveal-leave { animation: revealLeave 0.5s ease-in forwards; }
-
         @keyframes avatarFloat {
           0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-6px); }
+          50% { transform: translateY(-8px); }
         }
         .avatar-float { animation: avatarFloat 3s ease-in-out infinite; }
-
         @keyframes roleGlow {
-          0%, 100% { box-shadow: 0 0 20px ${isImpostor ? 'rgba(255,81,250,0.4)' : 'rgba(129,236,255,0.3)'}, 0 0 60px ${isImpostor ? 'rgba(255,81,250,0.1)' : 'rgba(129,236,255,0.1)'}; }
-          50%       { box-shadow: 0 0 30px ${isImpostor ? 'rgba(255,81,250,0.8)' : 'rgba(129,236,255,0.6)'}, 0 0 80px ${isImpostor ? 'rgba(255,81,250,0.2)' : 'rgba(129,236,255,0.2)'}; }
+          0%, 100% { box-shadow: 0 0 25px ${isImpostor ? 'rgba(255,81,250,0.4)' : 'rgba(129,236,255,0.3)'}, 0 0 75px ${isImpostor ? 'rgba(255,81,250,0.1)' : 'rgba(129,236,255,0.1)'}; }
+          50%       { box-shadow: 0 0 40px ${isImpostor ? 'rgba(255,81,250,0.8)' : 'rgba(129,236,255,0.6)'}, 0 0 100px ${isImpostor ? 'rgba(255,81,250,0.2)' : 'rgba(129,236,255,0.2)'}; }
         }
         .role-ring { animation: roleGlow 1.8s ease-in-out infinite; }
-
         @keyframes labelFlash {
           0%, 100% { opacity: 1; }
           30% { opacity: 0.3; }
           60% { opacity: 1; }
         }
         .label-flash { animation: labelFlash 0.6s ease 0.5s 2; }
-
         @keyframes themeFade {
           from { opacity: 0; transform: translateY(8px); }
           to   { opacity: 1; transform: translateY(0); }
         }
         .theme-fade { animation: themeFade 0.5s ease 1.2s both; }
-
         @keyframes countdown {
           from { stroke-dashoffset: 0; }
           to   { stroke-dashoffset: ${CIRCUMFERENCE}; }
@@ -217,20 +215,20 @@ const RoleRevealScreen: React.FC = () => {
         .cyber-grid {
           position: absolute; inset: 0; pointer-events: none;
           background-image:
-            linear-gradient(rgba(129,236,255,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(129,236,255,0.06) 1px, transparent 1px);
-          background-size: 40px 40px;
+            linear-gradient(rgba(129,236,255,0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(129,236,255,0.08) 1px, transparent 1px);
+          background-size: 50px 50px;
         }
         .trace-frame {
           position: absolute;
-          inset: 8px;
+          inset: 12px;
           border: 1px solid transparent;
           background:
             linear-gradient(${accentColor}44, ${accentColor}44) top left,
             linear-gradient(#81ecff44, #81ecff44) top right,
             linear-gradient(#ffe48344, #ffe48344) bottom right,
             linear-gradient(${accentColor}44, ${accentColor}44) bottom left;
-          background-size: 25% 1px, 25% 1px, 25% 1px, 25% 1px;
+          background-size: 25% 2px, 25% 2px, 25% 2px, 25% 2px;
           background-repeat: no-repeat;
           animation: borderTrace 6s linear infinite;
           pointer-events: none;
@@ -251,15 +249,15 @@ const RoleRevealScreen: React.FC = () => {
       {/* Background Layers */}
       <div className="absolute inset-0 bg-[#070712]" />
       <div className="cyber-grid z-[5]" />
-      
+
       {/* CRT Scanlines */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[size:100%_4px,3px_100%] pointer-events-none z-40" />
-      
+
       {/* Moving Scanline Bar */}
       <div
-        className="absolute left-0 w-full h-[2px] z-40 pointer-events-none"
+        className="absolute left-0 w-full h-[3px] z-40 pointer-events-none"
         style={{
-          background: 'linear-gradient(90deg, transparent, rgba(129,236,255,0.12), transparent)',
+          background: 'linear-gradient(90deg, transparent, rgba(129,236,255,0.15), transparent)',
           animation: 'scanMove 4s linear infinite',
         }}
       />
@@ -274,11 +272,11 @@ const RoleRevealScreen: React.FC = () => {
       {/* Ambient Orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-[6]">
         <div
-          className="absolute w-64 h-64 rounded-full blur-3xl opacity-10"
+          className="absolute w-96 h-96 rounded-full blur-3xl opacity-10"
           style={{ background: accentColor, top: "10%", left: "15%" }}
         />
         <div
-          className="absolute w-48 h-48 rounded-full blur-3xl opacity-[0.08]"
+          className="absolute w-80 h-80 rounded-full blur-3xl opacity-[0.08]"
           style={{ background: "#ffe483", bottom: "15%", right: "20%" }}
         />
       </div>
@@ -287,7 +285,7 @@ const RoleRevealScreen: React.FC = () => {
       <div className="trace-frame z-[35]" />
 
       {/* Corner Brackets */}
-      <div className="absolute inset-0 z-[36] pointer-events-none p-2">
+      <div className="absolute inset-0 z-[36] pointer-events-none p-4">
         <CornerBracket position="tl" delay={0.2} color={accentColor} />
         <CornerBracket position="tr" delay={0.4} color="#81ecff" />
         <CornerBracket position="br" delay={0.6} color={accentColor} />
@@ -295,99 +293,115 @@ const RoleRevealScreen: React.FC = () => {
       </div>
 
       {/* ── REVEAL STATE ── */}
-      <div className={`relative z-20 flex flex-col items-center gap-3 px-4 ${phase === "leaving" ? "reveal-leave" : "reveal-enter"}`}>
-        
+      <div className={`relative z-20 flex flex-col items-center gap-5 px-6 ${phase === "leaving" ? "reveal-leave" : "reveal-enter"}`}>
         {/* System header */}
-        <div className="text-[8px] tracking-[0.5em] text-[#46465c] uppercase flex items-center gap-2">
-          <span className="w-4 h-[1px] bg-[#46465c]" />
+        <div className="text-[10px] tracking-[0.5em] text-[#46465c] uppercase flex items-center gap-3">
+          <span className="w-6 h-[1px] bg-[#46465c]" />
           identity_reveal.exe
-          <span className="w-4 h-[1px] bg-[#46465c]" />
+          <span className="w-6 h-[1px] bg-[#46465c]" />
         </div>
 
         {/* Avatar + Ring Container */}
-        <div className="relative avatar-float my-2">
+        <div className="relative avatar-float my-4">
           {/* SVG Countdown Ring */}
-          <svg width="96" height="96" className="absolute inset-0" style={{ zIndex: 2 }}>
+          <svg width={AVATAR_SIZE} height={AVATAR_SIZE} className="absolute inset-0" style={{ zIndex: 2 }}>
             <circle
-              cx="48" cy="48" r="46" fill="none"
+              cx={AVATAR_SIZE / 2}
+              cy={AVATAR_SIZE / 2}
+              r={AVATAR_SIZE / 2 - 6}
+              fill="none"
               stroke={`${accentColor}15`}
-              strokeWidth="2"
+              strokeWidth="3"
             />
             <circle
-              cx="48" cy="48" r="46" fill="none"
+              cx={AVATAR_SIZE / 2}
+              cy={AVATAR_SIZE / 2}
+              r={AVATAR_SIZE / 2 - 6}
+              fill="none"
               stroke={accentColor}
-              strokeWidth="2"
+              strokeWidth="3"
               strokeLinecap="round"
               className="countdown-ring"
             />
           </svg>
 
           <div
-            className={`w-24 h-24 rounded-full flex items-center justify-center role-ring`}
-            style={{ background: `${accentColor}10` }}
+            className={`rounded-full flex items-center justify-center role-ring`}
+            style={{
+              width: AVATAR_SIZE,
+              height: AVATAR_SIZE,
+              background: `${accentColor}10`,
+            }}
           >
             <div
-              className="w-[76px] h-[76px] rounded-full flex items-center justify-center"
+              className="rounded-full flex items-center justify-center overflow-hidden"
               style={{
+                width: AVATAR_SIZE - 12,
+                height: AVATAR_SIZE - 12,
                 background: `radial-gradient(circle at 35% 35%, ${accentColor}20, #070712)`,
-                border: `1px solid ${accentColor}40`,
+                border: `1.5px solid ${accentColor}40`,
               }}
             >
-              {/* Replaced Emoji with Lucide Icon */}
-              {isImpostor ? (
-                <ShieldAlert size={32} className="text-[#ff51fa] drop-shadow-[0_0_10px_rgba(255,81,250,0.8)]" />
+              {avatarImage ? (
+                <img
+                  src={avatarImage}
+                  alt={me?.name || "avatar"}
+                  className="w-full h-full object-cover"
+                />
+              ) : isImpostor ? (
+                <ShieldAlert size={48} className="text-[#ff51fa] drop-shadow-[0_0_12px_rgba(255,81,250,0.8)]" />
               ) : (
-                <Fingerprint size={32} className="text-[#81ecff] drop-shadow-[0_0_10px_rgba(129,236,255,0.8)]" />
+                <Fingerprint size={48} className="text-[#81ecff] drop-shadow-[0_0_12px_rgba(129,236,255,0.8)]" />
               )}
             </div>
           </div>
         </div>
 
         {/* Player Name */}
-        <div className="flex flex-col items-center gap-0.5">
-          <span className="text-[#46465c] text-[8px] tracking-[0.4em] uppercase">player</span>
-          <span className="text-white text-sm font-black tracking-widest uppercase" style={{ textShadow: `0 0 10px ${accentColor}40` }}>
+        <div className="flex flex-col items-center gap-1">
+          <span className="text-[#46465c] text-[10px] tracking-[0.4em] uppercase">player</span>
+          <span className="text-white text-lg font-black tracking-widest uppercase" style={{ textShadow: `0 0 12px ${accentColor}60` }}>
             {me?.name ?? "Unknown"}
           </span>
         </div>
 
         {/* Role Badge */}
         <div
-          className={`label-flash relative px-6 py-2 border font-black text-xs tracking-[0.3em] uppercase flex items-center gap-2`}
+          className={`label-flash relative px-8 py-3 border font-black text-sm tracking-[0.3em] uppercase flex items-center gap-3`}
           style={{
             background: `${accentColor}15`,
             borderColor: `${accentColor}60`,
             color: accentColor,
-            boxShadow: `inset 0 0 20px ${accentColor}10, 0 0 15px ${accentColor}20`
+            boxShadow: `inset 0 0 25px ${accentColor}10, 0 0 20px ${accentColor}20`,
           }}
         >
           <div className="absolute top-1 left-1 w-2 h-2 border-t border-l" style={{ borderColor: `${accentColor}80` }} />
           <div className="absolute top-1 right-1 w-2 h-2 border-t border-r" style={{ borderColor: `${accentColor}80` }} />
           <div className="absolute bottom-1 left-1 w-2 h-2 border-b border-l" style={{ borderColor: `${accentColor}80` }} />
           <div className="absolute bottom-1 right-1 w-2 h-2 border-b border-r" style={{ borderColor: `${accentColor}80` }} />
-          
-          {isImpostor ? <Crosshair size={14} /> : <ShieldCheck size={14} />}
+
+          {isImpostor ? <Crosshair size={18} /> : <ShieldCheck size={18} />}
           {isImpostor ? "Impostor" : "Crewmate"}
         </div>
 
         {/* Role Description */}
-        <p className="text-[#46465c] text-[10px] text-center max-w-[280px] leading-relaxed tracking-wide">
+        <p className="text-[#46465c] text-xs text-center max-w-md leading-relaxed tracking-wide">
           {isImpostor
             ? "You received a FAKE theme. Blend in — don't get caught."
             : "You have the real theme. Code well and sniff out the impostor."}
         </p>
 
         {/* Theme Reveal */}
-        <div className="theme-fade flex flex-col items-center gap-1.5 mt-1">
-          <span className="text-[#46465c] text-[8px] tracking-[0.4em] uppercase">your theme</span>
-          <div className="relative px-5 py-1.5 border border-[#ffe48333] rounded-sm bg-black/60">
-            <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#ffe48355]" />
-            <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#ffe48355]" />
+        <div className="theme-fade flex flex-col items-center gap-2 mt-2">
+          <span className="text-[#46465c] text-[10px] tracking-[0.4em] uppercase">your theme</span>
+          <div className="relative px-8 py-3 border border-[#ffe48333] rounded-sm bg-black/70">
+            <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#ffe48355]" />
+            <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#ffe48355]" />
             <span
-              className="font-black text-base tracking-widest uppercase"
+              className="font-black text-xl tracking-widest uppercase"
               style={{
                 color: "#ffe483",
-                textShadow: "0 0 15px rgba(255,228,131,0.6)",
+                textShadow: "0 0 20px rgba(255,228,131,0.7)",
               }}
             >
               {displayTheme?.toUpperCase()}
@@ -396,21 +410,21 @@ const RoleRevealScreen: React.FC = () => {
         </div>
 
         {/* Footer hint */}
-        <div className="flex items-center gap-2 mt-2">
-          <div className="w-1.5 h-1.5 rounded-full bg-[#4ade80] shadow-[0_0_6px_#4ade8088]" style={{ animation: 'dataPulse 1s infinite' }} />
-          <p className="text-[#2a2a3c] text-[8px] tracking-widest uppercase">
+        <div className="flex items-center gap-2 mt-3">
+          <div className="w-2 h-2 rounded-full bg-[#4ade80] shadow-[0_0_8px_#4ade80aa]" style={{ animation: 'dataPulse 1s infinite' }} />
+          <p className="text-[#2a2a3c] text-[10px] tracking-widest uppercase">
             synchronizing game state...
           </p>
         </div>
       </div>
 
       {/* Room ID & Side HUD Watermark */}
-      <div className="absolute bottom-2 left-0 right-0 flex justify-between items-end px-4 z-30 pointer-events-none">
-        <div className="flex items-center gap-2 text-[7px] font-mono tracking-widest text-[#81ecff22] uppercase">
-          <Wifi size={8} />
+      <div className="absolute bottom-3 left-0 right-0 flex justify-between items-end px-5 z-30 pointer-events-none">
+        <div className="flex items-center gap-2 text-[8px] font-mono tracking-widest text-[#81ecff22] uppercase">
+          <Wifi size={10} />
           <span>Node: Secure</span>
         </div>
-        <div className="text-[#1e1e2e] text-[8px] tracking-[0.4em]">
+        <div className="text-[#1e1e2e] text-[10px] tracking-[0.4em]">
           ROOM:{roomId ?? "????"}
         </div>
       </div>
