@@ -442,7 +442,7 @@ const ResultScreen: React.FC = () => {
               </button>
             ))}
             <div className="flex-1" />
-            <button onClick={() => navigate("/game_lobby")} className="flex items-center gap-2 px-4 py-3 text-xs text-gray-600 hover:text-white tracking-widest uppercase transition-colors cursor-pointer">
+            <button onClick={() => navigate("/")} className="flex items-center gap-2 px-4 py-3 text-xs text-gray-600 hover:text-white tracking-widest uppercase transition-colors cursor-pointer">
               <FiHome className="w-3.5 h-3.5" />
               Lobby
             </button>
